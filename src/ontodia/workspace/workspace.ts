@@ -319,7 +319,7 @@ export class Workspace extends Component<WorkspaceProps, WorkspaceState> {
     preventTextSelectionUntilMouseUp() { this.markup.preventTextSelection(); }
 
     zoomToFit = () => {
-        this.markup.paperArea.zoomToFit();
+        return this.markup.paperArea.zoomToFit();
     }
 
     zoomToFitRect = (bbox: Rect) => {

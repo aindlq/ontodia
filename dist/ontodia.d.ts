@@ -2530,7 +2530,7 @@ declare module 'ontodia/ontodia/workspace/workspace' {
             getDiagram(): DiagramView;
             getEditor(): EditorController;
             preventTextSelectionUntilMouseUp(): void;
-            zoomToFit: () => void;
+            zoomToFit: () => Promise<void>;
             zoomToFitRect: (bbox: Rect) => void;
             clearAll: () => void;
             showWaitIndicatorWhile(operation: Promise<any>): void;

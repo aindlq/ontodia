@@ -16660,7 +16660,7 @@ var Workspace = /** @class */ (function (_super) {
         _this._watermarkSvg = ONTODIA_LOGO_SVG;
         _this._watermarkUrl = ONTODIA_WEBSITE;
         _this.zoomToFit = function () {
-            _this.markup.paperArea.zoomToFit();
+            return _this.markup.paperArea.zoomToFit();
         };
         _this.zoomToFitRect = function (bbox) {
             _this.markup.paperArea.zoomToFitRect(bbox);
