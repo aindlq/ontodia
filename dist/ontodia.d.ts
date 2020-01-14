@@ -2618,6 +2618,7 @@ declare module 'ontodia/ontodia/workspace/layout/layout' {
         collapsedSize?: number;
         minSize?: number;
         undocked?: boolean;
+        className?: string;
     }
     export interface WorkspaceLayoutProps {
         layout: WorkspaceLayoutNode;

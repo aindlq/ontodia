@@ -34,6 +34,7 @@ interface Component {
     collapsedSize?: number;
     minSize?: number;
     undocked?: boolean;
+    className?: string;
 }
 
 export interface WorkspaceLayoutProps {
@@ -65,6 +66,7 @@ export class WorkspaceLayout extends React.Component<WorkspaceLayoutProps, {}> {
             return (
                 <AccordionItem key={child.type === WorkspaceLayoutType.Component ? child.id : index}
                     heading={child.type === WorkspaceLayoutType.Component ? child.heading : undefined}
+                    className={child.type === WorkspaceLayoutType.Component ? child.className : undefined}
                     dockSide={dockSide}
                     defaultSize={child.defaultSize}
                     defaultCollapsed={child.defaultCollapsed}

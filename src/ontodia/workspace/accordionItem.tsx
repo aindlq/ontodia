@@ -10,6 +10,7 @@ export enum DockSide {
 export interface Props {
     heading?: React.ReactNode;
     bodyClassName?: string;
+    className?: string;
     bodyRef?: (body: HTMLDivElement) => void;
     children?: React.ReactNode;
     defaultSize?: number;
@@ -69,7 +70,7 @@ export class AccordionItem extends React.Component<Props, State> {
     render() {
         const {
             heading, bodyClassName, children, bodyRef,
-            collapsed, size, direction, onBeginDragHandle, onDragHandle, onEndDragHandle, dockSide,
+            collapsed, size, direction, onBeginDragHandle, onDragHandle, onEndDragHandle, dockSide, className = '',
         } = this.props;
         const {resizing} = this.state;
         const shouldRenderHandle = onBeginDragHandle && onDragHandle && onEndDragHandle;
@@ -84,7 +85,7 @@ export class AccordionItem extends React.Component<Props, State> {
             }
             ref={element => this._element = element}
             style={style}>
-            <div className={`${CLASS_NAME}__inner`}>
+            <div className={`${CLASS_NAME}__inner ${className}`}>
                 {heading ? <div className={`${CLASS_NAME}__header`}
                     ref={header => this._header = header}
                     onClick={() => this.props.onChangeCollapsed(!collapsed)}>{heading}</div> : null}

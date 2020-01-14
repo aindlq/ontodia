@@ -18189,7 +18189,7 @@ var WorkspaceLayout = /** @class */ (function (_super) {
             if (collapsedSize === undefined && direction === 'horizontal') {
                 collapsedSize = DEFAULT_HORIZONTAL_COLLAPSED_SIZE;
             }
-            return (React.createElement(accordionItem_1.AccordionItem, { key: child.type === WorkspaceLayoutType.Component ? child.id : index, heading: child.type === WorkspaceLayoutType.Component ? child.heading : undefined, dockSide: dockSide, defaultSize: child.defaultSize, defaultCollapsed: child.defaultCollapsed, collapsedSize: collapsedSize, minSize: child.minSize }, _this.renderLayout(child)));
+            return (React.createElement(accordionItem_1.AccordionItem, { key: child.type === WorkspaceLayoutType.Component ? child.id : index, heading: child.type === WorkspaceLayoutType.Component ? child.heading : undefined, className: child.type === WorkspaceLayoutType.Component ? child.className : undefined, dockSide: dockSide, defaultSize: child.defaultSize, defaultCollapsed: child.defaultCollapsed, collapsedSize: collapsedSize, minSize: child.minSize }, _this.renderLayout(child)));
         });
         return (React.createElement(accordion_1.Accordion, { direction: direction, onStartResize: _onStartResize, onResize: _onResize, animationDuration: animationDuration }, items));
     };
@@ -18601,14 +18601,14 @@ var AccordionItem = /** @class */ (function (_super) {
     };
     AccordionItem.prototype.render = function () {
         var _this = this;
-        var _a = this.props, heading = _a.heading, bodyClassName = _a.bodyClassName, children = _a.children, bodyRef = _a.bodyRef, collapsed = _a.collapsed, size = _a.size, direction = _a.direction, onBeginDragHandle = _a.onBeginDragHandle, onDragHandle = _a.onDragHandle, onEndDragHandle = _a.onEndDragHandle, dockSide = _a.dockSide;
+        var _a = this.props, heading = _a.heading, bodyClassName = _a.bodyClassName, children = _a.children, bodyRef = _a.bodyRef, collapsed = _a.collapsed, size = _a.size, direction = _a.direction, onBeginDragHandle = _a.onBeginDragHandle, onDragHandle = _a.onDragHandle, onEndDragHandle = _a.onEndDragHandle, dockSide = _a.dockSide, _b = _a.className, className = _b === void 0 ? '' : _b;
         var resizing = this.state.resizing;
         var shouldRenderHandle = onBeginDragHandle && onDragHandle && onEndDragHandle;
         var style = this.isVertical ? { height: size } : { width: size };
         // unmount child component when the accordion item is collapsed and has dockSide
         var isMounted = !(collapsed && dockSide);
         return React.createElement("div", { className: CLASS_NAME + " " + CLASS_NAME + "--" + (collapsed ? 'collapsed' : 'expanded') + " " + CLASS_NAME + "--" + direction + "\n                " + (resizing ? CLASS_NAME + "--resizing" : ''), ref: function (element) { return _this._element = element; }, style: style },
-            React.createElement("div", { className: CLASS_NAME + "__inner" },
+            React.createElement("div", { className: CLASS_NAME + "__inner " + className },
                 heading ? React.createElement("div", { className: CLASS_NAME + "__header", ref: function (header) { return _this._header = header; }, onClick: function () { return _this.props.onChangeCollapsed(!collapsed); } }, heading) : null,
                 React.createElement("div", { className: CLASS_NAME + "__body" }, children && isMounted ? children :
                     React.createElement("div", { ref: bodyRef, className: "" + (bodyClassName || '') }))),
