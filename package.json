@@ -43,10 +43,7 @@
     "webcola": "~3.3.8",
     "whatwg-fetch": "~2.0.2"
   },
-  "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@types/d3-color": "1.0.4",
     "@types/lodash": "4.14.108",
@@ -62,8 +59,6 @@
     "rdf-parser-jsonld": "0.3.3",
     "rdf-parser-n3": "0.3.0",
     "rdf-parser-rdfxml": "0.3.1",
-    "react": "15.6.2",
-    "react-dom": "15.6.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "ts-loader": "6.2.1",

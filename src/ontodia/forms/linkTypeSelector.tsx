@@ -99,10 +99,9 @@ export class LinkTypeSelector extends React.Component<Props, State> {
         );
     }
 
-    private onChangeType = (e: React.FormEvent<HTMLSelectElement>) => {
+    private onChangeType = (fatLinkType: FatLinkType) => {
+        const direction = LinkDirection.out;
         const {link: originalLink, direction: originalDirection} = this.props.linkValue.value;
-        const index = parseInt(e.currentTarget.value, 10);
-        const {fatLinkType, direction} = this.state.fatLinkTypes[index];
         const link: LinkModel = {...originalLink, linkTypeId: fatLinkType.id};
         // switches source and target if the direction has changed
         if (originalDirection !== direction) {
@@ -115,21 +114,15 @@ export class LinkTypeSelector extends React.Component<Props, State> {
     private renderPossibleLinkType = (
         {fatLinkType, direction}: { fatLinkType: FatLinkType; direction: LinkDirection }, index: number
     ) => {
-        const {view, linkValue, source, target} = this.props;
+        const {view} = this.props;
         const label = view.formatLabel(fatLinkType.label, fatLinkType.id);
-        let [sourceLabel, targetLabel] = [source, target].map(element =>
-            view.formatLabel(element.label.values, element.id)
-        );
-        if (direction === LinkDirection.in) {
-            [sourceLabel, targetLabel] = [targetLabel, sourceLabel];
-        }
-        return <option key={index} value={index}>{label} [{sourceLabel} &rarr; {targetLabel}]</option>;
+        return <option key={index} value={index}>{label}</option>;
     }
 
     render() {
         const {linkValue, disabled} = this.props;
         const {fatLinkTypes} = this.state;
-        const value = (fatLinkTypes || []).findIndex(({fatLinkType, direction}) =>
+        const value = (fatLinkTypes || []).find(({fatLinkType, direction}) =>
             fatLinkType.id === linkValue.value.link.linkTypeId && direction === linkValue.value.direction
         );
         return (
@@ -137,15 +130,22 @@ export class LinkTypeSelector extends React.Component<Props, State> {
                 <label>Link Type</label>
                 {
                     fatLinkTypes ? (
-                        <select className='ontodia-form-control'
-                             value={value}
-                             onChange={this.onChangeType}
-                             disabled={disabled}>
+                        this.props.editor.linkSelector()({
+                            disabled: disabled,
+                            value: value?.fatLinkType,
+                            values: fatLinkTypes.map(f => f.fatLinkType),
+                            onChange: this.onChangeType
+                        })
+                        /* {<select className='ontodia-form-control'
+                            value={value}
+                            onChange={this.onChangeType}
+                            disabled={disabled}>
                             <option value={-1} disabled={true}>Select link type</option>
                             {
-                                fatLinkTypes.map(this.renderPossibleLinkType)
+                            fatLinkTypes.map(this.renderPossibleLinkType)
                             }
-                        </select>
+                            </select>
+                           }*/
                     ) : <div><HtmlSpinner width={20} height={20} /></div>
                 }
                 {linkValue.error ? <span className={`${CLASS_NAME}__control-error`}>{linkValue.error}</span> : ''}

@@ -99,7 +99,7 @@ export class ElementTypeSelector extends React.Component<Props, State> {
         }
     }
 
-    private onElementTypeChange = async (e: React.FormEvent<HTMLSelectElement>) => {
+    private onElementTypeChange = async (classId: ElementTypeIri) => {
         this.setState({isLoading: true});
 
         this.loadingItemCancellation.abort();
@@ -107,7 +107,6 @@ export class ElementTypeSelector extends React.Component<Props, State> {
         const signal = this.loadingItemCancellation.signal;
 
         const {onChange, metadataApi} = this.props;
-        const classId = (e.target as HTMLSelectElement).value as ElementTypeIri;
         const elementModel = await CancellationToken.mapCancelledToNull(
             signal,
             metadataApi.generateNewElement([classId], signal)
@@ -131,7 +130,7 @@ export class ElementTypeSelector extends React.Component<Props, State> {
     private renderElementTypeSelector() {
         const {elementValue} = this.props;
         const {elementTypes, isLoading} = this.state;
-        const value = elementValue.value.types.length ? elementValue.value.types[0] : '';
+        const value = elementValue.value.types.length ? elementValue.value.types[0] : undefined;
         if (isLoading) {
             return <HtmlSpinner width={20} height={20} />;
         }
@@ -139,14 +138,21 @@ export class ElementTypeSelector extends React.Component<Props, State> {
             <div className={`${CLASS_NAME}__control-row`}>
                 <label>Entity Type</label>
                 {
-                    elementTypes ? (
+                    elementTypes ?
+                    this.props.editor.classSelector()({
+                        value: value,
+                        values: elementTypes,
+                        onChange: this.onElementTypeChange
+                    })
+                    /* (
                         <select className='ontodia-form-control' value={value} onChange={this.onElementTypeChange}>
-                            <option value={PLACEHOLDER_ELEMENT_TYPE} disabled={true}>Select entity type</option>
-                            {
-                                elementTypes.map(this.renderPossibleElementType)
-                            }
+                        <option value={PLACEHOLDER_ELEMENT_TYPE} disabled={true}>Select entity type</option>
+                        {
+                        elementTypes.map(this.renderPossibleElementType)
+                        }
                         </select>
-                    ) : <div><HtmlSpinner width={20} height={20} /></div>
+                        ) */
+                    : <div><HtmlSpinner width={20} height={20} /></div>
                 }
                 {elementValue.error ? <span className={`${CLASS_NAME}__control-error`}>{elementValue.error}</span> : ''}
             </div>

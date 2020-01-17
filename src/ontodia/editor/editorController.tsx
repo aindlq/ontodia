@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { MetadataApi } from '../data/metadataApi';
 import { ValidationApi } from '../data/validationApi';
-import { ElementModel, LinkModel, ElementIri, sameLink, sameElement } from '../data/model';
+import { ElementModel, LinkModel, ElementIri, sameLink, sameElement, ElementTypeIri } from '../data/model';
 
 import { setElementExpanded, setElementData, setLinkData, changeLinkTypeVisibility } from '../diagram/commands';
 import { Element, Link, LinkVertex, FatLinkType } from '../diagram/elements';
@@ -44,6 +44,21 @@ export interface PropertyEditorOptions {
 }
 export type PropertyEditor = (options: PropertyEditorOptions) => React.ReactElement<any>;
 
+export interface LinkSelectorOptions {
+    disabled: boolean
+    value: FatLinkType
+    values: FatLinkType[]
+    onChange?: (link: FatLinkType) => void
+}
+export type LinkSelector = (options: LinkSelectorOptions) => React.ReactElement<any>;
+
+export interface ClassSelectorOptions {
+    value: ElementTypeIri
+    values: ReadonlyArray<ElementTypeIri>
+    onChange?: (type: ElementTypeIri) => void
+}
+export type ClassSelector = (options: ClassSelectorOptions) => React.ReactElement<any>;
+
 export enum DialogTypes {
     ConnectionsMenu,
     EditEntityForm,
@@ -64,6 +79,8 @@ export interface EditorOptions {
     suggestProperties?: PropertySuggestionHandler;
     validationApi?: ValidationApi;
     propertyEditor?: PropertyEditor;
+    linkSelector?: LinkSelector;
+    classSelector?: ClassSelector
 }
 
 export interface EditorEvents {
@@ -434,12 +451,22 @@ export class EditorController {
         this.showDialog({target, dialogType, content, onClose: onCancel});
     }
 
-    showEditElementTypeForm({link, source, target, targetIsNew}: {
-        link: Link;
-        source: Element;
-        target: Element;
-        targetIsNew: boolean;
-    }) {
+    linkSelector() {
+        return this.options.linkSelector;
+    }
+
+    classSelector() {
+        return this.options.classSelector;
+    }
+
+    showEditElementTypeForm(
+        {link, source, target, targetIsNew}: {
+            link: Link;
+            source: Element;
+            target: Element;
+            targetIsNew: boolean;
+        }
+    ) {
         const dialogType = DialogTypes.EditEntityTypeForm;
         const onCancel = () => {
             this.removeTemporaryElement(target);
@@ -519,7 +546,10 @@ export class EditorController {
                 onCancel={onCancel}
             />
         );
-        this.showDialog({target, dialogType, content, caption: 'Establish New Connection', onClose: onCancel});
+        this.showDialog({
+            target, dialogType, content, caption: 'Establish New Connection', onClose: onCancel,
+            className: 'ontodia-edit-link-form'
+        });
     }
 
     showEditLinkForm(link: Link) {
@@ -568,6 +598,7 @@ export class EditorController {
             size: {width: 300, height: 160},
             caption,
             onClose: onCancel,
+            className: 'ontodia-edit-link-form'
         });
     }
 
@@ -609,15 +640,20 @@ export class EditorController {
         offset?: Vector;
         calculatePosition?: () => Vector;
         onClose: () => void;
+        className?: string;
     }) {
-        const {target, dialogType, content, size, caption, offset, calculatePosition, onClose} = params;
+        const {target, dialogType, content, size, caption,
+               offset, calculatePosition, onClose, className
+        } = params;
 
         this.dialogTarget = target;
         this.dialogType = dialogType;
 
         const dialog = (
             <Dialog view={this.view} target={target} size={size} caption={caption}
-                offset={offset} calculatePosition={calculatePosition} onClose={onClose}>{content}</Dialog>
+                offset={offset} calculatePosition={calculatePosition} onClose={onClose}
+                className={className}
+            >{content}</Dialog>
         );
         this.view.setPaperWidget({key: 'dialog', widget: dialog, attachment: WidgetAttachment.OverElements});
         this.source.trigger('toggleDialog', {isOpened: true});

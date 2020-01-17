@@ -12741,6 +12741,12 @@ var EditorController = /** @class */ (function () {
         var content = propertyEditor ? propertyEditor({ elementData: target.data, onSubmit: onSubmit, onCancel: onCancel }) : (React.createElement(editEntityForm_1.EditEntityForm, { view: this.view, entity: modelToEdit, onApply: onSubmit, onCancel: onCancel }));
         this.showDialog({ target: target, dialogType: dialogType, content: content, onClose: onCancel });
     };
+    EditorController.prototype.linkSelector = function () {
+        return this.options.linkSelector;
+    };
+    EditorController.prototype.classSelector = function () {
+        return this.options.classSelector;
+    };
     EditorController.prototype.showEditElementTypeForm = function (_a) {
         var _this = this;
         var link = _a.link, source = _a.source, target = _a.target;
@@ -12791,7 +12797,10 @@ var EditorController = /** @class */ (function () {
                     _this.showEditEntityForm(newTarget);
                 }
             }, onCancel: onCancel }));
-        this.showDialog({ target: target, dialogType: dialogType, content: content, caption: 'Establish New Connection', onClose: onCancel });
+        this.showDialog({
+            target: target, dialogType: dialogType, content: content, caption: 'Establish New Connection', onClose: onCancel,
+            className: 'ontodia-edit-link-form'
+        });
     };
     EditorController.prototype.showEditLinkForm = function (link) {
         var _this = this;
@@ -12839,6 +12848,7 @@ var EditorController = /** @class */ (function () {
             size: { width: 300, height: 160 },
             caption: caption,
             onClose: onCancel,
+            className: 'ontodia-edit-link-form'
         });
     };
     // Link editing implementation could be rethought in the future.
@@ -12866,10 +12876,10 @@ var EditorController = /** @class */ (function () {
         });
     };
     EditorController.prototype.showDialog = function (params) {
-        var target = params.target, dialogType = params.dialogType, content = params.content, size = params.size, caption = params.caption, offset = params.offset, calculatePosition = params.calculatePosition, onClose = params.onClose;
+        var target = params.target, dialogType = params.dialogType, content = params.content, size = params.size, caption = params.caption, offset = params.offset, calculatePosition = params.calculatePosition, onClose = params.onClose, className = params.className;
         this.dialogTarget = target;
         this.dialogType = dialogType;
-        var dialog = (React.createElement(dialog_1.Dialog, { view: this.view, target: target, size: size, caption: caption, offset: offset, calculatePosition: calculatePosition, onClose: onClose }, content));
+        var dialog = (React.createElement(dialog_1.Dialog, { view: this.view, target: target, size: size, caption: caption, offset: offset, calculatePosition: calculatePosition, onClose: onClose, className: className }, content));
         this.view.setPaperWidget({ key: 'dialog', widget: dialog, attachment: view_1.WidgetAttachment.OverElements });
         this.source.trigger('toggleDialog', { isOpened: false });
     };
@@ -13430,8 +13440,8 @@ var Dialog = /** @class */ (function (_super) {
     };
     Dialog.prototype.render = function () {
         var _this = this;
-        var _a = this.props, size = _a.size, caption = _a.caption;
-        var _b = this.calculatePosition(), x = _b.x, y = _b.y;
+        var _a = this.props, size = _a.size, caption = _a.caption, _b = _a.className, className = _b === void 0 ? '' : _b;
+        var _c = this.calculatePosition(), x = _c.x, y = _c.y;
         var width = this.state.width || size.width;
         var height = this.state.height || size.height;
         var style = {
@@ -13440,7 +13450,8 @@ var Dialog = /** @class */ (function (_super) {
             width: width,
             height: height,
         };
-        return (React.createElement("div", { className: CLASS_NAME, style: style },
+        var cn = CLASS_NAME + " " + className;
+        return (React.createElement("div", { className: cn, style: style },
             React.createElement("button", { className: CLASS_NAME + "__close-button", onClick: function () { return _this.props.onClose(); } }),
             caption ? React.createElement("div", { className: 'ontodia-dialog__caption' }, caption) : null,
             this.props.children,
@@ -14603,8 +14614,8 @@ var ElementTypeSelector = /** @class */ (function (_super) {
         _this.cancellation = new async_1.Cancellation();
         _this.filterCancellation = new async_1.Cancellation();
         _this.newIriCancellation = new async_1.Cancellation();
-        _this.onElementTypeChange = function (e) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-            var signal, _a, elementValue, onChange, metadataApi, classId, type, typeName, types, newId;
+        _this.onElementTypeChange = function (classId) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            var signal, _a, elementValue, onChange, metadataApi, type, typeName, types, newId;
             return tslib_1.__generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
@@ -14613,7 +14624,6 @@ var ElementTypeSelector = /** @class */ (function (_super) {
                         this.newIriCancellation = new async_1.Cancellation();
                         signal = this.newIriCancellation.signal;
                         _a = this.props, elementValue = _a.elementValue, onChange = _a.onChange, metadataApi = _a.metadataApi;
-                        classId = e.target.value;
                         type = this.props.editor.model.createClass(classId);
                         typeName = this.props.view.formatLabel(type.label, type.id);
                         types = [classId];
@@ -14689,16 +14699,28 @@ var ElementTypeSelector = /** @class */ (function (_super) {
     ElementTypeSelector.prototype.renderElementTypeSelector = function () {
         var elementValue = this.props.elementValue;
         var _a = this.state, elementTypes = _a.elementTypes, isLoading = _a.isLoading;
-        var value = elementValue.value.types.length ? elementValue.value.types[0] : '';
+        var value = elementValue.value.types.length ? elementValue.value.types[0] : undefined;
         if (isLoading) {
             return React.createElement(spinner_1.HtmlSpinner, { width: 20, height: 20 });
         }
         return (React.createElement("div", { className: CLASS_NAME + "__control-row" },
             React.createElement("label", null, "Entity Type"),
-            elementTypes ? (React.createElement("select", { className: 'ontodia-form-control', value: value, onChange: this.onElementTypeChange },
-                React.createElement("option", { value: schema_1.PLACEHOLDER_ELEMENT_TYPE, disabled: true }, "Select entity type"),
-                elementTypes.map(this.renderPossibleElementType))) : React.createElement("div", null,
-                React.createElement(spinner_1.HtmlSpinner, { width: 20, height: 20 })),
+            elementTypes ?
+                this.props.editor.classSelector()({
+                    value: value,
+                    values: elementTypes,
+                    onChange: this.onElementTypeChange
+                })
+                /* (
+                    <select className='ontodia-form-control' value={value} onChange={this.onElementTypeChange}>
+                    <option value={PLACEHOLDER_ELEMENT_TYPE} disabled={true}>Select entity type</option>
+                    {
+                    elementTypes.map(this.renderPossibleElementType)
+                    }
+                    </select>
+                    ) */
+                : React.createElement("div", null,
+                    React.createElement(spinner_1.HtmlSpinner, { width: 20, height: 20 })),
             elementValue.error ? React.createElement("span", { className: CLASS_NAME + "__control-error" }, elementValue.error) : ''));
     };
     ElementTypeSelector.prototype.renderExistingElementsList = function () {
@@ -14991,10 +15013,9 @@ var LinkTypeSelector = /** @class */ (function (_super) {
         _this.listener = new events_1.EventObserver();
         _this.cancellation = new async_1.Cancellation();
         _this.updateAll = function () { return _this.forceUpdate(); };
-        _this.onChangeType = function (e) {
+        _this.onChangeType = function (fatLinkType) {
+            var direction = elements_1.LinkDirection.out;
             var _a = _this.props.linkValue.value, originalLink = _a.link, originalDirection = _a.direction;
-            var index = parseInt(e.currentTarget.value, 10);
-            var _b = _this.state.fatLinkTypes[index], fatLinkType = _b.fatLinkType, direction = _b.direction;
             var link = tslib_1.__assign(tslib_1.__assign({}, originalLink), { linkTypeId: fatLinkType.id });
             // switches source and target if the direction has changed
             if (originalDirection !== direction) {
@@ -15004,23 +15025,10 @@ var LinkTypeSelector = /** @class */ (function (_super) {
             _this.props.onChange({ link: link, direction: direction });
         };
         _this.renderPossibleLinkType = function (_a, index) {
-            var _b;
             var fatLinkType = _a.fatLinkType, direction = _a.direction;
-            var _c = _this.props, view = _c.view, linkValue = _c.linkValue, source = _c.source, target = _c.target;
+            var view = _this.props.view;
             var label = view.formatLabel(fatLinkType.label, fatLinkType.id);
-            var _d = [source, target].map(function (element) {
-                return view.formatLabel(element.label.values, element.id);
-            }), sourceLabel = _d[0], targetLabel = _d[1];
-            if (direction !== linkValue.value.direction) {
-                _b = [targetLabel, sourceLabel], sourceLabel = _b[0], targetLabel = _b[1];
-            }
-            return React.createElement("option", { key: index, value: index },
-                label,
-                " [",
-                sourceLabel,
-                " \u2192 ",
-                targetLabel,
-                "]");
+            return React.createElement("option", { key: index, value: index }, label);
         };
         _this.state = {
             fatLinkTypes: [],
@@ -15070,17 +15078,32 @@ var LinkTypeSelector = /** @class */ (function (_super) {
         });
     };
     LinkTypeSelector.prototype.render = function () {
-        var _a = this.props, linkValue = _a.linkValue, disabled = _a.disabled;
+        var _a;
+        var _b = this.props, linkValue = _b.linkValue, disabled = _b.disabled;
         var fatLinkTypes = this.state.fatLinkTypes;
-        var value = (fatLinkTypes || []).findIndex(function (_a) {
+        var value = (fatLinkTypes || []).find(function (_a) {
             var fatLinkType = _a.fatLinkType, direction = _a.direction;
             return fatLinkType.id === linkValue.value.link.linkTypeId && direction === linkValue.value.direction;
         });
         return (React.createElement("div", { className: CLASS_NAME + "__control-row" },
             React.createElement("label", null, "Link Type"),
-            fatLinkTypes ? (React.createElement("select", { className: 'ontodia-form-control', value: value, onChange: this.onChangeType, disabled: disabled },
-                React.createElement("option", { value: -1, disabled: true }, "Select link type"),
-                fatLinkTypes.map(this.renderPossibleLinkType))) : React.createElement("div", null,
+            fatLinkTypes ? (this.props.editor.linkSelector()({
+                disabled: disabled,
+                value: (_a = value) === null || _a === void 0 ? void 0 : _a.fatLinkType,
+                values: fatLinkTypes.map(function (f) { return f.fatLinkType; }),
+                onChange: this.onChangeType
+            })
+            /* {<select className='ontodia-form-control'
+                value={value}
+                onChange={this.onChangeType}
+                disabled={disabled}>
+                <option value={-1} disabled={true}>Select link type</option>
+                {
+                fatLinkTypes.map(this.renderPossibleLinkType)
+                }
+                </select>
+               }*/
+            ) : React.createElement("div", null,
                 React.createElement(spinner_1.HtmlSpinner, { width: 20, height: 20 })),
             linkValue.error ? React.createElement("span", { className: CLASS_NAME + "__control-error" }, linkValue.error) : ''));
     };
@@ -16731,7 +16754,7 @@ var Workspace = /** @class */ (function (_super) {
         _this.centerTo = function (paperPosition) {
             _this.markup.paperArea.centerTo(paperPosition);
         };
-        var _a = _this.props, hideHalo = _a.hideHalo, history = _a.history, _b = _a.viewOptions, viewOptions = _b === void 0 ? {} : _b, metadataApi = _a.metadataApi, validationApi = _a.validationApi, propertyEditor = _a.propertyEditor, elementTemplateResolver = _a.elementTemplateResolver, linkTemplateResolver = _a.linkTemplateResolver, typeStyleResolver = _a.typeStyleResolver, selectLabelLanguage = _a.selectLabelLanguage;
+        var _a = _this.props, hideHalo = _a.hideHalo, history = _a.history, _b = _a.viewOptions, viewOptions = _b === void 0 ? {} : _b, metadataApi = _a.metadataApi, validationApi = _a.validationApi, propertyEditor = _a.propertyEditor, elementTemplateResolver = _a.elementTemplateResolver, linkTemplateResolver = _a.linkTemplateResolver, typeStyleResolver = _a.typeStyleResolver, selectLabelLanguage = _a.selectLabelLanguage, linkSelector = _a.linkSelector, classSelector = _a.classSelector;
         var linkRouter = viewOptions.linkRouter, onIriClick = viewOptions.onIriClick, disableDefaultHalo = viewOptions.disableDefaultHalo, suggestProperties = viewOptions.suggestProperties, groupBy = viewOptions.groupBy;
         _this.model = new asyncModel_1.AsyncModel(history || new history_1.NonRememberingHistory(), groupBy || []);
         _this.view = new view_1.DiagramView(_this.model, {
@@ -16749,6 +16772,8 @@ var Workspace = /** @class */ (function (_super) {
             suggestProperties: suggestProperties,
             validationApi: validationApi,
             propertyEditor: propertyEditor,
+            linkSelector: linkSelector,
+            classSelector: classSelector,
         });
         _this.editor.setMetadataApi(metadataApi);
         _this.view.setLanguage(_this.props.language);

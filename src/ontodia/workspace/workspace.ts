@@ -15,7 +15,7 @@ import { DiagramView, IriClickHandler, LabelLanguageSelector, WidgetAttachment }
 
 import { AsyncModel, GroupBy } from '../editor/asyncModel';
 import { AuthoringState } from '../editor/authoringState';
-import { EditorController, PropertyEditor } from '../editor/editorController';
+import { EditorController, PropertyEditor, LinkSelector, ClassSelector } from '../editor/editorController';
 
 import { EventObserver } from '../viewUtils/events';
 import { dataURLToBlob } from '../viewUtils/toSvg';
@@ -92,6 +92,8 @@ export interface WorkspaceProps {
     metadataApi?: MetadataApi;
     validationApi?: ValidationApi;
     propertyEditor?: PropertyEditor;
+    linkSelector?: LinkSelector;
+    classSelector?: ClassSelector;
     onWorkspaceEvent?: WorkspaceEventHandler;
 
     /**
@@ -155,7 +157,7 @@ export class Workspace extends Component<WorkspaceProps, WorkspaceState> {
         const {
             hideHalo, history, viewOptions = {},
             metadataApi, validationApi, propertyEditor,
-            elementTemplateResolver, linkTemplateResolver, typeStyleResolver, selectLabelLanguage,
+            elementTemplateResolver, linkTemplateResolver, typeStyleResolver, selectLabelLanguage, linkSelector, classSelector,
         } = this.props;
         const {
             linkRouter, onIriClick,
@@ -181,6 +183,8 @@ export class Workspace extends Component<WorkspaceProps, WorkspaceState> {
             suggestProperties,
             validationApi,
             propertyEditor,
+            linkSelector,
+            classSelector,
         });
         this.editor.setMetadataApi(metadataApi);
 

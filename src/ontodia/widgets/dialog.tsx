@@ -34,6 +34,7 @@ export interface Props extends PaperWidgetProps {
     offset?: Vector;
     calculatePosition?: () => Vector;
     onClose: () => void;
+    className?: string;
 }
 
 export interface State {
@@ -271,7 +272,7 @@ export class Dialog extends React.Component<Props, State> {
     }
 
     render() {
-        const {size, caption} = this.props;
+        const {size, caption, className = ''} = this.props;
         const {x, y} = this.calculatePosition();
         const width = this.state.width || size.width;
         const height = this.state.height || size.height;
@@ -282,8 +283,9 @@ export class Dialog extends React.Component<Props, State> {
             height,
         };
 
+        const cn = `${CLASS_NAME} ${className}`
         return (
-            <div className={CLASS_NAME} style={style}>
+            <div className={cn} style={style}>
                 <button className={`${CLASS_NAME}__close-button`} onClick={() => this.props.onClose()} />
                 {caption ? <div className='ontodia-dialog__caption'>{caption}</div> : null}
                 {this.props.children}

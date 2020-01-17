@@ -29,7 +29,7 @@ declare module 'ontodia' {
     export * from 'ontodia/ontodia/editor/asyncModel';
     export { AuthoredEntity, AuthoredEntityProps, AuthoredEntityContext } from 'ontodia/ontodia/editor/authoredEntity';
     export * from 'ontodia/ontodia/editor/authoringState';
-    export { EditorOptions, EditorEvents, EditorController, PropertyEditor, PropertyEditorOptions, } from 'ontodia/ontodia/editor/editorController';
+    export { EditorOptions, EditorEvents, EditorController, PropertyEditor, PropertyEditorOptions, LinkSelectorOptions, ClassSelectorOptions } from 'ontodia/ontodia/editor/editorController';
     export { ValidationState, ElementValidation, LinkValidation } from 'ontodia/ontodia/editor/validation';
     export { LayoutData, LayoutElement, LayoutLink, SerializedDiagram, convertToSerializedDiagram, makeSerializedDiagram, LinkTypeOptions, makeLayoutData } from 'ontodia/ontodia/editor/serializedDiagram';
     export { calculateLayout, removeOverlaps, CalculatedLayout, UnzippedCalculatedLayout, LayoutNode, applyLayout, forceLayout, } from 'ontodia/ontodia/viewUtils/layout';
@@ -1972,7 +1972,7 @@ declare module 'ontodia/ontodia/editor/editorController' {
     import * as React from 'react';
     import { MetadataApi } from 'ontodia/ontodia/data/metadataApi';
     import { ValidationApi } from 'ontodia/ontodia/data/validationApi';
-    import { ElementModel, LinkModel, ElementIri } from 'ontodia/ontodia/data/model';
+    import { ElementModel, LinkModel, ElementIri, ElementTypeIri } from 'ontodia/ontodia/data/model';
     import { Element, Link, FatLinkType } from 'ontodia/ontodia/diagram/elements';
     import { Vector } from 'ontodia/ontodia/diagram/geometry';
     import { PaperArea } from 'ontodia/ontodia/diagram/paperArea';
@@ -1989,6 +1989,19 @@ declare module 'ontodia/ontodia/editor/editorController' {
         onCancel?: () => void;
     }
     export type PropertyEditor = (options: PropertyEditorOptions) => React.ReactElement<any>;
+    export interface LinkSelectorOptions {
+        disabled: boolean;
+        value: FatLinkType;
+        values: FatLinkType[];
+        onChange?: (link: FatLinkType) => void;
+    }
+    export type LinkSelector = (options: LinkSelectorOptions) => React.ReactElement<any>;
+    export interface ClassSelectorOptions {
+        value: ElementTypeIri;
+        values: ReadonlyArray<ElementTypeIri>;
+        onChange?: (type: ElementTypeIri) => void;
+    }
+    export type ClassSelector = (options: ClassSelectorOptions) => React.ReactElement<any>;
     export enum DialogTypes {
         ConnectionsMenu = 0,
         EditEntityForm = 1,
@@ -2006,6 +2019,8 @@ declare module 'ontodia/ontodia/editor/editorController' {
         suggestProperties?: PropertySuggestionHandler;
         validationApi?: ValidationApi;
         propertyEditor?: PropertyEditor;
+        linkSelector?: LinkSelector;
+        classSelector?: ClassSelector;
     }
     export interface EditorEvents {
         changeMode: {
@@ -2044,6 +2059,8 @@ declare module 'ontodia/ontodia/editor/editorController' {
         setSpinner(props: SpinnerProps | undefined): void;
         showConnectionsMenu(target: Element): void;
         showEditEntityForm(target: Element): void;
+        linkSelector(): LinkSelector;
+        classSelector(): ClassSelector;
         showEditElementTypeForm({ link, source, target }: {
             link: Link;
             source: Element;
@@ -2062,6 +2079,7 @@ declare module 'ontodia/ontodia/editor/editorController' {
             offset?: Vector;
             calculatePosition?: () => Vector;
             onClose: () => void;
+            className?: string;
         }): void;
         hideDialog(): void;
         onDragDrop(dragged: ReadonlyArray<ElementIri | ElementModel>, paperPosition: Vector): void;
@@ -2431,7 +2449,7 @@ declare module 'ontodia/ontodia/workspace/workspace' {
     import { PaperArea, ZoomOptions, PointerEvent, PointerUpEvent } from 'ontodia/ontodia/diagram/paperArea';
     import { DiagramView, IriClickHandler, LabelLanguageSelector } from 'ontodia/ontodia/diagram/view';
     import { AsyncModel, GroupBy } from 'ontodia/ontodia/editor/asyncModel';
-    import { EditorController, PropertyEditor } from 'ontodia/ontodia/editor/editorController';
+    import { EditorController, PropertyEditor, LinkSelector, ClassSelector } from 'ontodia/ontodia/editor/editorController';
     import { PropertySuggestionHandler } from 'ontodia/ontodia/widgets/connectionsMenu';
     import { SearchCriteria } from 'ontodia/ontodia/widgets/instancesSearch';
     import { WorkspaceEventHandler } from 'ontodia/ontodia/workspace/workspaceContext';
@@ -2490,6 +2508,8 @@ declare module 'ontodia/ontodia/workspace/workspace' {
             metadataApi?: MetadataApi;
             validationApi?: ValidationApi;
             propertyEditor?: PropertyEditor;
+            linkSelector?: LinkSelector;
+            classSelector?: ClassSelector;
             onWorkspaceEvent?: WorkspaceEventHandler;
             /**
                 * Custom panel to search existing elements on the diagram.
