@@ -6395,9 +6395,9 @@ function extractCSSFromDocument(targetSubtree) {
         for (var j = 0; j < rules.length; j++) {
             var rule = rules[j];
             if (rule instanceof CSSStyleRule) {
-                if (targetSubtree.querySelector(rule.selectorText)) {
-                    exportedRules.add(rule);
-                }
+                //       if (targetSubtree.querySelector(rule.selectorText)) {
+                exportedRules.add(rule);
+                //       }
             }
         }
     }

@@ -72,8 +72,6 @@ function exportSVG(options: ToSVGOptions): Promise<SVGElement> {
     };
     svgClone.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
 
-    addWatermark(svgClone, viewBox, watermarkSvg);
-
     const images: HTMLImageElement[] = [];
     if (!isIE11()) {
         const nodes = svgClone.querySelectorAll('img');
@@ -199,9 +197,9 @@ function extractCSSFromDocument(targetSubtree: Element): string {
         for (let j = 0; j < rules.length; j++) {
             const rule = rules[j];
             if (rule instanceof CSSStyleRule) {
-                if (targetSubtree.querySelector(rule.selectorText)) {
+         //       if (targetSubtree.querySelector(rule.selectorText)) {
                     exportedRules.add(rule);
-                }
+         //       }
             }
         }
     }
