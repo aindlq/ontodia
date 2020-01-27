@@ -278,42 +278,17 @@ function exportAsDataUri(original: HTMLImageElement): Promise<string> {
         return Promise.resolve(url);
     }
 
-    return loadCrossOriginImage(original.src).then(image => {
-        const canvas = document.createElement('canvas');
-        canvas.width = image.width;
-        canvas.height = image.height;
-
-        const context = canvas.getContext('2d');
-        context.drawImage(image, 0, 0);
-
-        // match extensions like htttp://example.com/images/foo.JPG&w=200
-        const extensionMatch = url.match(/\.([a-zA-Z0-9]+)[^\.a-zA-Z0-9]?[^\.]*$/);
-        const extension = extensionMatch ? extensionMatch[1].toLowerCase() : 'png';
-
-        try {
-            const mimeType = 'image/' + (extension === 'jpg' ? 'jpeg' : extension);
-            const dataUri = canvas.toDataURL(mimeType);
-            return Promise.resolve(dataUri);
-        } catch (e) {
-            if (extension !== 'svg') {
-                return Promise.reject('Failed to convert image to data URI');
-            }
-            return fetch(url)
-                .then(response => response.text())
-                .then(svg => svg.length > 0 ? ('data:image/svg+xml,' + encodeURIComponent(svg)) : '');
-        }
-    });
-}
-
-function loadCrossOriginImage(src: string): Promise<HTMLImageElement> {
-    const image = new Image();
-    image.crossOrigin = 'anonymous';
-    const promise = new Promise<HTMLImageElement>((resolve, reject) => {
-        image.onload = () => resolve(image);
-        image.onerror = ev => reject(ev);
-    });
-    image.src = src;
-    return promise;
+    return fetch(original.src)
+        .then(result => result.blob())
+        .then(blob => {
+            return new Promise<string>(resolve => {
+                let reader = new FileReader();
+                reader.onload = () => {
+                    resolve(reader.result as string)
+                };
+                reader.readAsDataURL(blob);
+            });
+        });
 }
 
 function foreachNode<T extends Node>(nodeList: NodeListOf<T>, callback: (node?: T, index?: number) => void) {
