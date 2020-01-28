@@ -6250,7 +6250,12 @@ var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 var FOREIGN_OBJECT_SIZE_PADDING = 2;
 var BORDER_PADDING = 100;
 function toSVG(options) {
-    return exportSVG(options).then(function (svg) { return new XMLSerializer().serializeToString(svg); });
+    return exportSVG(options).then(function (svg) {
+        var serialized = new XMLSerializer().serializeToString(svg);
+        // FIX for Google Chrome bug, where > are replaced with &gt; in the cssText
+        var chromeFixRegex = /&gt;/gi;
+        return serialized.replace(chromeFixRegex, '>');
+    });
 }
 exports.toSVG = toSVG;
 function exportSVG(options) {
@@ -6402,7 +6407,9 @@ function extractCSSFromDocument(targetSubtree) {
         }
     }
     var exportedCssTexts = [];
-    exportedRules.forEach(function (rule) { return exportedCssTexts.push(rule.cssText); });
+    // FIX for Google Chrome bug, where foreignObject is replaced with foreignobject in the cssText
+    var chromeFixRegex = /foreignobject/gi;
+    exportedRules.forEach(function (rule) { return exportedCssTexts.push(rule.cssText.replace(chromeFixRegex, 'foreignObject')); });
     return exportedCssTexts.join('\n');
 }
 function clonePaperSvg(options, elementSizePadding) {

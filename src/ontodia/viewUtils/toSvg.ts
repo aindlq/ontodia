@@ -45,7 +45,13 @@ const FOREIGN_OBJECT_SIZE_PADDING = 2;
 const BORDER_PADDING = 100;
 
 export function toSVG(options: ToSVGOptions): Promise<string> {
-    return exportSVG(options).then(svg => new XMLSerializer().serializeToString(svg));
+    return exportSVG(options).then(svg => {
+        const serialized = new XMLSerializer().serializeToString(svg);
+
+        // FIX for Google Chrome bug, where > are replaced with &gt; in the cssText
+        const chromeFixRegex = /&gt;/gi;
+        return serialized.replace(chromeFixRegex, '>');
+    });
 }
 
 function exportSVG(options: ToSVGOptions): Promise<SVGElement> {
@@ -205,7 +211,12 @@ function extractCSSFromDocument(targetSubtree: Element): string {
     }
 
     const exportedCssTexts: string[] = [];
-    exportedRules.forEach(rule => exportedCssTexts.push(rule.cssText));
+
+    // FIX for Google Chrome bug, where foreignObject is replaced with foreignobject in the cssText
+    const chromeFixRegex = /foreignobject/gi;
+    exportedRules.forEach(
+        rule => exportedCssTexts.push(rule.cssText.replace(chromeFixRegex, 'foreignObject'))
+    );
     return exportedCssTexts.join('\n');
 }
 
