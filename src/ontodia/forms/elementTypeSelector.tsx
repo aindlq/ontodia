@@ -167,15 +167,14 @@ export class ElementTypeSelector extends React.Component<Props, State> {
         }
         if (existingElements.length > 0) {
             return existingElements.map(element => {
-                const isAlreadyOnDiagram = !editor.temporaryState.elements.has(element.id) && Boolean(
-                    editor.model.elements.find(({iri, group}) => iri === element.id && group === undefined)
-                );
+                const elementFromDiagram =
+                    editor.model.elements.find(({iri, group}) => iri === element.id && group === undefined);
                 const hasAppropriateType = Boolean(elementTypes.find(type => element.types.indexOf(type) >= 0));
                 return (
                     <ListElementView key={element.id}
                         view={view}
-                        model={element}
-                        disabled={isAlreadyOnDiagram || !hasAppropriateType}
+                        model={elementFromDiagram?.data || element}
+                        disabled={!hasAppropriateType}
                         selected={element.id === elementValue.value.id}
                         onClick={(e, model) => this.onSelectExistingItem(model)} />
                 );

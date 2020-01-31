@@ -465,7 +465,8 @@ export class EditorController {
             source: Element;
             target: Element;
             targetIsNew: boolean;
-        }
+        },
+        fn: any
     ) {
         const dialogType = DialogTypes.EditEntityTypeForm;
         const onCancel = () => {
@@ -481,10 +482,28 @@ export class EditorController {
                 source={source.data}
                 target={{value: target.data, isNew: targetIsNew}}
                 onChangeElement={(data: ElementModel) => {
-                    const previous = target.data;
-                    this.setTemporaryState(TemporaryState.deleteElement(this.temporaryState, previous));
-                    target.setData(data);
-                    this.setTemporaryState(TemporaryState.addElement(this.temporaryState, data));
+                    let existingTarget =
+                        this.view.model.elements.find(
+                            ({iri, group}) => iri === data.id && group === undefined
+                        );
+
+                    if (existingTarget && existingTarget !== target) {
+                        onCancel();
+                        const newLink = new Link({
+                            typeId: link.data.linkTypeId,
+                            sourceId: link.sourceId,
+                            targetId: existingTarget.id,
+                            data: {...link.data, targetId: existingTarget.id as ElementIri},
+                        });
+                        fn(
+                            this.createNewLink({link: newLink, temporary: true})
+                        );
+                    } else {
+                        const previous = target.data;
+                        this.setTemporaryState(TemporaryState.deleteElement(this.temporaryState, previous));
+                        target.setData(data);
+                        this.setTemporaryState(TemporaryState.addElement(this.temporaryState, data));
+                    }
                 }}
                 onChangeLink={(data: LinkModel) => {
                     this.removeTemporaryLink(link);
@@ -511,7 +530,10 @@ export class EditorController {
                         isNewElement ? 'Create new entity' : 'Link to entity'
                     );
 
+
                     this.model.addElement(target);
+
+
                     if (isNewElement) {
                         target.setExpanded(true);
                         this.setAuthoringState(

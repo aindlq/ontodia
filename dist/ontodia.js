@@ -7,7 +7,7 @@
 		exports["Ontodia"] = factory(require("whatwg-fetch"), require("react"), require("react-dom"), require("d3-color"), require("lodash"), require("rdf-ext"), require("n3"), require("webcola"), require("file-saverjs"));
 	else
 		root["Ontodia"] = factory(root["whatwg-fetch"], root["react"], root["react-dom"], root["d3-color"], root["lodash"], root["rdf-ext"], root["n3"], root["webcola"], root["file-saverjs"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__40__, __WEBPACK_EXTERNAL_MODULE__45__, __WEBPACK_EXTERNAL_MODULE__58__, __WEBPACK_EXTERNAL_MODULE__59__, __WEBPACK_EXTERNAL_MODULE__66__, __WEBPACK_EXTERNAL_MODULE__93__, __WEBPACK_EXTERNAL_MODULE__100__, __WEBPACK_EXTERNAL_MODULE__106__, __WEBPACK_EXTERNAL_MODULE__134__) {
+})(window, function(__WEBPACK_EXTERNAL_MODULE__40__, __WEBPACK_EXTERNAL_MODULE__45__, __WEBPACK_EXTERNAL_MODULE__57__, __WEBPACK_EXTERNAL_MODULE__58__, __WEBPACK_EXTERNAL_MODULE__65__, __WEBPACK_EXTERNAL_MODULE__93__, __WEBPACK_EXTERNAL_MODULE__100__, __WEBPACK_EXTERNAL_MODULE__106__, __WEBPACK_EXTERNAL_MODULE__134__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -117,7 +117,7 @@ tslib_1.__exportStar(__webpack_require__(103), exports);
 tslib_1.__exportStar(__webpack_require__(107), exports);
 var schema_1 = __webpack_require__(53);
 exports.DIAGRAM_CONTEXT_URL_V1 = schema_1.DIAGRAM_CONTEXT_URL_V1;
-var commands_1 = __webpack_require__(63);
+var commands_1 = __webpack_require__(62);
 exports.RestoreGeometry = commands_1.RestoreGeometry;
 exports.setElementExpanded = commands_1.setElementExpanded;
 exports.setElementData = commands_1.setElementData;
@@ -129,17 +129,17 @@ exports.LinkVertex = elements_1.LinkVertex;
 exports.LinkDirection = elements_1.LinkDirection;
 var embeddedLayer_1 = __webpack_require__(50);
 exports.EmbeddedLayer = embeddedLayer_1.EmbeddedLayer;
-tslib_1.__exportStar(__webpack_require__(56), exports);
-tslib_1.__exportStar(__webpack_require__(64), exports);
+tslib_1.__exportStar(__webpack_require__(55), exports);
+tslib_1.__exportStar(__webpack_require__(63), exports);
 var model_1 = __webpack_require__(108);
 exports.DiagramModel = model_1.DiagramModel;
-tslib_1.__exportStar(__webpack_require__(65), exports);
-var paperArea_1 = __webpack_require__(82);
+tslib_1.__exportStar(__webpack_require__(64), exports);
+var paperArea_1 = __webpack_require__(81);
 exports.getContentFittingBox = paperArea_1.getContentFittingBox;
 tslib_1.__exportStar(__webpack_require__(110), exports);
-var authoredEntity_1 = __webpack_require__(86);
+var authoredEntity_1 = __webpack_require__(85);
 exports.AuthoredEntity = authoredEntity_1.AuthoredEntity;
-tslib_1.__exportStar(__webpack_require__(88), exports);
+tslib_1.__exportStar(__webpack_require__(87), exports);
 var editorController_1 = __webpack_require__(112);
 exports.EditorController = editorController_1.EditorController;
 var validation_1 = __webpack_require__(131);
@@ -153,15 +153,17 @@ exports.calculateLayout = layout_1.calculateLayout;
 exports.removeOverlaps = layout_1.removeOverlaps;
 exports.applyLayout = layout_1.applyLayout;
 exports.forceLayout = layout_1.forceLayout;
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 exports.Cancellation = async_1.Cancellation;
+exports.CancellationToken = async_1.CancellationToken;
+exports.CancelledError = async_1.CancelledError;
 tslib_1.__exportStar(__webpack_require__(54), exports);
 var toolbar_1 = __webpack_require__(132);
 exports.DefaultToolbar = toolbar_1.DefaultToolbar;
 var workspace_1 = __webpack_require__(133);
 exports.Workspace = workspace_1.Workspace;
 exports.renderTo = workspace_1.renderTo;
-var workspaceContext_1 = __webpack_require__(87);
+var workspaceContext_1 = __webpack_require__(86);
 exports.WorkspaceEventKey = workspaceContext_1.WorkspaceEventKey;
 var draggableHandle_1 = __webpack_require__(114);
 exports.DraggableHandle = draggableHandle_1.DraggableHandle;
@@ -429,7 +431,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, ".ontodia-spinner__arrow {\n  animation-name: ontodia-spinner-rotation;\n  animation-duration: 1.5s;\n  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);\n  animation-iteration-count: infinite; }\n\n.ontodia-spinner[data-error='true'] .ontodia-spinner__arrow {\n  animation-iteration-count: 1; }\n\n@keyframes ontodia-spinner-rotation {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n.clearfix:before, .clearfix:after {\n  display: table;\n  content: \"\"; }\n\n.clearfix:after {\n  clear: both; }\n\n.ontodia-label {\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 5px;\n  font-weight: 700; }\n\n.ontodia-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  touch-action: manipulation;\n  cursor: pointer;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  text-transform: none;\n  transition: background-color 0.3s; }\n  .ontodia-btn[disabled] {\n    cursor: not-allowed;\n    opacity: .65; }\n\n.ontodia-btn-default {\n  background-color: #fff;\n  border-color: #ccc;\n  color: #333; }\n  .ontodia-btn-default:hover {\n    background-color: #e0e0e0; }\n  .ontodia-btn-default.active {\n    background-color: #e0e0e0;\n    border-color: #dbdbdb; }\n  .ontodia-btn-default.active:hover {\n    background-color: #d4d4d4;\n    border-color: #8c8c8c; }\n  .ontodia-btn-default[disabled], .ontodia-btn-default[disabled]:hover, .ontodia-btn-default[disabled].active, .ontodia-btn-default[disabled].active:hover {\n    background-color: #e0e0e0; }\n\n.ontodia-btn-primary {\n  color: white;\n  background-color: #337ab7;\n  border-color: #245580; }\n  .ontodia-btn-primary:hover, .ontodia-btn-primary:focus, .ontodia-btn-primary:active {\n    background-color: #265a88; }\n  .ontodia-btn-primary:hover, .ontodia-btn-primary:focus {\n    border-color: #204d74; }\n  .ontodia-btn-primary.active {\n    border-color: #245580; }\n  .ontodia-btn-primary[disabled], .ontodia-btn-primary[disabled]:hover, .ontodia-btn-primary[disabled]:focus, .ontodia-btn-primary[disabled]:active, .ontodia-btn-primary[disabled].active {\n    background-color: #265a88; }\n\n.ontodia-btn-success {\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n  color: #fff;\n  transition: 0.3s; }\n  .ontodia-btn-success:hover {\n    background: #47a447; }\n\n.ontodia-btn-danger {\n  background-color: #c9302c;\n  border-color: #c9302c;\n  color: #fff;\n  transition: 0.3s; }\n  .ontodia-btn-danger:hover {\n    background: #a82825; }\n\n.ontodia-btn-group {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle; }\n  .ontodia-btn-group > .ontodia-btn, .ontodia-btn-group > .ontodia-btn-group {\n    position: relative;\n    float: left; }\n  .ontodia-btn-group > .ontodia-btn:hover,\n  .ontodia-btn-group > .ontodia-btn:focus,\n  .ontodia-btn-group > .ontodia-btn.active,\n  .ontodia-btn-group > .ontodia-btn.active:hover {\n    z-index: 2; }\n  .ontodia-btn-group .ontodia-btn + .ontodia-btn,\n  .ontodia-btn-group .ontodia-btn + .ontodia-btn-group,\n  .ontodia-btn-group .ontodia-btn-group + .ontodia-btn,\n  .ontodia-btn-group .ontodia-btn-group + .ontodia-btn-group {\n    margin-left: -1px; }\n  .ontodia-btn-group > .ontodia-btn:first-child {\n    margin-left: 0; }\n  .ontodia-btn-group-sm > .ontodia-btn {\n    font-size: 12px;\n    line-height: 1.5;\n    padding: 5px 10px; }\n  .ontodia-btn-group-xs > .ontodia-btn {\n    font-size: 12px;\n    line-height: 1.5;\n    padding: 1px 5px; }\n\n.ontodia-form-control {\n  display: block;\n  width: 100%;\n  height: 34px;\n  margin: 0;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555;\n  background: #fff;\n  border: 1px solid #ccc;\n  transition: border-color ease-in-out .15s; }\n  .ontodia-form-control:focus {\n    border-color: #66afe9;\n    outline: 0; }\n  .ontodia-form-control:disabled {\n    background-color: #eee;\n    cursor: not-allowed;\n    opacity: 0.6; }\n\n.ontodia-input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate; }\n  .ontodia-input-group .ontodia-form-control {\n    display: table-cell;\n    position: relative;\n    z-index: 2;\n    float: left;\n    width: 100%;\n    margin-bottom: 0; }\n  .ontodia-input-group .ontodia-form-control:first-child {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0; }\n\n.ontodia-input-group-btn {\n  display: table-cell;\n  width: 1%;\n  vertical-align: middle;\n  position: relative;\n  font-size: 0;\n  white-space: nowrap; }\n  .ontodia-input-group-btn:last-child > .ontodia-btn {\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n    z-index: 2;\n    margin-left: -1px; }\n\n.ontodia-list-group {\n  margin: 0;\n  padding: 0; }\n\n.ontodia-list-group-item:last-child {\n  margin-bottom: 0; }\n\n.ontodia-list-group-item {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd; }\n\n.ontodia-badge {\n  display: inline-block;\n  min-width: 10px;\n  font-size: 12px;\n  font-weight: 700;\n  line-height: 1;\n  color: white;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  background-color: #777777;\n  padding: 3px 7px;\n  border-radius: 10px; }\n\n.ontodia-overlayed-element {\n  cursor: move;\n  outline: none; }\n\n.ontodia-overlayed-element,\n.ontodia-exported-element {\n  box-sizing: border-box;\n  color: black;\n  font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 14px;\n  line-height: 1.42857143; }\n  .ontodia-overlayed-element img,\n  .ontodia-exported-element img {\n    vertical-align: middle; }\n\n.ontodia-exported-element *, .ontodia-exported-element *:before, .ontodia-exported-element *:after {\n  box-sizing: inherit; }\n\n.ontodia-overlayed-element--blurred {\n  filter: grayscale(100%);\n  opacity: 0.5; }\n\n.ontodia-link__wrap {\n  stroke-width: 12px;\n  stroke-linejoin: round;\n  stroke-linecap: round;\n  stroke: transparent;\n  fill: none; }\n\n.ontodia-link:hover .ontodia-link__wrap {\n  stroke: rgba(140, 140, 140, 0.44); }\n\n.ontodia-link__vertex {\n  cursor: all-scroll; }\n\n.ontodia-link:not(:hover) .ontodia-link__vertex {\n  fill: transparent; }\n\n.ontodia-link__vertex-tools {\n  opacity: 0;\n  cursor: pointer; }\n  .ontodia-link__vertex-tools > circle {\n    fill: gray; }\n  .ontodia-link__vertex-tools > path {\n    stroke: white; }\n  .ontodia-link__vertex-tools:hover > circle {\n    fill: black; }\n\n.ontodia-link:hover .ontodia-link__vertex-tools {\n  opacity: 0.8; }\n\n.ontodia-link--blurred {\n  opacity: 0.5; }\n\n.ontodia-paper-area {\n  flex: auto;\n  width: 0;\n  display: flex;\n  position: relative;\n  cursor: default;\n  background: #fff; }\n  .ontodia-paper-area__area {\n    flex: auto;\n    overflow: hidden; }\n  .ontodia-paper-area__widgets {\n    position: absolute;\n    left: 0;\n    top: 0; }\n  .ontodia-paper-area__watermark {\n    background-size: cover;\n    width: 8%;\n    max-width: 130px;\n    min-width: 50px;\n    position: absolute;\n    top: 15px;\n    right: 25px;\n    cursor: pointer;\n    opacity: 0.3;\n    transition: opacity 0.3s; }\n    .ontodia-paper-area__watermark:hover {\n      opacity: 0.5; }\n  .ontodia-paper-area--hide-scrollbars {\n    overflow: hidden; }\n\n.ontodia-paper {\n  position: relative; }\n\n.ontodia-exported-watermark {\n  opacity: 0.3;\n  transition: opacity 0.3s; }\n\n.ontodia-paper-area--animated .ontodia-overlayed-element {\n  transition: transform 0.5s ease-in-out; }\n\n.ontodia-paper-area--animated .ontodia-link-layer, .ontodia-paper-area--animated .ontodia-paper-area__widgets {\n  transition: none;\n  opacity: 0; }\n\n.ontodia-link-layer, .ontodia-paper-area__widgets {\n  transition: opacity 0.5s ease-in-out; }\n\n.ontodia-loading-widget {\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(255, 255, 255, 0.9);\n  z-index: 10; }\n\n.ontodia-authoring-state__item-error {\n  align-self: flex-end;\n  margin: 0px 5px;\n  display: flex;\n  align-items: center;\n  cursor: help; }\n\n.ontodia-authoring-state__item-error-icon {\n  background: url(" + escape(__webpack_require__(6)) + ");\n  height: 15px;\n  width: 17px; }\n\n.ontodia-authoring-state__state-label {\n  font-weight: bold;\n  margin-right: 5px; }\n\n.ontodia-authoring-state__state-cancel {\n  color: #3f87a6;\n  cursor: pointer; }\n  .ontodia-authoring-state__state-cancel:hover {\n    text-decoration: underline; }\n\n.ontodia-authoring-state__state-indicator {\n  position: absolute; }\n\n.ontodia-authoring-state__state-indicator-container {\n  position: relative; }\n\n.ontodia-authoring-state__state-indicator-body {\n  position: absolute;\n  white-space: nowrap;\n  display: flex;\n  align-items: center;\n  bottom: 0;\n  background: rgba(255, 255, 255, 0.7);\n  border-radius: 5px; }\n\n.ontodia-authoring-tools {\n  margin: 10px; }\n  .ontodia-authoring-tools__create-entity {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    white-space: normal; }\n  .ontodia-authoring-tools__type-label {\n    color: black;\n    border: black 1px dashed;\n    background: #ffd221;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n\n.ontodia-class-tree {\n  flex: auto;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-class-tree__filter {\n    flex-shrink: 0;\n    margin: 10px 0 10px 0; }\n  .ontodia-class-tree__filter-group {\n    margin-left: 10px;\n    margin-right: 10px; }\n  .ontodia-class-tree__only-creatable {\n    display: block;\n    margin-top: 5px; }\n  .ontodia-class-tree__tree {\n    border-top: 1px solid #dddddd; }\n  .ontodia-class-tree__spinner {\n    align-self: center;\n    /* center vertically in flexbox */\n    margin: auto; }\n\n.ontodia-class-leaf {\n  margin: 1px 0; }\n  .ontodia-class-leaf__row {\n    display: flex;\n    align-items: center;\n    white-space: nowrap;\n    user-select: none; }\n    .ontodia-class-leaf__row > * {\n      flex-shrink: 0; }\n  .ontodia-class-leaf__body {\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    font-size: 15px;\n    padding: 1px;\n    border: 1px solid;\n    border-color: transparent; }\n    .ontodia-class-leaf__body:hover {\n      background: #dcebff91;\n      border-color: #ccefff;\n      cursor: pointer; }\n    .ontodia-class-leaf__body--selected {\n      background-color: #beebff;\n      border-color: #8edcff; }\n  .ontodia-class-leaf__icon-container {\n    height: 20px; }\n  .ontodia-class-leaf__icon {\n    display: block;\n    height: 100%; }\n  .ontodia-class-leaf__label {\n    margin-left: 5px;\n    color: black; }\n  .ontodia-class-leaf__highlighted-term {\n    font-weight: bold; }\n  .ontodia-class-leaf__count {\n    margin-left: 5px; }\n  .ontodia-class-leaf__children {\n    margin-left: 20px; }\n  .ontodia-class-leaf__no-toggle {\n    display: inline-block;\n    width: 22px;\n    height: 22px; }\n  .ontodia-class-leaf__toggle {\n    display: inline-block;\n    width: 12px;\n    height: 12px;\n    margin: 5px; }\n    .ontodia-class-leaf__toggle:hover:not(:empty) {\n      background: #dcebff91;\n      cursor: pointer; }\n  .ontodia-class-leaf__toggle-icon {\n    display: block;\n    height: 100%; }\n  .ontodia-class-leaf__create {\n    margin-left: 5px; }\n    .ontodia-class-leaf__create > button {\n      cursor: move; }\n\n.ontodia-connections-menu {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-connections-menu__sort-switch {\n    display: none; }\n  .ontodia-connections-menu__sort-switch:checked + .ontodia-connections-menu__sort-switch-label {\n    color: #337ab7;\n    opacity: 1; }\n  .ontodia-connections-menu__sort-switch-label {\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    opacity: 0.4;\n    text-align: center; }\n    .ontodia-connections-menu__sort-switch-label:hover {\n      opacity: 1; }\n  .ontodia-connections-menu__search-line-input {\n    flex: 1 1 100%; }\n\n.ontodia-connections-menu_bread-crumbs {\n  padding: 10px;\n  padding-bottom: 0px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  height: 27px;\n  min-height: 27px;\n  flex-grow: 0; }\n\n.ontodia-connections-menu__title-label {\n  position: absolute;\n  top: -11px;\n  left: 10px;\n  background: white;\n  padding-left: 3px;\n  padding-right: 3px;\n  border-radius: 6px; }\n\n.ontodia-connections-menu_search-line {\n  padding: 10px;\n  display: flex;\n  align-items: center;\n  flex: 0 0 auto; }\n\n.ontodia-connections-menu_search-line-sort-switches {\n  flex: 0 0 20px;\n  margin-left: 10px; }\n\n.ontodia-connections-menu_links-list {\n  padding: 5px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  border-top: 1px solid #dbdbdb;\n  flex-grow: 1;\n  margin: 0; }\n\n.ocm_links-list-empty {\n  display: flex;\n  align-items: center; }\n\n.ontodia-connections-menu_links-list__empty {\n  width: 100%;\n  position: relative;\n  font-size: x-large;\n  color: #cbcbcb;\n  text-align: center; }\n\n.ontodia-connections-menu__loading,\n.ontodia-connections-menu__error {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  font-size: x-large;\n  display: flex;\n  color: #cbcbcb;\n  align-items: center;\n  justify-content: center; }\n\n.ontodia-connections-menu__loading-objects {\n  border: 1px solid gray;\n  flex-grow: 1;\n  box-shadow: inset 0px 0px 23px -8px gray;\n  background-color: whitesmoke;\n  position: relative;\n  font-size: x-large;\n  display: flex;\n  color: #cbcbcb;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 5px; }\n\n.ontodia-connections-menu__move-to-filter {\n  display: flex;\n  padding: 5px 10px;\n  user-select: none;\n  cursor: pointer; }\n  .ontodia-connections-menu__move-to-filter:hover {\n    background-color: #e6e6e6; }\n\n.link-in-popup-menu {\n  display: flex;\n  overflow: hidden;\n  padding: 0 5px 0 0;\n  align-items: center;\n  margin-bottom: 4px;\n  background: #f7f7f7; }\n  .link-in-popup-menu__link-title {\n    flex-grow: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    margin: 5px 0px 5px 5px; }\n  .link-in-popup-menu__count {\n    flex-shrink: 0;\n    margin-left: 10px; }\n  .link-in-popup-menu__navigate-button {\n    float: right;\n    background-image: url(" + escape(__webpack_require__(7)) + ");\n    width: 16px;\n    height: 16px;\n    opacity: 0.5;\n    margin-left: 10px;\n    min-width: 16px;\n    background-size: cover; }\n    .link-in-popup-menu__navigate-button:hover {\n      opacity: 1; }\n  .link-in-popup-menu__filter-button {\n    background-image: url(" + escape(__webpack_require__(8)) + ");\n    background-size: 20px 20px;\n    width: 20px;\n    height: 20px;\n    opacity: 0.4;\n    margin-left: 10px; }\n    .link-in-popup-menu__filter-button:hover {\n      opacity: 1; }\n  .link-in-popup-menu:hover {\n    background-color: #e2e2e2; }\n\n.link-in-popup-menu_direction {\n  background: rgba(219, 219, 219, 0.35);\n  min-height: 30px;\n  padding: 5px 0px 5px 10px;\n  display: flex;\n  align-items: center; }\n\n.link-in-popup-menu_direction__in-direction {\n  background: url(" + escape(__webpack_require__(9)) + ") 0 0 no-repeat;\n  flex-shrink: 0;\n  width: 22px;\n  height: 15px;\n  margin: 0 14px 0 0;\n  background-size: contain;\n  opacity: 0.5; }\n\n.link-in-popup-menu_direction__out-direction {\n  background: url(" + escape(__webpack_require__(10)) + ") 0 0 no-repeat;\n  flex-shrink: 0;\n  width: 22px;\n  height: 15px;\n  margin: 0 8px 0 6px;\n  background-size: contain;\n  opacity: 0.5; }\n\n.ontodia-connections-menu_links-list__loading {\n  text-align: center;\n  width: 100%;\n  position: relative;\n  font-size: x-large;\n  color: #cbcbcb; }\n\n.ontodia-connections-menu_links-list__hr {\n  margin-top: 10px;\n  margin-bottom: 10px; }\n\n.ontodia-connections-menu_objects-panel {\n  flex-grow: 1;\n  padding: 10px;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  padding-top: 0px; }\n\n.ontodia-connections-menu_objects-panel__select-all {\n  white-space: nowrap;\n  margin-bottom: 5px;\n  display: flex; }\n  .ontodia-connections-menu_objects-panel__select-all input {\n    margin-right: 5px; }\n    .ontodia-connections-menu_objects-panel__select-all input:disabled {\n      opacity: 0.3; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel {\n  height: 25px;\n  white-space: nowrap;\n  display: flex;\n  justify-content: space-between; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel__count-label {\n  height: 25px;\n  float: left;\n  padding: 0px 5px;\n  font-size: larger;\n  display: flex;\n  align-items: center;\n  max-width: 60%; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel__extra-elements {\n  color: gray;\n  cursor: help; }\n\n.ontodia-btn.ontodia-connections-menu_objects-panel_bottom-panel__add-button {\n  height: 25px;\n  padding-top: 1px;\n  padding-bottom: 2px; }\n\n.ontodia-connections-menu_objects-panel_objects-list {\n  border: 1px solid gray;\n  height: 0;\n  flex-grow: 1;\n  overflow-x: hidden;\n  overflow-y: scroll;\n  padding: 5px;\n  margin-bottom: 5px; }\n\n.ontodia-connections-menu__link {\n  color: #337ab7;\n  cursor: pointer;\n  text-decoration: none; }\n  .ontodia-connections-menu__link:hover {\n    text-decoration: underline; }\n\n.ontodia-dialog {\n  background: #fff;\n  border: 1px solid #333;\n  box-shadow: 0 4px 15px 7px rgba(51, 51, 51, 0.05);\n  position: absolute; }\n  .ontodia-dialog__caption {\n    font-weight: bold;\n    position: absolute;\n    top: -11px;\n    left: 10px;\n    background: white;\n    padding-left: 3px;\n    padding-right: 3px;\n    border-radius: 6px; }\n  .ontodia-dialog__close-button {\n    background: transparent url(" + escape(__webpack_require__(11)) + ");\n    background-size: contain;\n    border: 0 none;\n    cursor: pointer;\n    display: block;\n    outline: none;\n    padding: 0;\n    position: absolute;\n    top: -22px;\n    right: -22px;\n    height: 20px;\n    width: 20px;\n    opacity: 0.5;\n    transition: 0.3s; }\n    .ontodia-dialog__close-button:hover {\n      opacity: 1; }\n\n.ontodia-dialog__bottom-right-handle {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 0 0 10px 10px;\n  border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent;\n  cursor: nwse-resize; }\n  .ontodia-dialog__bottom-right-handle::before {\n    content: \"\";\n    position: absolute;\n    bottom: -10px;\n    right: 0;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 0 0 5px 5px;\n    border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent; }\n  .ontodia-dialog__bottom-right-handle:hover {\n    border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent; }\n\n.ontodia-dialog__bottom-handle, .ontodia-dialog__right-handle {\n  position: absolute;\n  opacity: 0;\n  background-color: black; }\n  .ontodia-dialog__bottom-handle:hover, .ontodia-dialog__right-handle:hover {\n    opacity: 0.1; }\n\n.ontodia-dialog__bottom-handle {\n  bottom: 0;\n  width: 100%;\n  height: 5px;\n  cursor: ns-resize; }\n\n.ontodia-dialog__right-handle {\n  top: 0;\n  right: 0;\n  width: 5px;\n  height: 100%;\n  cursor: ew-resize; }\n\n.ontodia-edit-form {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-edit-form__body {\n    overflow: auto;\n    padding: 10px;\n    flex: 1 1 100%;\n    display: flex;\n    flex-direction: column;\n    position: relative; }\n  .ontodia-edit-form__controls {\n    border-top: 1px solid #ccc;\n    padding: 10px;\n    text-align: right;\n    flex: 0 0 auto; }\n  .ontodia-edit-form__apply-button {\n    margin-right: 5px; }\n  .ontodia-edit-form__form-row {\n    display: block;\n    margin-bottom: 10px; }\n  .ontodia-edit-form__element-selector {\n    flex-grow: 1;\n    display: flex;\n    flex-direction: column; }\n  .ontodia-edit-form__search {\n    flex-shrink: 0;\n    position: relative; }\n  .ontodia-edit-form__search-icon {\n    opacity: 0.6;\n    position: absolute;\n    top: 50%;\n    left: 10px;\n    margin-top: -7px; }\n  .ontodia-edit-form__search-input {\n    padding-left: 33px; }\n  .ontodia-edit-form__existing-elements-list {\n    flex-grow: 1;\n    margin-top: 7px;\n    padding-right: 10px;\n    overflow-y: scroll; }\n  .ontodia-edit-form__separator {\n    margin: 7px 0;\n    overflow: hidden;\n    text-align: center; }\n  .ontodia-edit-form__separator-text {\n    color: #555;\n    display: inline-block;\n    font-size: 13px;\n    position: relative; }\n    .ontodia-edit-form__separator-text:before, .ontodia-edit-form__separator-text:after {\n      content: \"\";\n      border-top: 1px solid;\n      position: absolute;\n      top: 50%;\n      margin: 0 10px;\n      width: 500px; }\n    .ontodia-edit-form__separator-text:before {\n      left: 100%; }\n    .ontodia-edit-form__separator-text:after {\n      right: 100%; }\n  .ontodia-edit-form__progress {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0; }\n  .ontodia-edit-form__control-row {\n    position: relative;\n    padding-bottom: 18px; }\n  .ontodia-edit-form__control-error {\n    color: red;\n    position: absolute;\n    bottom: 0;\n    left: 0; }\n\n.ontodia-halo {\n  position: absolute;\n  pointer-events: none;\n  border: 1.5px dashed #d8956d;\n  border-radius: 2px;\n  box-shadow: 0 0 5px 0 #d8956d inset; }\n  .ontodia-halo__navigate {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: 50%;\n    margin-top: -10px;\n    right: -22px; }\n    .ontodia-halo__navigate:hover {\n      opacity: 1; }\n    .ontodia-halo__navigate[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n    .ontodia-halo__navigate--open {\n      background-image: url(" + escape(__webpack_require__(12)) + "); }\n    .ontodia-halo__navigate--closed {\n      background-image: url(" + escape(__webpack_require__(13)) + "); }\n  .ontodia-halo__folow {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: 50%;\n    margin-top: -10px;\n    left: -22px;\n    background-image: url(" + escape(__webpack_require__(14)) + "); }\n    .ontodia-halo__folow:hover {\n      opacity: 1; }\n    .ontodia-halo__folow[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__remove {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: -22px;\n    right: -22px;\n    background-image: url(" + escape(__webpack_require__(15)) + "); }\n    .ontodia-halo__remove:hover {\n      opacity: 1; }\n    .ontodia-halo__remove[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__expand {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    left: 50%;\n    margin-left: -10px; }\n    .ontodia-halo__expand:hover {\n      opacity: 1; }\n    .ontodia-halo__expand[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n    .ontodia-halo__expand--open {\n      background-image: url(" + escape(__webpack_require__(16)) + "); }\n    .ontodia-halo__expand--closed {\n      background-image: url(" + escape(__webpack_require__(17)) + "); }\n  .ontodia-halo__add-to-filter {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    right: -22px;\n    background-image: url(" + escape(__webpack_require__(8)) + "); }\n    .ontodia-halo__add-to-filter:hover {\n      opacity: 1; }\n    .ontodia-halo__add-to-filter[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__revert {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: -22px;\n    left: 50%;\n    margin-left: -10px;\n    background-image: url(" + escape(__webpack_require__(18)) + "); }\n    .ontodia-halo__revert:hover {\n      opacity: 1; }\n    .ontodia-halo__revert[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__establish-connection {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    left: -22px;\n    background-image: url(" + escape(__webpack_require__(19)) + "); }\n    .ontodia-halo__establish-connection:hover {\n      opacity: 1; }\n    .ontodia-halo__establish-connection[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__establish-connection-spinner {\n    position: absolute;\n    width: 20px;\n    height: 20px;\n    bottom: -22px;\n    left: -22px; }\n\n.ontodia-halo-link__button {\n  background: transparent;\n  border: 0 none;\n  cursor: pointer;\n  padding: 0;\n  position: absolute;\n  opacity: 0.8;\n  outline: none;\n  transition: opacity 0.3s; }\n  .ontodia-halo-link__button:hover {\n    opacity: 1; }\n  .ontodia-halo-link__button[disabled] {\n    cursor: not-allowed;\n    opacity: 0.5; }\n\n.ontodia-halo-link__edit {\n  background-color: #ccc;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  background-size: 60%;\n  border-radius: 10px;\n  height: 20px;\n  width: 20px;\n  background-image: url(" + escape(__webpack_require__(20)) + "); }\n\n.ontodia-halo-link__delete {\n  background-color: #ccc;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  background-size: 60%;\n  border-radius: 10px;\n  height: 20px;\n  width: 20px;\n  background-image: url(" + escape(__webpack_require__(21)) + "); }\n\n.ontodia-halo-link__spinner {\n  position: absolute; }\n\n.ontodia-halo-link__edit-label-button {\n  background: transparent url(" + escape(__webpack_require__(22)) + ") no-repeat;\n  background-size: cover;\n  border: 0 none;\n  cursor: pointer;\n  padding: 0;\n  position: absolute;\n  margin-left: 5px;\n  outline: none;\n  opacity: 0.5;\n  transition: opacity 0.3s; }\n  .ontodia-halo-link__edit-label-button:hover {\n    opacity: 1; }\n\n.ontodia-instances-search {\n  flex: auto;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-instances-search__criteria {\n    flex-shrink: 0;\n    margin: 10px 0 10px 0; }\n  .ontodia-instances-search__criterions {\n    padding-left: 15px;\n    margin-bottom: 10px; }\n    .ontodia-instances-search__criterions:empty {\n      margin-bottom: 0; }\n  .ontodia-instances-search__criterion {\n    display: block;\n    position: relative;\n    width: 100%; }\n  .ontodia-instances-search__criterion-class {\n    border: black 1px dashed;\n    background: #ffd221;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__criterion-element {\n    border: black 1px dashed;\n    background: #ff835c;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__criterion-link-type {\n    border: black 1px dashed;\n    background: #caffce;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__link-direction {\n    height: 1em;\n    opacity: 0.5; }\n  .ontodia-instances-search__criterion-remove {\n    float: right;\n    margin: 0 10px 4px 4px; }\n  .ontodia-instances-search__text-criteria {\n    margin: 0 10px; }\n  .ontodia-instances-search__rest {\n    padding: 10px 10px 0 10px;\n    border-top: 1px solid #dddddd; }\n  .ontodia-instances-search__results {\n    padding-left: 0;\n    padding-top: 10px;\n    margin: 0 10px 0 10px;\n    outline: none; }\n  .ontodia-instances-search[data-state='finished'] .ontodia-instances-search__results:empty:before {\n    content: 'No items correspond to the specified criteria.';\n    font-style: italic; }\n  .ontodia-instances-search__rest-end {\n    margin: 5px 0 10px 0; }\n  .ontodia-instances-search__load-more {\n    width: 100%; }\n\n.link-types-toolbox {\n  flex: auto;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 0; }\n  .link-types-toolbox__heading {\n    padding: 10px; }\n  .link-types-toolbox__searching-box {\n    display: flex;\n    align-items: center; }\n  .link-types-toolbox__clearSearch {\n    margin-left: -25px;\n    -webkit-appearance: none;\n    padding: 0;\n    cursor: pointer;\n    background: 0 0;\n    border: 0; }\n  .link-types-toolbox__switch-all {\n    margin-top: 5px; }\n  .link-types-toolbox__rest {\n    border-top: 1px solid #dddddd;\n    flex: auto;\n    display: flex;\n    flex-direction: column; }\n\n.link-types-toolbox .panel-heading {\n  flex-shrink: 0;\n  -webkit-flex-shrink: 0;\n  /* safari 8 */ }\n\n.link-types-toolbox ul {\n  margin-bottom: 0; }\n\n.link-types-toolbox .links-heading {\n  margin-left: .4em; }\n\n.link-types-toolbox .links-heading span {\n  border: black 1px dashed;\n  background: #ff835c;\n  padding: 0 .5em 0 .5em;\n  word-wrap: break-word;\n  line-height: 1.3; }\n\n.link-types-toolbox__heading .link-types-toolbox-controls {\n  padding: 5px 15px;\n  font-size: 14px;\n  font-style: italic; }\n\n.link-types-toolbox__heading .link-types-toolbox-controls > span {\n  padding-left: .3em; }\n\n.ontodia-list-group .linkInToolBox {\n  padding: 0 0 0 5px;\n  word-break: break-word; }\n\n.linkInToolBox > div {\n  display: inline; }\n\n.linkInToolBox__new-tag {\n  margin-left: .5em;\n  white-space: normal;\n  word-wrap: normal;\n  border-radius: 2px;\n  padding: 0 5px;\n  background: orange; }\n\n.linkInToolBox .ontodia-badge {\n  display: none;\n  margin-left: .5em;\n  white-space: normal;\n  word-wrap: normal; }\n\n.linkInToolBox .link-title {\n  font-size: 16px;\n  color: black;\n  display: inline; }\n\n.linkInToolBox .ontodia-btn-group {\n  float: left;\n  margin-top: 2px;\n  margin-right: 6px;\n  margin-bottom: 2px; }\n\n.linkInToolBox .ontodia-btn.ontodia-btn-default {\n  border-color: #c3c3c3; }\n\n.linkInToolBox__filter-button {\n  display: none;\n  float: right;\n  background-image: url(" + escape(__webpack_require__(8)) + ");\n  background-size: 20px 20px;\n  width: 20px;\n  height: 20px;\n  margin: 3px;\n  cursor: pointer;\n  opacity: 0.4;\n  transition: opacity 200ms 0ms; }\n\n.linkInToolBox:hover .linkInToolBox__filter-button {\n  opacity: 1.0;\n  transition: opacity 200ms 0ms; }\n\n.connected-links .linkInToolBox .ontodia-badge {\n  /* show connection count badge only in \"Connected to Element\" list */\n  display: inline; }\n\n.connected-links .linkInToolBox__filter-button {\n  /* show filter button only in \"Connected to Element\" list */\n  display: inline; }\n\n.ontodia-list-element-view {\n  position: relative;\n  display: block;\n  background: #808080;\n  padding: 1px 1px 1px 10px;\n  border-radius: 2px;\n  margin: 0 0 2px 0;\n  opacity: 1.0;\n  cursor: move;\n  user-select: none; }\n  .ontodia-list-element-view--disabled {\n    opacity: 0.4;\n    cursor: default; }\n  .ontodia-list-element-view__label {\n    background: white;\n    border-radius: 0 2px 2px 0;\n    font-family: \"Andale Mono\", sans-serif;\n    font-size: 15px;\n    min-height: 1.3em;\n    padding-left: 7px;\n    padding-right: 5px;\n    overflow-wrap: break-word; }\n\n.ontodia-text-highlight {\n  font-weight: bold; }\n\n.ontodia-navigator {\n  display: block;\n  position: absolute;\n  bottom: 25px;\n  right: 25px;\n  overflow: hidden;\n  background: #fff;\n  border: 1px solid #ddd;\n  box-shadow: 0 4px 15px 7px rgba(51, 51, 51, 0.05);\n  transition: width 0.3s, height 0.3s; }\n  .ontodia .ontodia-navigator {\n    box-sizing: content-box; }\n  .ontodia-navigator--collapsed {\n    width: 26px;\n    height: 26px; }\n  .ontodia-navigator > canvas {\n    transition: opacity 0.3s; }\n  .ontodia-navigator--expanded > canvas {\n    opacity: 1; }\n  .ontodia-navigator--collapsed > canvas {\n    opacity: 0; }\n  .ontodia-navigator__toggle {\n    position: absolute;\n    background: transparent;\n    border: none;\n    outline: none;\n    padding: 4px;\n    opacity: 0.5;\n    transition: opacity 0.3s; }\n    .ontodia-navigator__toggle:hover {\n      opacity: 1; }\n  .ontodia-navigator--expanded .ontodia-navigator__toggle {\n    top: 5px;\n    left: 5px; }\n  .ontodia-navigator--collapsed .ontodia-navigator__toggle {\n    top: 0px;\n    left: 0px; }\n  .ontodia-navigator__toggle-icon {\n    width: 18px;\n    height: 18px;\n    background-size: 18px 18px;\n    background-repeat: no-repeat; }\n  .ontodia-navigator--expanded .ontodia-navigator__toggle-icon {\n    background-image: url(" + escape(__webpack_require__(23)) + "); }\n  .ontodia-navigator--collapsed .ontodia-navigator__toggle-icon {\n    background-image: url(" + escape(__webpack_require__(24)) + "); }\n\n@keyframes ontodia-progress-bar-stripes {\n  from {\n    background-position: 40px 0; }\n  to {\n    background-position: 0 0; } }\n\n.ontodia-progress-bar {\n  flex-shrink: 0;\n  -webkit-flex-shrink: 0;\n  /* safari 8 */\n  width: 100%;\n  background-color: #f5f5f5;\n  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);\n  background-repeat: repeat-x;\n  overflow: hidden;\n  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }\n  .ontodia-progress-bar__bar {\n    float: left;\n    height: 100%;\n    font-size: 12px;\n    line-height: 20px;\n    color: #fff;\n    text-align: center;\n    transition: width .6s ease;\n    background-color: #337ab7;\n    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n    background-repeat: repeat-x;\n    background-size: 40px 40px;\n    animation: ontodia-progress-bar-stripes 2s linear infinite; }\n  .ontodia-progress-bar--loading, .ontodia-progress-bar--error {\n    /* property name | duration | delay */\n    transition: height 300ms 300ms; }\n  .ontodia-progress-bar--error {\n    background-color: #E72F2F; }\n  .ontodia-progress-bar--completed {\n    /* property name | duration | delay */\n    transition: height 200ms 0ms; }\n\n.ontodia-search-results {\n  margin: 0;\n  padding: 0;\n  outline: none; }\n\n.ontodia-accordion {\n  flex: auto;\n  display: flex;\n  height: 100%;\n  width: 100%; }\n  .ontodia-accordion--scrollable {\n    overflow: auto; }\n  .ontodia-accordion--vertical {\n    flex-direction: column; }\n  .ontodia-accordion--vertical:not(.ontodia-accordion--resizing) > .ontodia-accordion-item {\n    transition: height 0.3s ease-in-out; }\n\n.ontodia-accordion-item {\n  display: flex;\n  position: relative;\n  flex: auto; }\n  .ontodia-accordion-item--resizing > .ontodia-accordion-item__handle, .ontodia-accordion-item__handle:hover {\n    background: rgba(0, 0, 0, 0.1); }\n  .ontodia-accordion-item--vertical {\n    border-top: 1px solid lightgray; }\n    .ontodia-accordion-item--vertical:first-child {\n      border-top-width: 0; }\n  .ontodia-accordion-item--horizontal {\n    border-right: 1px solid lightgray; }\n    .ontodia-accordion-item--horizontal:last-child {\n      border-right-width: 0; }\n  .ontodia-accordion-item__handle {\n    position: absolute;\n    z-index: 2; }\n  .ontodia-accordion-item__handle-vertical {\n    height: 5px;\n    bottom: -2.5px;\n    left: 0;\n    width: 100%;\n    cursor: ns-resize; }\n  .ontodia-accordion-item__handle-horizontal {\n    height: 100%;\n    top: 0;\n    right: -2.5px;\n    width: 5px;\n    cursor: ew-resize; }\n  .ontodia-accordion-item__handle-btn {\n    background: #fff;\n    border: 2px solid #17b;\n    box-shadow: 0 0 0 1px rgba(9, 30, 66, 0.08), 0 2px 4px 1px rgba(9, 30, 66, 0.08);\n    border-radius: 10px;\n    cursor: pointer;\n    height: 20px;\n    position: absolute;\n    top: 50%;\n    margin-top: -10px;\n    width: 20px;\n    z-index: 20;\n    transition: 0.3s; }\n    .ontodia-accordion-item__handle-btn::before {\n      background-position: 0 0;\n      background-repeat: no-repeat;\n      background-size: cover;\n      content: \"\";\n      height: 8px;\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -4px;\n      margin-left: -4px;\n      width: 8px;\n      transition: background 0.3s; }\n    .ontodia-accordion-item__handle-btn:hover {\n      background: #17b; }\n  .ontodia-accordion-item__handle-btn-left {\n    left: 100%;\n    margin-left: -10px; }\n    .ontodia-accordion-item__handle-btn-left:before {\n      background-image: url(" + escape(__webpack_require__(25)) + "); }\n    .ontodia-accordion-item__handle-btn-left:hover:before {\n      background-image: url(" + escape(__webpack_require__(26)) + "); }\n  .ontodia-accordion-item__handle-btn-right {\n    right: 100%;\n    margin-right: -10px; }\n    .ontodia-accordion-item__handle-btn-right:before {\n      background-image: url(" + escape(__webpack_require__(27)) + "); }\n    .ontodia-accordion-item__handle-btn-right:hover:before {\n      background-image: url(" + escape(__webpack_require__(28)) + "); }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__handle-btn:before {\n    transform: rotate(180deg); }\n  .ontodia-accordion-item__inner {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden; }\n  .ontodia-accordion-item__body {\n    flex: 1 1 0px;\n    display: flex;\n    flex-direction: column; }\n  .ontodia-accordion-item__header {\n    padding-left: 20px;\n    position: relative;\n    flex-shrink: 0;\n    font-size: 16px;\n    background: #E4E4E4;\n    cursor: default;\n    /* unselectable */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none; }\n    .ontodia-accordion-item__header:before {\n      border-top: 6px solid #555555;\n      border-left: 3.5px solid transparent;\n      border-right: 3.5px solid transparent;\n      content: \"\";\n      position: absolute;\n      top: 50%;\n      left: 7px;\n      margin-top: -3px;\n      -webkit-transition: 0.1s;\n      -moz-transition: 0.1s;\n      transition: 0.1s; }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__header:before {\n    -webkit-transform: rotate(-90deg);\n    -moz-transform: rotate(-90deg);\n    -ms-transform: rotate(-90deg);\n    transform: rotate(-90deg); }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__body {\n    display: none; }\n\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle,\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle {\n  height: 8px;\n  width: 100%;\n  top: initial;\n  left: 0;\n  cursor: ns-resize; }\n\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn,\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn {\n  height: 100%;\n  width: 40px;\n  top: 0;\n  left: 50%;\n  margin-left: -20px;\n  margin-top: 0px; }\n\n.ontodia-drag-resizable-column {\n  display: flex;\n  flex-direction: column;\n  position: relative; }\n  .ontodia-drag-resizable-column__handle {\n    background: #fff url(" + escape(__webpack_require__(29)) + ") repeat;\n    width: 8px;\n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: initial;\n    z-index: 2;\n    -webkit-transition: 0.3s;\n    -moz-transition: 0.3s;\n    transition: 0.3s;\n    cursor: ew-resize; }\n  .ontodia-drag-resizable-column__handle-btn {\n    background: #eee;\n    cursor: pointer;\n    height: 40px;\n    position: absolute;\n    top: 50%;\n    left: 0;\n    margin-top: -20px;\n    width: 100%;\n    z-index: 1;\n    -webkit-transition: 0.3s;\n    -moz-transition: 0.3s;\n    transition: 0.3s; }\n    .ontodia-drag-resizable-column__handle-btn::before {\n      background-position: 0 0;\n      background-repeat: no-repeat;\n      background-size: cover;\n      content: \"\";\n      height: 6px;\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -3px;\n      margin-left: -3px;\n      width: 6px;\n      -webkit-transition: 0.3s;\n      -moz-transition: 0.3s;\n      transition: 0.3s; }\n    .ontodia-drag-resizable-column__handle-btn:hover {\n      background: #b3b3b3;\n      transform: scale(1.2); }\n  .ontodia-drag-resizable-column--closed .ontodia-drag-resizable-column__handle-btn::before {\n    transform: rotate(180deg); }\n  .ontodia-drag-resizable-column--docked-left {\n    margin-right: 8px; }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle {\n    right: -8px; }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(25)) + "); }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(26)) + "); }\n  .ontodia-drag-resizable-column--docked-right {\n    margin-left: 8px; }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle {\n    left: -8px; }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(27)) + "); }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(28)) + "); }\n  .ontodia-drag-resizable-column--docked-top {\n    margin-bottom: 8px; }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle {\n    bottom: -8px; }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(30)) + "); }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(31)) + "); }\n  .ontodia-drag-resizable-column--docked-bottom {\n    margin-top: 8px; }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle {\n    top: -8px; }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(32)) + "); }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(33)) + "); }\n\n.introjs-tooltiptext {\n  color: #333;\n  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  font-size: 14px;\n  line-height: 1.42857; }\n\n.ontodia-toolbar__language-selector {\n  padding: 5px;\n  margin-top: 4px; }\n  .ontodia-toolbar__language-selector > label {\n    margin-right: 5px; }\n    .ontodia-toolbar__language-selector > label > span {\n      vertical-align: middle; }\n\n.ontodia-toolbar__toggle {\n  line-height: 1; }\n\n.ontodia-toolbar__toggle:after {\n  background-position: 0 0;\n  background-repeat: no-repeat;\n  content: '';\n  display: block;\n  height: 12px;\n  margin: 3px 0;\n  width: 12px; }\n\n.ontodia-toolbar__toggle-left:after {\n  background-image: url(" + escape(__webpack_require__(34)) + "); }\n\n.ontodia-toolbar__toggle-right:after {\n  background-image: url(" + escape(__webpack_require__(35)) + "); }\n\n.ontodia-toolbar__toggle.active {\n  border-color: #c3c3c3; }\n\n.ontodia-toolbar__toggle-left.active:after {\n  background-image: url(" + escape(__webpack_require__(36)) + "); }\n\n.ontodia-toolbar__toggle-right.active:after {\n  background-image: url(" + escape(__webpack_require__(37)) + "); }\n\n.ontodia-toolbar__layout-group {\n  margin: 5px;\n  height: 30px;\n  float: left; }\n  .ontodia-toolbar__layout-group > label {\n    margin-right: 5px; }\n  .ontodia-toolbar__layout-group .btn-group, .ontodia-toolbar__layout-group button {\n    height: 100%; }\n\n.ontodia-toolbar {\n  background: rgba(0, 0, 0, 0.15); }\n\n.ontodia-toolbar > .ontodia-btn-group {\n  margin-left: 10px; }\n\n.ontodia-toolbar > .ontodia-btn-group > button {\n  margin-top: 5px;\n  margin-bottom: 5px; }\n\n.ontodia-toolbar .ontodia-toolbar__undo,\n.ontodia-toolbar .ontodia-toolbar__redo {\n  display: none; }\n\n.ontodia {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box;\n  white-space: initial;\n  color: #333;\n  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  font-size: 14px;\n  line-height: 1.42857; }\n  .ontodia *, .ontodia *:before, .ontodia *:after {\n    box-sizing: inherit; }\n  .ontodia__header {\n    display: flex;\n    flex-direction: column;\n    flex: 0 0 auto; }\n  .ontodia__workspace {\n    display: flex;\n    flex: auto;\n    overflow: hidden;\n    flex-direction: column; }\n  .ontodia__main-panel {\n    display: flex;\n    flex: auto;\n    overflow: hidden;\n    width: 0; }\n  .ontodia--unselectable {\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none; }\n  .ontodia--horizontal-resizing * {\n    cursor: ew-resize !important; }\n  .ontodia--vertical-resizing * {\n    cursor: ns-resize !important; }\n  .ontodia h4 {\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.1;\n    margin-top: 10px;\n    margin-bottom: 10px; }\n  .ontodia select {\n    color: inherit;\n    margin: 0;\n    font: inherit;\n    line-height: inherit;\n    text-transform: none; }\n  .ontodia hr {\n    border: 0;\n    border-top: 1px solid #eee;\n    height: 0; }\n\n.ontodia-scrollable {\n  flex: 1 1 0px;\n  overflow-y: scroll; }\n\n.ontodia-scrollable > * {\n  position: relative; }\n\n.jstree-icon.jstree-themeicon.jstree-themeicon-custom {\n  background-size: contain !important; }\n\n.ontodia-default-template, .ontodia-group-template__wrap {\n  max-width: 450px;\n  float: left;\n  border-radius: 12px;\n  border-style: solid;\n  border-width: 1px; }\n  .ontodia-default-template__thumbnail {\n    text-align: center; }\n    .ontodia-default-template__thumbnail > img {\n      max-width: 200px; }\n  .ontodia-default-template[data-expanded='true'] .ontodia-default-template__thumbnail > img, .ontodia-group-template__wrap[data-expanded='true'] .ontodia-default-template__thumbnail > img {\n    max-width: 350px; }\n\n.ontodia-default-template_type-line, .ontodia-group-template__type-line {\n  padding: 0px 7px;\n  color: white;\n  height: 18px;\n  margin-bottom: 2px;\n  overflow: hidden;\n  display: flex;\n  align-items: baseline;\n  margin-top: -3px; }\n\ndiv.ontodia-default-template_type-line__icon, div.ontodia-group-template__type-line-icon {\n  position: inherit !important;\n  margin-right: 4px; }\n\n.ontodia-default-template_type-line_text-container, .ontodia-group-template__type-line-text-container {\n  flex-grow: 1;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  width: 0; }\n\n.ontodia-default-template_type-line_text-container__text, .ontodia-group-template__type-line-text {\n  display: inline;\n  white-space: nowrap;\n  font-size: 12px; }\n\n.ontodia-default-template_body, .ontodia-group-template__body {\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  border-top-style: solid;\n  border-top-width: 1px;\n  background: white;\n  padding: 7px 10px 8px 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column; }\n\n.ontodia-default-template_body__label, .ontodia-group-template__label {\n  font-size: 19px;\n  font-weight: 100;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin-bottom: 0;\n  white-space: nowrap;\n  word-wrap: break-word; }\n\n.ontodia-default-template_body_expander {\n  width: 100%;\n  overflow: hidden;\n  display: flex; }\n\n.ontodia-default-template_body_expander__iri_label {\n  font-size: 12px;\n  font-weight: 100;\n  margin-right: 15px;\n  color: #b6b6b6; }\n\n.ontodia-default-template_body_expander_iri {\n  font-size: 12px;\n  width: 100%;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.ontodia-default-template_body_expander_iri__link {\n  color: #b6b6b6; }\n\n.ontodia-default-template_body_expander__hr {\n  margin: 5px 0px 5px 0px; }\n\n.ontodia-default-template_body_expander_property-table {\n  font-size: 15px;\n  font-weight: 100;\n  margin-bottom: 5px;\n  max-height: 200px;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n\n.ontodia-default-template_body_expander_property-table_row {\n  white-space: nowrap; }\n\n.ontodia-default-template_body_expander_property-table_row__key {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  vertical-align: top; }\n\n.ontodia-default-template_body_expander_property-table_row_key {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  vertical-align: top; }\n\n.ontodia-default-template_body_expander_property-table_row_key_values {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden; }\n\n.ontodia-default-template_body_expander_property-table_row_key_values__value {\n  width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: initial;\n  padding-right: 10px; }\n\n.ontodia-group-template {\n  overflow: hidden; }\n  .ontodia-group-template__wrap {\n    max-width: none; }\n  .ontodia-group-template__body {\n    overflow: visible; }\n  .ontodia-group-template__embedded-layer {\n    margin-top: 7px; }\n  .ontodia-group-template .ontodia-paper__canvas {\n    border-color: #fff; }\n\n.ontodia-standard-template {\n  min-width: 180px;\n  max-width: 400px;\n  float: left; }\n  .ontodia-standard-template__main {\n    border-radius: 2px;\n    border: 1px solid; }\n  .ontodia-standard-template__body {\n    margin-left: 8px;\n    border-radius: 0 2px 2px 0;\n    border-left: 1px solid;\n    padding: 3px 0;\n    background: #fafaf9; }\n  .ontodia-standard-template__body-horizontal {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    overflow: hidden; }\n  .ontodia-standard-template__body-content {\n    flex-grow: 1;\n    min-width: 0;\n    margin-right: 12px; }\n  .ontodia-standard-template__label {\n    font-size: 19px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__thumbnail {\n    font-size: 26px;\n    margin: 5px 10px;\n    flex-shrink: 0;\n    width: 50px;\n    height: 50px;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .ontodia-standard-template__thumbnail-image {\n    max-height: 100%;\n    max-width: 100%; }\n  .ontodia-standard-template__thumbnail-icon {\n    max-height: 26px;\n    max-width: 26px; }\n  .ontodia-standard-template__photo {\n    border-bottom: 1px solid; }\n  .ontodia-standard-template__photo-image {\n    width: 100%;\n    border-radius: 2px 2px 0 0; }\n  .ontodia-standard-template__type {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    font-size: 11px;\n    font-style: italic;\n    color: #999;\n    display: flex; }\n  .ontodia-standard-template__type-value {\n    width: 0;\n    flex-grow: 1;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__iri {\n    width: 100%;\n    overflow: hidden;\n    display: flex; }\n  .ontodia-standard-template__iri-key {\n    font-size: 12px;\n    margin-right: 4px;\n    color: #b6b6b6; }\n  .ontodia-standard-template__iri-value {\n    font-size: 12px;\n    width: 100%;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__iri-value a {\n    color: #b6b6b6; }\n  .ontodia-standard-template__hr {\n    margin: 5px 0; }\n  .ontodia-standard-template__properties {\n    font-size: 15px;\n    max-height: 200px;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n  .ontodia-standard-template__propertites-row {\n    white-space: nowrap; }\n  .ontodia-standard-template__properties-key {\n    display: inline-block;\n    width: 50%;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    vertical-align: top; }\n  .ontodia-standard-template__properties-values {\n    display: inline-block;\n    width: 50%;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .ontodia-standard-template__properties-value {\n    width: 100%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: initial;\n    padding-right: 10px; }\n  .ontodia-standard-template__pinned-props {\n    border-top: 1px solid;\n    margin: 0 5px; }\n  .ontodia-standard-template__dropdown {\n    border-radius: 2px;\n    background-color: white;\n    margin-top: 5px;\n    border: 1px solid; }\n  .ontodia-standard-template__dropdown-content {\n    width: 100%;\n    padding: 9px; }\n  .ontodia-standard-template__actions {\n    display: flex;\n    justify-content: space-between; }\n    .ontodia-standard-template__actions button {\n      padding: 5px;\n      min-width: 60px; }\n", ""]);
+exports.push([module.i, ".ontodia-spinner__arrow {\n  animation-name: ontodia-spinner-rotation;\n  animation-duration: 1.5s;\n  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);\n  animation-iteration-count: infinite; }\n\n.ontodia-spinner[data-error='true'] .ontodia-spinner__arrow {\n  animation-iteration-count: 1; }\n\n@keyframes ontodia-spinner-rotation {\n  0% {\n    transform: rotate(0deg); }\n  100% {\n    transform: rotate(360deg); } }\n\n.clearfix:before, .clearfix:after {\n  display: table;\n  content: \"\"; }\n\n.clearfix:after {\n  clear: both; }\n\n.ontodia-label {\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 5px;\n  font-weight: 700; }\n\n.ontodia-btn {\n  display: inline-block;\n  padding: 6px 12px;\n  margin-bottom: 0;\n  font-size: 14px;\n  font-weight: 400;\n  line-height: 1.42857143;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  touch-action: manipulation;\n  cursor: pointer;\n  user-select: none;\n  background-image: none;\n  border: 1px solid transparent;\n  text-transform: none;\n  transition: background-color 0.3s; }\n  .ontodia-btn[disabled] {\n    cursor: not-allowed;\n    opacity: .65; }\n\n.ontodia-btn-default {\n  background-color: #fff;\n  border-color: #ccc;\n  color: #333; }\n  .ontodia-btn-default:hover {\n    background-color: #e0e0e0; }\n  .ontodia-btn-default.active {\n    background-color: #e0e0e0;\n    border-color: #dbdbdb; }\n  .ontodia-btn-default.active:hover {\n    background-color: #d4d4d4;\n    border-color: #8c8c8c; }\n  .ontodia-btn-default[disabled], .ontodia-btn-default[disabled]:hover, .ontodia-btn-default[disabled].active, .ontodia-btn-default[disabled].active:hover {\n    background-color: #e0e0e0; }\n\n.ontodia-btn-primary {\n  color: white;\n  background-color: #337ab7;\n  border-color: #245580; }\n  .ontodia-btn-primary:hover, .ontodia-btn-primary:focus, .ontodia-btn-primary:active {\n    background-color: #265a88; }\n  .ontodia-btn-primary:hover, .ontodia-btn-primary:focus {\n    border-color: #204d74; }\n  .ontodia-btn-primary.active {\n    border-color: #245580; }\n  .ontodia-btn-primary[disabled], .ontodia-btn-primary[disabled]:hover, .ontodia-btn-primary[disabled]:focus, .ontodia-btn-primary[disabled]:active, .ontodia-btn-primary[disabled].active {\n    background-color: #265a88; }\n\n.ontodia-btn-success {\n  background-color: #5cb85c;\n  border-color: #5cb85c;\n  color: #fff;\n  transition: 0.3s; }\n  .ontodia-btn-success:hover {\n    background: #47a447; }\n\n.ontodia-btn-danger {\n  background-color: #c9302c;\n  border-color: #c9302c;\n  color: #fff;\n  transition: 0.3s; }\n  .ontodia-btn-danger:hover {\n    background: #a82825; }\n\n.ontodia-btn-group {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle; }\n  .ontodia-btn-group > .ontodia-btn, .ontodia-btn-group > .ontodia-btn-group {\n    position: relative;\n    float: left; }\n  .ontodia-btn-group > .ontodia-btn:hover,\n  .ontodia-btn-group > .ontodia-btn:focus,\n  .ontodia-btn-group > .ontodia-btn.active,\n  .ontodia-btn-group > .ontodia-btn.active:hover {\n    z-index: 2; }\n  .ontodia-btn-group .ontodia-btn + .ontodia-btn,\n  .ontodia-btn-group .ontodia-btn + .ontodia-btn-group,\n  .ontodia-btn-group .ontodia-btn-group + .ontodia-btn,\n  .ontodia-btn-group .ontodia-btn-group + .ontodia-btn-group {\n    margin-left: -1px; }\n  .ontodia-btn-group > .ontodia-btn:first-child {\n    margin-left: 0; }\n  .ontodia-btn-group-sm > .ontodia-btn {\n    font-size: 12px;\n    line-height: 1.5;\n    padding: 5px 10px; }\n  .ontodia-btn-group-xs > .ontodia-btn {\n    font-size: 12px;\n    line-height: 1.5;\n    padding: 1px 5px; }\n\n.ontodia-form-control {\n  display: block;\n  width: 100%;\n  height: 34px;\n  margin: 0;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555;\n  background: #fff;\n  border: 1px solid #ccc;\n  transition: border-color ease-in-out .15s; }\n  .ontodia-form-control:focus {\n    border-color: #66afe9;\n    outline: 0; }\n  .ontodia-form-control:disabled {\n    background-color: #eee;\n    cursor: not-allowed;\n    opacity: 0.6; }\n\n.ontodia-input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate; }\n  .ontodia-input-group .ontodia-form-control {\n    display: table-cell;\n    position: relative;\n    z-index: 2;\n    float: left;\n    width: 100%;\n    margin-bottom: 0; }\n  .ontodia-input-group .ontodia-form-control:first-child {\n    border-top-right-radius: 0;\n    border-bottom-right-radius: 0; }\n\n.ontodia-input-group-btn {\n  display: table-cell;\n  width: 1%;\n  vertical-align: middle;\n  position: relative;\n  font-size: 0;\n  white-space: nowrap; }\n  .ontodia-input-group-btn:last-child > .ontodia-btn {\n    border-top-left-radius: 0;\n    border-bottom-left-radius: 0;\n    z-index: 2;\n    margin-left: -1px; }\n\n.ontodia-list-group {\n  margin: 0;\n  padding: 0; }\n\n.ontodia-list-group-item:last-child {\n  margin-bottom: 0; }\n\n.ontodia-list-group-item {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd; }\n\n.ontodia-badge {\n  display: inline-block;\n  min-width: 10px;\n  font-size: 12px;\n  font-weight: 700;\n  line-height: 1;\n  color: white;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: middle;\n  background-color: #777777;\n  padding: 3px 7px;\n  border-radius: 10px; }\n\n.ontodia-overlayed-element {\n  cursor: move;\n  outline: none; }\n\n.ontodia-overlayed-element,\n.ontodia-exported-element {\n  box-sizing: border-box;\n  color: black;\n  font-family: \"Helvetica Neue\",Helvetica,Arial,sans-serif;\n  font-size: 14px;\n  line-height: 1.42857143; }\n  .ontodia-overlayed-element img,\n  .ontodia-exported-element img {\n    vertical-align: middle; }\n\n.ontodia-exported-element *, .ontodia-exported-element *:before, .ontodia-exported-element *:after {\n  box-sizing: inherit; }\n\n.ontodia-overlayed-element--blurred {\n  filter: grayscale(100%);\n  opacity: 0.5; }\n\n.ontodia-link__wrap {\n  stroke-width: 12px;\n  stroke-linejoin: round;\n  stroke-linecap: round;\n  stroke: transparent;\n  fill: none; }\n\n.ontodia-link:hover .ontodia-link__wrap {\n  stroke: rgba(140, 140, 140, 0.44); }\n\n.ontodia-link__vertex {\n  cursor: all-scroll; }\n\n.ontodia-link:not(:hover) .ontodia-link__vertex {\n  fill: transparent; }\n\n.ontodia-link__vertex-tools {\n  opacity: 0;\n  cursor: pointer; }\n  .ontodia-link__vertex-tools > circle {\n    fill: gray; }\n  .ontodia-link__vertex-tools > path {\n    stroke: white; }\n  .ontodia-link__vertex-tools:hover > circle {\n    fill: black; }\n\n.ontodia-link:hover .ontodia-link__vertex-tools {\n  opacity: 0.8; }\n\n.ontodia-link--blurred {\n  opacity: 0.5; }\n\n.ontodia-paper-area {\n  flex: auto;\n  width: 0;\n  display: flex;\n  position: relative;\n  cursor: default;\n  background: #fff; }\n  .ontodia-paper-area__area {\n    flex: auto;\n    overflow: hidden; }\n  .ontodia-paper-area__widgets {\n    position: absolute;\n    left: 0;\n    top: 0; }\n  .ontodia-paper-area__watermark {\n    background-size: cover;\n    width: 8%;\n    max-width: 130px;\n    min-width: 50px;\n    position: absolute;\n    top: 15px;\n    right: 25px;\n    cursor: pointer;\n    opacity: 0.3;\n    transition: opacity 0.3s; }\n    .ontodia-paper-area__watermark:hover {\n      opacity: 0.5; }\n  .ontodia-paper-area--hide-scrollbars {\n    overflow: hidden; }\n\n.ontodia-paper {\n  position: relative; }\n\n.ontodia-exported-watermark {\n  opacity: 0.3;\n  transition: opacity 0.3s; }\n\n.ontodia-paper-area--animated .ontodia-overlayed-element {\n  transition: transform 0.5s ease-in-out; }\n\n.ontodia-paper-area--animated .ontodia-link-layer, .ontodia-paper-area--animated .ontodia-paper-area__widgets {\n  transition: none;\n  opacity: 0; }\n\n.ontodia-link-layer, .ontodia-paper-area__widgets {\n  transition: opacity 0.5s ease-in-out; }\n\n.ontodia-loading-widget {\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  margin: auto;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(255, 255, 255, 0.9);\n  z-index: 10; }\n\n.ontodia-authoring-state__item-error {\n  align-self: flex-end;\n  margin: 0px 5px;\n  display: flex;\n  align-items: center;\n  cursor: help; }\n\n.ontodia-authoring-state__item-error-icon {\n  background: url(" + escape(__webpack_require__(6)) + ");\n  height: 15px;\n  width: 17px; }\n\n.ontodia-authoring-state__state-label {\n  font-weight: bold;\n  margin-right: 5px; }\n\n.ontodia-authoring-state__state-cancel {\n  color: #3f87a6;\n  cursor: pointer; }\n  .ontodia-authoring-state__state-cancel:hover {\n    text-decoration: underline; }\n\n.ontodia-authoring-state__state-indicator {\n  position: absolute; }\n\n.ontodia-authoring-state__state-indicator-container {\n  position: relative; }\n\n.ontodia-authoring-state__state-indicator-body {\n  position: absolute;\n  white-space: nowrap;\n  display: flex;\n  align-items: center;\n  bottom: 0;\n  background: rgba(255, 255, 255, 0.7);\n  border-radius: 5px; }\n\n.ontodia-authoring-tools {\n  margin: 10px; }\n  .ontodia-authoring-tools__create-entity {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    white-space: normal; }\n  .ontodia-authoring-tools__type-label {\n    color: black;\n    border: black 1px dashed;\n    background: #ffd221;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n\n.ontodia-class-tree {\n  flex: auto;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-class-tree__filter {\n    flex-shrink: 0;\n    margin: 10px 0 10px 0; }\n  .ontodia-class-tree__filter-group {\n    margin-left: 10px;\n    margin-right: 10px; }\n  .ontodia-class-tree__only-creatable {\n    display: block;\n    margin-top: 5px; }\n  .ontodia-class-tree__tree {\n    border-top: 1px solid #dddddd; }\n  .ontodia-class-tree__spinner {\n    align-self: center;\n    /* center vertically in flexbox */\n    margin: auto; }\n\n.ontodia-class-leaf {\n  margin: 1px 0; }\n  .ontodia-class-leaf__row {\n    display: flex;\n    align-items: center;\n    white-space: nowrap;\n    user-select: none; }\n    .ontodia-class-leaf__row > * {\n      flex-shrink: 0; }\n  .ontodia-class-leaf__body {\n    display: flex;\n    align-items: center;\n    text-decoration: none;\n    font-size: 15px;\n    padding: 1px;\n    border: 1px solid;\n    border-color: transparent; }\n    .ontodia-class-leaf__body:hover {\n      background: #dcebff91;\n      border-color: #ccefff;\n      cursor: pointer; }\n    .ontodia-class-leaf__body--selected {\n      background-color: #beebff;\n      border-color: #8edcff; }\n  .ontodia-class-leaf__icon-container {\n    height: 20px; }\n  .ontodia-class-leaf__icon {\n    display: block;\n    height: 100%; }\n  .ontodia-class-leaf__label {\n    margin-left: 5px;\n    color: black; }\n  .ontodia-class-leaf__highlighted-term {\n    font-weight: bold; }\n  .ontodia-class-leaf__count {\n    margin-left: 5px; }\n  .ontodia-class-leaf__children {\n    margin-left: 20px; }\n  .ontodia-class-leaf__no-toggle {\n    display: inline-block;\n    width: 22px;\n    height: 22px; }\n  .ontodia-class-leaf__toggle {\n    display: inline-block;\n    width: 12px;\n    height: 12px;\n    margin: 5px; }\n    .ontodia-class-leaf__toggle:hover:not(:empty) {\n      background: #dcebff91;\n      cursor: pointer; }\n  .ontodia-class-leaf__toggle-icon {\n    display: block;\n    height: 100%; }\n  .ontodia-class-leaf__create {\n    margin-left: 5px; }\n    .ontodia-class-leaf__create > button {\n      cursor: move; }\n\n.ontodia-connections-menu {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-connections-menu__sort-switch {\n    display: none; }\n  .ontodia-connections-menu__sort-switch:checked + .ontodia-connections-menu__sort-switch-label {\n    color: #337ab7;\n    opacity: 1; }\n  .ontodia-connections-menu__sort-switch-label {\n    cursor: pointer;\n    display: block;\n    margin: 0;\n    opacity: 0.4;\n    text-align: center; }\n    .ontodia-connections-menu__sort-switch-label:hover {\n      opacity: 1; }\n  .ontodia-connections-menu__search-line-input {\n    flex: 1 1 100%; }\n\n.ontodia-connections-menu_bread-crumbs {\n  padding: 10px;\n  padding-bottom: 0px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  height: 27px;\n  min-height: 27px;\n  flex-grow: 0; }\n\n.ontodia-connections-menu__title-label {\n  position: absolute;\n  top: -11px;\n  left: 10px;\n  background: white;\n  padding-left: 3px;\n  padding-right: 3px;\n  border-radius: 6px; }\n\n.ontodia-connections-menu_search-line {\n  padding: 10px;\n  display: flex;\n  align-items: center;\n  flex: 0 0 auto; }\n\n.ontodia-connections-menu_search-line-sort-switches {\n  flex: 0 0 20px;\n  margin-left: 10px; }\n\n.ontodia-connections-menu_links-list {\n  padding: 5px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  border-top: 1px solid #dbdbdb;\n  flex-grow: 1;\n  margin: 0; }\n\n.ocm_links-list-empty {\n  display: flex;\n  align-items: center; }\n\n.ontodia-connections-menu_links-list__empty {\n  width: 100%;\n  position: relative;\n  font-size: x-large;\n  color: #cbcbcb;\n  text-align: center; }\n\n.ontodia-connections-menu__loading,\n.ontodia-connections-menu__error {\n  width: 100%;\n  height: 100%;\n  position: relative;\n  font-size: x-large;\n  display: flex;\n  color: #cbcbcb;\n  align-items: center;\n  justify-content: center; }\n\n.ontodia-connections-menu__loading-objects {\n  border: 1px solid gray;\n  flex-grow: 1;\n  box-shadow: inset 0px 0px 23px -8px gray;\n  background-color: whitesmoke;\n  position: relative;\n  font-size: x-large;\n  display: flex;\n  color: #cbcbcb;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 5px; }\n\n.ontodia-connections-menu__move-to-filter {\n  display: flex;\n  padding: 5px 10px;\n  user-select: none;\n  cursor: pointer; }\n  .ontodia-connections-menu__move-to-filter:hover {\n    background-color: #e6e6e6; }\n\n.link-in-popup-menu {\n  display: flex;\n  overflow: hidden;\n  padding: 0 5px 0 0;\n  align-items: center;\n  margin-bottom: 4px;\n  background: #f7f7f7; }\n  .link-in-popup-menu__link-title {\n    flex-grow: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    margin: 5px 0px 5px 5px; }\n  .link-in-popup-menu__count {\n    flex-shrink: 0;\n    margin-left: 10px; }\n  .link-in-popup-menu__navigate-button {\n    float: right;\n    background-image: url(" + escape(__webpack_require__(7)) + ");\n    width: 16px;\n    height: 16px;\n    opacity: 0.5;\n    margin-left: 10px;\n    min-width: 16px;\n    background-size: cover; }\n    .link-in-popup-menu__navigate-button:hover {\n      opacity: 1; }\n  .link-in-popup-menu__filter-button {\n    background-image: url(" + escape(__webpack_require__(8)) + ");\n    background-size: 20px 20px;\n    width: 20px;\n    height: 20px;\n    opacity: 0.4;\n    margin-left: 10px; }\n    .link-in-popup-menu__filter-button:hover {\n      opacity: 1; }\n  .link-in-popup-menu:hover {\n    background-color: #e2e2e2; }\n\n.link-in-popup-menu_direction {\n  background: rgba(219, 219, 219, 0.35);\n  min-height: 30px;\n  padding: 5px 0px 5px 10px;\n  display: flex;\n  align-items: center; }\n\n.link-in-popup-menu_direction__in-direction {\n  background: url(" + escape(__webpack_require__(9)) + ") 0 0 no-repeat;\n  flex-shrink: 0;\n  width: 22px;\n  height: 15px;\n  margin: 0 14px 0 0;\n  background-size: contain;\n  opacity: 0.5; }\n\n.link-in-popup-menu_direction__out-direction {\n  background: url(" + escape(__webpack_require__(10)) + ") 0 0 no-repeat;\n  flex-shrink: 0;\n  width: 22px;\n  height: 15px;\n  margin: 0 8px 0 6px;\n  background-size: contain;\n  opacity: 0.5; }\n\n.ontodia-connections-menu_links-list__loading {\n  text-align: center;\n  width: 100%;\n  position: relative;\n  font-size: x-large;\n  color: #cbcbcb; }\n\n.ontodia-connections-menu_links-list__hr {\n  margin-top: 10px;\n  margin-bottom: 10px; }\n\n.ontodia-connections-menu_objects-panel {\n  flex-grow: 1;\n  padding: 10px;\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  padding-top: 0px; }\n\n.ontodia-connections-menu_objects-panel__select-all {\n  white-space: nowrap;\n  margin-bottom: 5px;\n  display: flex; }\n  .ontodia-connections-menu_objects-panel__select-all input {\n    margin-right: 5px; }\n    .ontodia-connections-menu_objects-panel__select-all input:disabled {\n      opacity: 0.3; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel {\n  height: 25px;\n  white-space: nowrap;\n  display: flex;\n  justify-content: space-between; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel__count-label {\n  height: 25px;\n  float: left;\n  padding: 0px 5px;\n  font-size: larger;\n  display: flex;\n  align-items: center;\n  max-width: 60%; }\n\n.ontodia-connections-menu_objects-panel_bottom-panel__extra-elements {\n  color: gray;\n  cursor: help; }\n\n.ontodia-btn.ontodia-connections-menu_objects-panel_bottom-panel__add-button {\n  height: 25px;\n  padding-top: 1px;\n  padding-bottom: 2px; }\n\n.ontodia-connections-menu_objects-panel_objects-list {\n  border: 1px solid gray;\n  height: 0;\n  flex-grow: 1;\n  overflow-x: hidden;\n  overflow-y: scroll;\n  padding: 5px;\n  margin-bottom: 5px; }\n\n.ontodia-connections-menu__link {\n  color: #337ab7;\n  cursor: pointer;\n  text-decoration: none; }\n  .ontodia-connections-menu__link:hover {\n    text-decoration: underline; }\n\n.ontodia-dialog {\n  background: #fff;\n  border: 1px solid #333;\n  box-shadow: 0 4px 15px 7px rgba(51, 51, 51, 0.05);\n  position: absolute; }\n  .ontodia-dialog__caption {\n    font-weight: bold;\n    position: absolute;\n    top: -11px;\n    left: 10px;\n    background: white;\n    padding-left: 3px;\n    padding-right: 3px;\n    border-radius: 6px; }\n  .ontodia-dialog__close-button {\n    background: transparent url(" + escape(__webpack_require__(11)) + ");\n    background-size: contain;\n    border: 0 none;\n    cursor: pointer;\n    display: block;\n    outline: none;\n    padding: 0;\n    position: absolute;\n    top: -22px;\n    right: -22px;\n    height: 20px;\n    width: 20px;\n    opacity: 0.5;\n    transition: 0.3s; }\n    .ontodia-dialog__close-button:hover {\n      opacity: 1; }\n\n.ontodia-dialog__bottom-right-handle {\n  position: absolute;\n  bottom: 0;\n  right: 0;\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 0 0 10px 10px;\n  border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent;\n  cursor: nwse-resize; }\n  .ontodia-dialog__bottom-right-handle::before {\n    content: \"\";\n    position: absolute;\n    bottom: -10px;\n    right: 0;\n    width: 0;\n    height: 0;\n    border-style: solid;\n    border-width: 0 0 5px 5px;\n    border-color: transparent transparent rgba(0, 0, 0, 0.38) transparent; }\n  .ontodia-dialog__bottom-right-handle:hover {\n    border-color: transparent transparent rgba(0, 0, 0, 0.5) transparent; }\n\n.ontodia-dialog__bottom-handle, .ontodia-dialog__right-handle {\n  position: absolute;\n  opacity: 0;\n  background-color: black; }\n  .ontodia-dialog__bottom-handle:hover, .ontodia-dialog__right-handle:hover {\n    opacity: 0.1; }\n\n.ontodia-dialog__bottom-handle {\n  bottom: 0;\n  width: 100%;\n  height: 5px;\n  cursor: ns-resize; }\n\n.ontodia-dialog__right-handle {\n  top: 0;\n  right: 0;\n  width: 5px;\n  height: 100%;\n  cursor: ew-resize; }\n\n.ontodia-edit-form {\n  height: 100%;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-edit-form__body {\n    overflow: auto;\n    padding: 10px;\n    flex: 1 1 100%;\n    display: flex;\n    flex-direction: column;\n    position: relative; }\n  .ontodia-edit-form__controls {\n    border-top: 1px solid #ccc;\n    padding: 10px;\n    text-align: right;\n    flex: 0 0 auto; }\n  .ontodia-edit-form__apply-button {\n    margin-right: 5px; }\n  .ontodia-edit-form__form-row {\n    display: block;\n    margin-bottom: 10px; }\n  .ontodia-edit-form__element-selector {\n    flex-grow: 1;\n    display: flex;\n    flex-direction: column; }\n  .ontodia-edit-form__search {\n    flex-shrink: 0;\n    position: relative; }\n  .ontodia-edit-form__search-icon {\n    opacity: 0.6;\n    position: absolute;\n    top: 50%;\n    left: 10px;\n    margin-top: -7px; }\n  .ontodia-edit-form__search-input {\n    padding-left: 33px; }\n  .ontodia-edit-form__existing-elements-list {\n    flex-grow: 1;\n    margin-top: 7px;\n    padding-right: 10px;\n    overflow-y: scroll; }\n  .ontodia-edit-form__separator {\n    margin: 7px 0;\n    overflow: hidden;\n    text-align: center; }\n  .ontodia-edit-form__separator-text {\n    color: #555;\n    display: inline-block;\n    font-size: 13px;\n    position: relative; }\n    .ontodia-edit-form__separator-text:before, .ontodia-edit-form__separator-text:after {\n      content: \"\";\n      border-top: 1px solid;\n      position: absolute;\n      top: 50%;\n      margin: 0 10px;\n      width: 500px; }\n    .ontodia-edit-form__separator-text:before {\n      left: 100%; }\n    .ontodia-edit-form__separator-text:after {\n      right: 100%; }\n  .ontodia-edit-form__progress {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0; }\n  .ontodia-edit-form__control-row {\n    position: relative;\n    padding-bottom: 18px; }\n  .ontodia-edit-form__control-error {\n    color: red;\n    position: absolute;\n    bottom: 0;\n    left: 0; }\n\n.ontodia-halo {\n  position: absolute;\n  pointer-events: none;\n  border: 1.5px dashed #d8956d;\n  border-radius: 2px;\n  box-shadow: 0 0 5px 0 #d8956d inset; }\n  .ontodia-halo__navigate {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: 50%;\n    margin-top: -10px;\n    right: -22px; }\n    .ontodia-halo__navigate:hover {\n      opacity: 1; }\n    .ontodia-halo__navigate[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n    .ontodia-halo__navigate--open {\n      background-image: url(" + escape(__webpack_require__(12)) + "); }\n    .ontodia-halo__navigate--closed {\n      background-image: url(" + escape(__webpack_require__(13)) + "); }\n  .ontodia-halo__folow {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: 50%;\n    margin-top: -10px;\n    left: -22px;\n    background-image: url(" + escape(__webpack_require__(14)) + "); }\n    .ontodia-halo__folow:hover {\n      opacity: 1; }\n    .ontodia-halo__folow[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__remove {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: -22px;\n    right: -22px;\n    background-image: url(" + escape(__webpack_require__(15)) + "); }\n    .ontodia-halo__remove:hover {\n      opacity: 1; }\n    .ontodia-halo__remove[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__expand {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    left: 50%;\n    margin-left: -10px; }\n    .ontodia-halo__expand:hover {\n      opacity: 1; }\n    .ontodia-halo__expand[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n    .ontodia-halo__expand--open {\n      background-image: url(" + escape(__webpack_require__(16)) + "); }\n    .ontodia-halo__expand--closed {\n      background-image: url(" + escape(__webpack_require__(17)) + "); }\n  .ontodia-halo__add-to-filter {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    right: -22px;\n    background-image: url(" + escape(__webpack_require__(8)) + "); }\n    .ontodia-halo__add-to-filter:hover {\n      opacity: 1; }\n    .ontodia-halo__add-to-filter[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__revert {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    top: -22px;\n    left: 50%;\n    margin-left: -10px;\n    background-image: url(" + escape(__webpack_require__(18)) + "); }\n    .ontodia-halo__revert:hover {\n      opacity: 1; }\n    .ontodia-halo__revert[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__establish-connection {\n    position: absolute;\n    background-color: transparent;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    border: 0 none;\n    cursor: pointer;\n    outline: none;\n    padding: 0;\n    pointer-events: auto;\n    width: 20px;\n    height: 20px;\n    opacity: 0.5;\n    transition: opacity 0.3s;\n    bottom: -22px;\n    left: -22px;\n    background-image: url(" + escape(__webpack_require__(19)) + "); }\n    .ontodia-halo__establish-connection:hover {\n      opacity: 1; }\n    .ontodia-halo__establish-connection[disabled] {\n      cursor: not-allowed;\n      opacity: 0.2; }\n  .ontodia-halo__establish-connection-spinner {\n    position: absolute;\n    width: 20px;\n    height: 20px;\n    bottom: -22px;\n    left: -22px; }\n\n.ontodia-halo-link__button {\n  background: transparent;\n  border: 0 none;\n  cursor: pointer;\n  padding: 0;\n  position: absolute;\n  opacity: 0.8;\n  outline: none;\n  transition: opacity 0.3s; }\n  .ontodia-halo-link__button:hover {\n    opacity: 1; }\n  .ontodia-halo-link__button[disabled] {\n    cursor: not-allowed;\n    opacity: 0.5; }\n\n.ontodia-halo-link__edit {\n  background-color: #ccc;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  background-size: 60%;\n  border-radius: 10px;\n  height: 20px;\n  width: 20px;\n  background-image: url(" + escape(__webpack_require__(20)) + "); }\n\n.ontodia-halo-link__delete {\n  background-color: #ccc;\n  background-position: 50%;\n  background-repeat: no-repeat;\n  background-size: 60%;\n  border-radius: 10px;\n  height: 20px;\n  width: 20px;\n  background-image: url(" + escape(__webpack_require__(21)) + "); }\n\n.ontodia-halo-link__spinner {\n  position: absolute; }\n\n.ontodia-halo-link__edit-label-button {\n  background: transparent url(" + escape(__webpack_require__(22)) + ") no-repeat;\n  background-size: cover;\n  border: 0 none;\n  cursor: pointer;\n  padding: 0;\n  position: absolute;\n  margin-left: 5px;\n  outline: none;\n  opacity: 0.5;\n  transition: opacity 0.3s; }\n  .ontodia-halo-link__edit-label-button:hover {\n    opacity: 1; }\n\n.ontodia-instances-search {\n  flex: auto;\n  display: flex;\n  flex-direction: column; }\n  .ontodia-instances-search__criteria {\n    flex-shrink: 0;\n    margin: 10px 0 10px 0; }\n  .ontodia-instances-search__criterions {\n    padding-left: 15px;\n    margin-bottom: 10px; }\n    .ontodia-instances-search__criterions:empty {\n      margin-bottom: 0; }\n  .ontodia-instances-search__criterion {\n    display: block;\n    position: relative;\n    width: 100%; }\n  .ontodia-instances-search__criterion-class {\n    border: black 1px dashed;\n    background: #ffd221;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__criterion-element {\n    border: black 1px dashed;\n    background: #ff835c;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__criterion-link-type {\n    border: black 1px dashed;\n    background: #caffce;\n    padding: 0 .5em 0 .5em;\n    word-wrap: break-word; }\n  .ontodia-instances-search__link-direction {\n    height: 1em;\n    opacity: 0.5; }\n  .ontodia-instances-search__criterion-remove {\n    float: right;\n    margin: 0 10px 4px 4px; }\n  .ontodia-instances-search__text-criteria {\n    margin: 0 10px; }\n  .ontodia-instances-search__rest {\n    padding: 10px 10px 0 10px;\n    border-top: 1px solid #dddddd; }\n  .ontodia-instances-search__results {\n    padding-left: 0;\n    padding-top: 10px;\n    margin: 0 10px 0 10px;\n    outline: none; }\n  .ontodia-instances-search[data-state='finished'] .ontodia-instances-search__results:empty:before {\n    content: 'No items correspond to the specified criteria.';\n    font-style: italic; }\n  .ontodia-instances-search__rest-end {\n    margin: 5px 0 10px 0; }\n  .ontodia-instances-search__load-more {\n    width: 100%; }\n\n.link-types-toolbox {\n  flex: auto;\n  display: flex;\n  flex-direction: column;\n  margin-bottom: 0; }\n  .link-types-toolbox__heading {\n    padding: 10px; }\n  .link-types-toolbox__searching-box {\n    display: flex;\n    align-items: center; }\n  .link-types-toolbox__clearSearch {\n    margin-left: -25px;\n    -webkit-appearance: none;\n    padding: 0;\n    cursor: pointer;\n    background: 0 0;\n    border: 0; }\n  .link-types-toolbox__switch-all {\n    margin-top: 5px; }\n  .link-types-toolbox__rest {\n    border-top: 1px solid #dddddd;\n    flex: auto;\n    display: flex;\n    flex-direction: column; }\n\n.link-types-toolbox .panel-heading {\n  flex-shrink: 0;\n  -webkit-flex-shrink: 0;\n  /* safari 8 */ }\n\n.link-types-toolbox ul {\n  margin-bottom: 0; }\n\n.link-types-toolbox .links-heading {\n  margin-left: .4em; }\n\n.link-types-toolbox .links-heading span {\n  border: black 1px dashed;\n  background: #ff835c;\n  padding: 0 .5em 0 .5em;\n  word-wrap: break-word;\n  line-height: 1.3; }\n\n.link-types-toolbox__heading .link-types-toolbox-controls {\n  padding: 5px 15px;\n  font-size: 14px;\n  font-style: italic; }\n\n.link-types-toolbox__heading .link-types-toolbox-controls > span {\n  padding-left: .3em; }\n\n.ontodia-list-group .linkInToolBox {\n  padding: 0 0 0 5px;\n  word-break: break-word; }\n\n.linkInToolBox > div {\n  display: inline; }\n\n.linkInToolBox__new-tag {\n  margin-left: .5em;\n  white-space: normal;\n  word-wrap: normal;\n  border-radius: 2px;\n  padding: 0 5px;\n  background: orange; }\n\n.linkInToolBox .ontodia-badge {\n  display: none;\n  margin-left: .5em;\n  white-space: normal;\n  word-wrap: normal; }\n\n.linkInToolBox .link-title {\n  font-size: 16px;\n  color: black;\n  display: inline; }\n\n.linkInToolBox .ontodia-btn-group {\n  float: left;\n  margin-top: 2px;\n  margin-right: 6px;\n  margin-bottom: 2px; }\n\n.linkInToolBox .ontodia-btn.ontodia-btn-default {\n  border-color: #c3c3c3; }\n\n.linkInToolBox__filter-button {\n  display: none;\n  float: right;\n  background-image: url(" + escape(__webpack_require__(8)) + ");\n  background-size: 20px 20px;\n  width: 20px;\n  height: 20px;\n  margin: 3px;\n  cursor: pointer;\n  opacity: 0.4;\n  transition: opacity 200ms 0ms; }\n\n.linkInToolBox:hover .linkInToolBox__filter-button {\n  opacity: 1.0;\n  transition: opacity 200ms 0ms; }\n\n.connected-links .linkInToolBox .ontodia-badge {\n  /* show connection count badge only in \"Connected to Element\" list */\n  display: inline; }\n\n.connected-links .linkInToolBox__filter-button {\n  /* show filter button only in \"Connected to Element\" list */\n  display: inline; }\n\n.ontodia-list-element-view {\n  position: relative;\n  display: block;\n  background: #808080;\n  padding: 1px 1px 1px 10px;\n  border-radius: 2px;\n  margin: 0 0 2px 0;\n  opacity: 1.0;\n  cursor: move;\n  user-select: none; }\n  .ontodia-list-element-view--disabled {\n    opacity: 0.4;\n    cursor: default; }\n  .ontodia-list-element-view__label {\n    background: white;\n    border-radius: 0 2px 2px 0;\n    font-family: \"Andale Mono\", sans-serif;\n    font-size: 15px;\n    min-height: 1.3em;\n    padding-left: 7px;\n    padding-right: 5px;\n    overflow-wrap: break-word; }\n\n.ontodia-text-highlight {\n  font-weight: bold; }\n\n.ontodia-navigator {\n  display: block;\n  position: absolute;\n  bottom: 25px;\n  right: 25px;\n  overflow: hidden;\n  background: #fff;\n  border: 1px solid #ddd;\n  box-shadow: 0 4px 15px 7px rgba(51, 51, 51, 0.05);\n  transition: width 0.3s, height 0.3s; }\n  .ontodia .ontodia-navigator {\n    box-sizing: content-box; }\n  .ontodia-navigator--collapsed {\n    width: 26px;\n    height: 26px; }\n  .ontodia-navigator > canvas {\n    transition: opacity 0.3s; }\n  .ontodia-navigator--expanded > canvas {\n    opacity: 1; }\n  .ontodia-navigator--collapsed > canvas {\n    opacity: 0; }\n  .ontodia-navigator__toggle {\n    position: absolute;\n    background: transparent;\n    border: none;\n    outline: none;\n    padding: 4px;\n    opacity: 0.5;\n    transition: opacity 0.3s; }\n    .ontodia-navigator__toggle:hover {\n      opacity: 1; }\n  .ontodia-navigator--expanded .ontodia-navigator__toggle {\n    top: 5px;\n    left: 5px; }\n  .ontodia-navigator--collapsed .ontodia-navigator__toggle {\n    top: 0px;\n    left: 0px; }\n  .ontodia-navigator__toggle-icon {\n    width: 18px;\n    height: 18px;\n    background-size: 18px 18px;\n    background-repeat: no-repeat; }\n  .ontodia-navigator--expanded .ontodia-navigator__toggle-icon {\n    background-image: url(" + escape(__webpack_require__(23)) + "); }\n  .ontodia-navigator--collapsed .ontodia-navigator__toggle-icon {\n    background-image: url(" + escape(__webpack_require__(24)) + "); }\n\n@keyframes ontodia-progress-bar-stripes {\n  from {\n    background-position: 40px 0; }\n  to {\n    background-position: 0 0; } }\n\n.ontodia-progress-bar {\n  flex-shrink: 0;\n  -webkit-flex-shrink: 0;\n  /* safari 8 */\n  width: 100%;\n  background-color: #f5f5f5;\n  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);\n  background-repeat: repeat-x;\n  overflow: hidden;\n  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }\n  .ontodia-progress-bar__bar {\n    float: left;\n    height: 100%;\n    font-size: 12px;\n    line-height: 20px;\n    color: #fff;\n    text-align: center;\n    transition: width .6s ease;\n    background-color: #337ab7;\n    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n    background-repeat: repeat-x;\n    background-size: 40px 40px;\n    animation: ontodia-progress-bar-stripes 2s linear infinite; }\n  .ontodia-progress-bar--error .ontodia-progress-bar__bar {\n    background-color: #E72F2F; }\n  .ontodia-progress-bar--loading, .ontodia-progress-bar--error {\n    /* property name | duration | delay */\n    transition: height 300ms 300ms; }\n  .ontodia-progress-bar--completed {\n    /* property name | duration | delay */\n    transition: height 200ms 0ms; }\n\n.ontodia-search-results {\n  margin: 0;\n  padding: 0;\n  outline: none; }\n\n.ontodia-accordion {\n  flex: auto;\n  display: flex;\n  height: 100%;\n  width: 100%; }\n  .ontodia-accordion--scrollable {\n    overflow: auto; }\n  .ontodia-accordion--vertical {\n    flex-direction: column; }\n  .ontodia-accordion--vertical:not(.ontodia-accordion--resizing) > .ontodia-accordion-item {\n    transition: height 0.3s ease-in-out; }\n\n.ontodia-accordion-item {\n  display: flex;\n  position: relative;\n  flex: auto; }\n  .ontodia-accordion-item--resizing > .ontodia-accordion-item__handle, .ontodia-accordion-item__handle:hover {\n    background: rgba(0, 0, 0, 0.1); }\n  .ontodia-accordion-item--vertical {\n    border-top: 1px solid lightgray; }\n    .ontodia-accordion-item--vertical:first-child {\n      border-top-width: 0; }\n  .ontodia-accordion-item--horizontal {\n    border-right: 1px solid lightgray; }\n    .ontodia-accordion-item--horizontal:last-child {\n      border-right-width: 0; }\n  .ontodia-accordion-item__handle {\n    position: absolute;\n    z-index: 2; }\n  .ontodia-accordion-item__handle-vertical {\n    height: 5px;\n    bottom: -2.5px;\n    left: 0;\n    width: 100%;\n    cursor: ns-resize; }\n  .ontodia-accordion-item__handle-horizontal {\n    height: 100%;\n    top: 0;\n    right: -2.5px;\n    width: 5px;\n    cursor: ew-resize; }\n  .ontodia-accordion-item__handle-btn {\n    background: #fff;\n    border: 2px solid #17b;\n    box-shadow: 0 0 0 1px rgba(9, 30, 66, 0.08), 0 2px 4px 1px rgba(9, 30, 66, 0.08);\n    border-radius: 10px;\n    cursor: pointer;\n    height: 20px;\n    position: absolute;\n    top: 50%;\n    margin-top: -10px;\n    width: 20px;\n    z-index: 20;\n    transition: 0.3s; }\n    .ontodia-accordion-item__handle-btn::before {\n      background-position: 0 0;\n      background-repeat: no-repeat;\n      background-size: cover;\n      content: \"\";\n      height: 8px;\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -4px;\n      margin-left: -4px;\n      width: 8px;\n      transition: background 0.3s; }\n    .ontodia-accordion-item__handle-btn:hover {\n      background: #17b; }\n  .ontodia-accordion-item__handle-btn-left {\n    left: 100%;\n    margin-left: -10px; }\n    .ontodia-accordion-item__handle-btn-left:before {\n      background-image: url(" + escape(__webpack_require__(25)) + "); }\n    .ontodia-accordion-item__handle-btn-left:hover:before {\n      background-image: url(" + escape(__webpack_require__(26)) + "); }\n  .ontodia-accordion-item__handle-btn-right {\n    right: 100%;\n    margin-right: -10px; }\n    .ontodia-accordion-item__handle-btn-right:before {\n      background-image: url(" + escape(__webpack_require__(27)) + "); }\n    .ontodia-accordion-item__handle-btn-right:hover:before {\n      background-image: url(" + escape(__webpack_require__(28)) + "); }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__handle-btn:before {\n    transform: rotate(180deg); }\n  .ontodia-accordion-item__inner {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden; }\n  .ontodia-accordion-item__body {\n    flex: 1 1 0px;\n    display: flex;\n    flex-direction: column; }\n  .ontodia-accordion-item__header {\n    padding-left: 20px;\n    position: relative;\n    flex-shrink: 0;\n    font-size: 16px;\n    background: #E4E4E4;\n    cursor: default;\n    /* unselectable */\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none; }\n    .ontodia-accordion-item__header:before {\n      border-top: 6px solid #555555;\n      border-left: 3.5px solid transparent;\n      border-right: 3.5px solid transparent;\n      content: \"\";\n      position: absolute;\n      top: 50%;\n      left: 7px;\n      margin-top: -3px;\n      -webkit-transition: 0.1s;\n      -moz-transition: 0.1s;\n      transition: 0.1s; }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__header:before {\n    -webkit-transform: rotate(-90deg);\n    -moz-transform: rotate(-90deg);\n    -ms-transform: rotate(-90deg);\n    transform: rotate(-90deg); }\n  .ontodia-accordion-item--collapsed .ontodia-accordion-item__body {\n    display: none; }\n\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle,\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle {\n  height: 8px;\n  width: 100%;\n  top: initial;\n  left: 0;\n  cursor: ns-resize; }\n\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn,\n.ontodia-drag-resizable-column.ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn {\n  height: 100%;\n  width: 40px;\n  top: 0;\n  left: 50%;\n  margin-left: -20px;\n  margin-top: 0px; }\n\n.ontodia-drag-resizable-column {\n  display: flex;\n  flex-direction: column;\n  position: relative; }\n  .ontodia-drag-resizable-column__handle {\n    background: #fff url(" + escape(__webpack_require__(29)) + ") repeat;\n    width: 8px;\n    height: 100%;\n    position: absolute;\n    top: 0;\n    left: initial;\n    z-index: 2;\n    -webkit-transition: 0.3s;\n    -moz-transition: 0.3s;\n    transition: 0.3s;\n    cursor: ew-resize; }\n  .ontodia-drag-resizable-column__handle-btn {\n    background: #eee;\n    cursor: pointer;\n    height: 40px;\n    position: absolute;\n    top: 50%;\n    left: 0;\n    margin-top: -20px;\n    width: 100%;\n    z-index: 1;\n    -webkit-transition: 0.3s;\n    -moz-transition: 0.3s;\n    transition: 0.3s; }\n    .ontodia-drag-resizable-column__handle-btn::before {\n      background-position: 0 0;\n      background-repeat: no-repeat;\n      background-size: cover;\n      content: \"\";\n      height: 6px;\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      margin-top: -3px;\n      margin-left: -3px;\n      width: 6px;\n      -webkit-transition: 0.3s;\n      -moz-transition: 0.3s;\n      transition: 0.3s; }\n    .ontodia-drag-resizable-column__handle-btn:hover {\n      background: #b3b3b3;\n      transform: scale(1.2); }\n  .ontodia-drag-resizable-column--closed .ontodia-drag-resizable-column__handle-btn::before {\n    transform: rotate(180deg); }\n  .ontodia-drag-resizable-column--docked-left {\n    margin-right: 8px; }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle {\n    right: -8px; }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(25)) + "); }\n  .ontodia-drag-resizable-column--docked-left .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(26)) + "); }\n  .ontodia-drag-resizable-column--docked-right {\n    margin-left: 8px; }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle {\n    left: -8px; }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(27)) + "); }\n  .ontodia-drag-resizable-column--docked-right .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(28)) + "); }\n  .ontodia-drag-resizable-column--docked-top {\n    margin-bottom: 8px; }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle {\n    bottom: -8px; }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(30)) + "); }\n  .ontodia-drag-resizable-column--docked-top .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(31)) + "); }\n  .ontodia-drag-resizable-column--docked-bottom {\n    margin-top: 8px; }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle {\n    top: -8px; }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn::before {\n    background-image: url(" + escape(__webpack_require__(32)) + "); }\n  .ontodia-drag-resizable-column--docked-bottom .ontodia-drag-resizable-column__handle-btn:hover::before {\n    background-image: url(" + escape(__webpack_require__(33)) + "); }\n\n.introjs-tooltiptext {\n  color: #333;\n  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  font-size: 14px;\n  line-height: 1.42857; }\n\n.ontodia-toolbar__language-selector {\n  margin-left: 5px;\n  margin-right: 5px; }\n  .ontodia-toolbar__language-selector > label {\n    margin-right: 5px; }\n    .ontodia-toolbar__language-selector > label > span {\n      vertical-align: middle; }\n  .ontodia-toolbar__language-selector > select {\n    height: 30px; }\n\n.ontodia-toolbar__toggle {\n  line-height: 1; }\n\n.ontodia-toolbar__toggle:after {\n  background-position: 0 0;\n  background-repeat: no-repeat;\n  content: '';\n  display: block;\n  height: 12px;\n  margin: 3px 0;\n  width: 12px; }\n\n.ontodia-toolbar__toggle-left:after {\n  background-image: url(" + escape(__webpack_require__(34)) + "); }\n\n.ontodia-toolbar__toggle-right:after {\n  background-image: url(" + escape(__webpack_require__(35)) + "); }\n\n.ontodia-toolbar__toggle.active {\n  border-color: #c3c3c3; }\n\n.ontodia-toolbar__toggle-left.active:after {\n  background-image: url(" + escape(__webpack_require__(36)) + "); }\n\n.ontodia-toolbar__toggle-right.active:after {\n  background-image: url(" + escape(__webpack_require__(37)) + "); }\n\n.ontodia-toolbar__layout-group {\n  float: left;\n  margin-left: 5px;\n  height: 30px; }\n  .ontodia-toolbar__layout-group > label {\n    margin-right: 5px; }\n  .ontodia-toolbar__layout-group .btn-group, .ontodia-toolbar__layout-group button {\n    height: 100%; }\n\n.ontodia-toolbar .ontodia-toolbar__undo,\n.ontodia-toolbar .ontodia-toolbar__redo {\n  display: none; }\n\n.ontodia {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  box-sizing: border-box;\n  white-space: initial;\n  color: #333;\n  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;\n  font-size: 14px;\n  line-height: 1.42857; }\n  .ontodia *, .ontodia *:before, .ontodia *:after {\n    box-sizing: inherit; }\n  .ontodia__toolbar-widget {\n    position: absolute;\n    left: 10px;\n    top: 10px; }\n  .ontodia__workspace {\n    display: flex;\n    flex: auto;\n    overflow: hidden;\n    flex-direction: column; }\n  .ontodia__main-panel {\n    display: flex;\n    flex: auto;\n    overflow: hidden;\n    width: 0; }\n  .ontodia--unselectable {\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none; }\n  .ontodia--horizontal-resizing * {\n    cursor: ew-resize !important; }\n  .ontodia--vertical-resizing * {\n    cursor: ns-resize !important; }\n  .ontodia h4 {\n    font-size: 18px;\n    font-weight: 500;\n    line-height: 1.1;\n    margin-top: 10px;\n    margin-bottom: 10px; }\n  .ontodia select {\n    color: inherit;\n    margin: 0;\n    font: inherit;\n    line-height: inherit;\n    text-transform: none; }\n  .ontodia hr {\n    border: 0;\n    border-top: 1px solid #eee;\n    height: 0; }\n\n.ontodia-scrollable {\n  flex: 1 1 0px;\n  overflow-y: scroll; }\n\n.ontodia-scrollable > * {\n  position: relative; }\n\n.jstree-icon.jstree-themeicon.jstree-themeicon-custom {\n  background-size: contain !important; }\n\n.ontodia-default-template, .ontodia-group-template__wrap {\n  max-width: 450px;\n  float: left;\n  border-radius: 12px;\n  border-style: solid;\n  border-width: 1px; }\n  .ontodia-default-template__thumbnail {\n    text-align: center; }\n    .ontodia-default-template__thumbnail > img {\n      max-width: 200px; }\n  .ontodia-default-template[data-expanded='true'] .ontodia-default-template__thumbnail > img, .ontodia-group-template__wrap[data-expanded='true'] .ontodia-default-template__thumbnail > img {\n    max-width: 350px; }\n\n.ontodia-default-template_type-line, .ontodia-group-template__type-line {\n  padding: 0px 7px;\n  color: white;\n  height: 18px;\n  margin-bottom: 2px;\n  overflow: hidden;\n  display: flex;\n  align-items: baseline;\n  margin-top: -3px; }\n\ndiv.ontodia-default-template_type-line__icon, div.ontodia-group-template__type-line-icon {\n  position: inherit !important;\n  margin-right: 4px; }\n\n.ontodia-default-template_type-line_text-container, .ontodia-group-template__type-line-text-container {\n  flex-grow: 1;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  width: 0; }\n\n.ontodia-default-template_type-line_text-container__text, .ontodia-group-template__type-line-text {\n  display: inline;\n  white-space: nowrap;\n  font-size: 12px; }\n\n.ontodia-default-template_body, .ontodia-group-template__body {\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  border-top-style: solid;\n  border-top-width: 1px;\n  background: white;\n  padding: 7px 10px 8px 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column; }\n\n.ontodia-default-template_body__label, .ontodia-group-template__label {\n  font-size: 19px;\n  font-weight: 100;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin-bottom: 0;\n  white-space: nowrap;\n  word-wrap: break-word; }\n\n.ontodia-default-template_body_expander {\n  width: 100%;\n  overflow: hidden;\n  display: flex; }\n\n.ontodia-default-template_body_expander__iri_label {\n  font-size: 12px;\n  font-weight: 100;\n  margin-right: 15px;\n  color: #b6b6b6; }\n\n.ontodia-default-template_body_expander_iri {\n  font-size: 12px;\n  width: 100%;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.ontodia-default-template_body_expander_iri__link {\n  color: #b6b6b6; }\n\n.ontodia-default-template_body_expander__hr {\n  margin: 5px 0px 5px 0px; }\n\n.ontodia-default-template_body_expander_property-table {\n  font-size: 15px;\n  font-weight: 100;\n  margin-bottom: 5px;\n  max-height: 200px;\n  overflow-y: scroll;\n  overflow-x: hidden; }\n\n.ontodia-default-template_body_expander_property-table_row {\n  white-space: nowrap; }\n\n.ontodia-default-template_body_expander_property-table_row__key {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  vertical-align: top; }\n\n.ontodia-default-template_body_expander_property-table_row_key {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden;\n  vertical-align: top; }\n\n.ontodia-default-template_body_expander_property-table_row_key_values {\n  display: inline-block;\n  width: 50%;\n  text-overflow: ellipsis;\n  overflow: hidden; }\n\n.ontodia-default-template_body_expander_property-table_row_key_values__value {\n  width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: initial;\n  padding-right: 10px; }\n\n.ontodia-group-template {\n  overflow: hidden; }\n  .ontodia-group-template__wrap {\n    max-width: none; }\n  .ontodia-group-template__body {\n    overflow: visible; }\n  .ontodia-group-template__embedded-layer {\n    margin-top: 7px; }\n  .ontodia-group-template .ontodia-paper__canvas {\n    border-color: #fff; }\n\n.ontodia-standard-template {\n  min-width: 180px;\n  max-width: 400px;\n  float: left; }\n  .ontodia-standard-template__main {\n    border-radius: 2px;\n    border: 1px solid; }\n  .ontodia-standard-template__body {\n    margin-left: 8px;\n    border-radius: 0 2px 2px 0;\n    border-left: 1px solid;\n    padding: 3px 0;\n    background: #fafaf9; }\n  .ontodia-standard-template__body-horizontal {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    overflow: hidden; }\n  .ontodia-standard-template__body-content {\n    flex-grow: 1;\n    min-width: 0;\n    margin-right: 12px; }\n  .ontodia-standard-template__label {\n    font-size: 19px;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__thumbnail {\n    font-size: 26px;\n    margin: 5px 10px;\n    flex-shrink: 0;\n    width: 50px;\n    height: 50px;\n    display: flex;\n    justify-content: center;\n    align-items: center; }\n  .ontodia-standard-template__thumbnail-image {\n    max-height: 100%;\n    max-width: 100%; }\n  .ontodia-standard-template__thumbnail-icon {\n    max-height: 26px;\n    max-width: 26px; }\n  .ontodia-standard-template__photo {\n    border-bottom: 1px solid; }\n  .ontodia-standard-template__photo-image {\n    width: 100%;\n    border-radius: 2px 2px 0 0; }\n  .ontodia-standard-template__type {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    font-size: 11px;\n    font-style: italic;\n    color: #999;\n    display: flex; }\n  .ontodia-standard-template__type-value {\n    width: 0;\n    flex-grow: 1;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__iri {\n    width: 100%;\n    overflow: hidden;\n    display: flex; }\n  .ontodia-standard-template__iri-key {\n    font-size: 12px;\n    margin-right: 4px;\n    color: #b6b6b6; }\n  .ontodia-standard-template__iri-value {\n    font-size: 12px;\n    width: 100%;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis; }\n  .ontodia-standard-template__iri-value a {\n    color: #b6b6b6; }\n  .ontodia-standard-template__hr {\n    margin: 5px 0; }\n  .ontodia-standard-template__properties {\n    font-size: 15px;\n    max-height: 200px;\n    overflow-y: scroll;\n    overflow-x: hidden; }\n  .ontodia-standard-template__propertites-row {\n    white-space: nowrap; }\n  .ontodia-standard-template__properties-key {\n    display: inline-block;\n    width: 50%;\n    text-overflow: ellipsis;\n    overflow: hidden;\n    vertical-align: top; }\n  .ontodia-standard-template__properties-values {\n    display: inline-block;\n    width: 50%;\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .ontodia-standard-template__properties-value {\n    width: 100%;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: initial;\n    padding-right: 10px; }\n  .ontodia-standard-template__pinned-props {\n    border-top: 1px solid;\n    margin: 0 5px; }\n  .ontodia-standard-template__dropdown {\n    border-radius: 2px;\n    background-color: white;\n    margin-top: 5px;\n    border: 1px solid; }\n  .ontodia-standard-template__dropdown-content {\n    width: 100%;\n    padding: 9px; }\n  .ontodia-standard-template__actions {\n    display: flex;\n    justify-content: space-between; }\n    .ontodia-standard-template__actions button {\n      padding: 5px;\n      min-width: 60px; }\n", ""]);
 
 // exports
 
@@ -1392,7 +1394,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 tslib_1.__exportStar(__webpack_require__(44), exports);
 tslib_1.__exportStar(__webpack_require__(49), exports);
-tslib_1.__exportStar(__webpack_require__(85), exports);
+tslib_1.__exportStar(__webpack_require__(84), exports);
 exports.DefaultElementTemplateBundle = function (types) { return undefined; };
 
 
@@ -1710,11 +1712,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var paper_1 = __webpack_require__(51);
-var paperArea_1 = __webpack_require__(82);
+var paperArea_1 = __webpack_require__(81);
 var elements_1 = __webpack_require__(52);
-var elementLayer_1 = __webpack_require__(57);
+var elementLayer_1 = __webpack_require__(56);
 var events_1 = __webpack_require__(54);
-var paperArea_2 = __webpack_require__(82);
+var paperArea_2 = __webpack_require__(81);
 var EmbeddedLayer = /** @class */ (function (_super) {
     tslib_1.__extends(EmbeddedLayer, _super);
     function EmbeddedLayer(props) {
@@ -1906,8 +1908,8 @@ var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var react_1 = __webpack_require__(45);
 var elements_1 = __webpack_require__(52);
-var elementLayer_1 = __webpack_require__(57);
-var linkLayer_1 = __webpack_require__(81);
+var elementLayer_1 = __webpack_require__(56);
+var linkLayer_1 = __webpack_require__(80);
 var CLASS_NAME = 'ontodia-paper';
 var Paper = /** @class */ (function (_super) {
     tslib_1.__extends(Paper, _super);
@@ -2045,7 +2047,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var schema_1 = __webpack_require__(53);
 var events_1 = __webpack_require__(54);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var LinkDirection;
 (function (LinkDirection) {
     LinkDirection["in"] = "in";
@@ -2496,16 +2498,15 @@ var TemplateProperties;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var collections_1 = __webpack_require__(55);
 var EventSource = /** @class */ (function () {
     function EventSource() {
-        this.listeners = collections_1.createStringMap();
+        this.listeners = new Map();
     }
     EventSource.prototype.on = function (eventKey, listener) {
-        var listeners = this.listeners[eventKey];
+        var listeners = this.listeners.get(eventKey);
         if (!listeners) {
             listeners = [];
-            this.listeners[eventKey] = listeners;
+            this.listeners.set(eventKey, listeners);
         }
         listeners.push(listener);
     };
@@ -2518,7 +2519,7 @@ var EventSource = /** @class */ (function () {
         listeners.push(listener);
     };
     EventSource.prototype.off = function (eventKey, listener) {
-        var listeners = this.listeners[eventKey];
+        var listeners = this.listeners.get(eventKey);
         if (!listeners) {
             return;
         }
@@ -2539,7 +2540,7 @@ var EventSource = /** @class */ (function () {
     };
     EventSource.prototype.trigger = function (eventKey, data) {
         var _a;
-        var listeners = this.listeners[eventKey];
+        var listeners = this.listeners.get(eventKey);
         if (listeners) {
             for (var _i = 0, listeners_1 = listeners; _i < listeners_1.length; _i++) {
                 var listener = listeners_1[_i];
@@ -2558,7 +2559,7 @@ var EventSource = /** @class */ (function () {
 exports.EventSource = EventSource;
 var EventObserver = /** @class */ (function () {
     function EventObserver() {
-        this.unsubscribeByKey = collections_1.createStringMap();
+        this.unsubscribeByKey = new Map();
         this.onDispose = [];
     }
     EventObserver.prototype.listen = function (events, eventKey, listener) {
@@ -2590,17 +2591,13 @@ var EventObserver = /** @class */ (function () {
             unsubscribe();
         }
         this.onDispose.length = 0;
-        for (var key in this.unsubscribeByKey) {
-            if (!collections_1.hasOwnProperty(this.unsubscribeByKey, key)) {
-                continue;
-            }
-            var unsubscribers = this.unsubscribeByKey[key];
-            for (var _b = 0, unsubscribers_1 = unsubscribers; _b < unsubscribers_1.length; _b++) {
-                var unsubscribe = unsubscribers_1[_b];
+        this.unsubscribeByKey.forEach(function (unsubscribers) {
+            for (var _i = 0, unsubscribers_1 = unsubscribers; _i < unsubscribers_1.length; _i++) {
+                var unsubscribe = unsubscribers_1[_i];
                 unsubscribe();
             }
-        }
-        this.unsubscribeByKey = {};
+        });
+        this.unsubscribeByKey.clear();
     };
     return EventObserver;
 }());
@@ -2609,244 +2606,6 @@ exports.EventObserver = EventObserver;
 
 /***/ }),
 /* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(1);
-function createStringMap() {
-    var map = Object.create(null);
-    // tslint:disable-next-line:no-string-literal
-    delete map['hint'];
-    return map;
-}
-exports.createStringMap = createStringMap;
-function createNumberMap() {
-    return createStringMap();
-}
-exports.createNumberMap = createNumberMap;
-function hasOwnProperty(collection, key) {
-    return Object.prototype.hasOwnProperty.call(collection, key);
-}
-exports.hasOwnProperty = hasOwnProperty;
-function objectValues(obj) {
-    var items = [];
-    for (var key in obj) {
-        if (!Object.hasOwnProperty.call(obj, key)) {
-            continue;
-        }
-        items.push(obj[key]);
-    }
-    return items;
-}
-exports.objectValues = objectValues;
-function isEmptyMap(map) {
-    for (var key in map) {
-        if (hasOwnProperty(map, key)) {
-            return false;
-        }
-    }
-    return true;
-}
-exports.isEmptyMap = isEmptyMap;
-/**
- * Clones Map collection. Required due to IE11 not supporing `new Map(map)`.
- */
-function cloneMap(map) {
-    var clone = new Map();
-    map.forEach(function (value, key) { return clone.set(key, value); });
-    return clone;
-}
-exports.cloneMap = cloneMap;
-/**
- * Clones Set collection. Required due to IE11 not supporing `new Set(set)`.
- */
-function cloneSet(set) {
-    var clone = new Set();
-    set.forEach(function (item) { return clone.add(item); });
-    return clone;
-}
-exports.cloneSet = cloneSet;
-function getOrCreateArrayInMap(map, key) {
-    var values = map.get(key);
-    if (!values) {
-        values = [];
-        map.set(key, values);
-    }
-    return values;
-}
-exports.getOrCreateArrayInMap = getOrCreateArrayInMap;
-function getOrCreateSetInMap(map, key) {
-    var values = map.get(key);
-    if (!values) {
-        values = new Set();
-        map.set(key, values);
-    }
-    return values;
-}
-exports.getOrCreateSetInMap = getOrCreateSetInMap;
-var OrderedMap = /** @class */ (function () {
-    function OrderedMap() {
-        this.mapping = createStringMap();
-        this.ordered = [];
-    }
-    OrderedMap.prototype.reorder = function (compare) {
-        this.ordered.sort(compare);
-    };
-    Object.defineProperty(OrderedMap.prototype, "items", {
-        get: function () {
-            return this.ordered;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    OrderedMap.prototype.get = function (key) {
-        return this.mapping[key];
-    };
-    OrderedMap.prototype.push = function (key, value) {
-        if (key in this.mapping) {
-            var previous = this.mapping[key];
-            if (previous === value) {
-                return;
-            }
-            var index = this.ordered.indexOf(previous);
-            this.ordered.splice(index, 1);
-        }
-        this.mapping[key] = value;
-        this.ordered.push(value);
-    };
-    OrderedMap.prototype.delete = function (key) {
-        if (!(key in this.mapping)) {
-            return undefined;
-        }
-        var previous = this.mapping[key];
-        var index = this.ordered.indexOf(previous);
-        this.ordered.splice(index, 1);
-        delete this.mapping[key];
-        return previous;
-    };
-    return OrderedMap;
-}());
-exports.OrderedMap = OrderedMap;
-var HashMap = /** @class */ (function () {
-    function HashMap(hashCode, equals) {
-        this.hashCode = hashCode;
-        this.equals = equals;
-        this.map = new Map();
-        this._size = 0;
-    }
-    Object.defineProperty(HashMap.prototype, "size", {
-        get: function () {
-            return this._size;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    HashMap.prototype.has = function (key) {
-        var _this = this;
-        var items = this.map.get(this.hashCode(key));
-        if (!items) {
-            return false;
-        }
-        return Boolean(items.find(function (p) { return _this.equals(p.key, key); }));
-    };
-    HashMap.prototype.get = function (key) {
-        var _this = this;
-        var items = this.map.get(this.hashCode(key));
-        if (!items) {
-            return undefined;
-        }
-        var pair = items.find(function (p) { return _this.equals(p.key, key); });
-        return pair ? pair.value : undefined;
-    };
-    HashMap.prototype.set = function (key, value) {
-        var _this = this;
-        var hash = this.hashCode(key);
-        var items = this.map.get(hash);
-        if (items) {
-            var index = items.findIndex(function (p) { return _this.equals(p.key, key); });
-            if (index >= 0) {
-                items.splice(index, 1);
-            }
-            else {
-                this._size++;
-            }
-            items.push({ key: key, value: value });
-        }
-        else {
-            items = [{ key: key, value: value }];
-            this.map.set(hash, items);
-            this._size++;
-        }
-        return this;
-    };
-    HashMap.prototype.delete = function (key) {
-        var _this = this;
-        var items = this.map.get(this.hashCode(key));
-        if (!items) {
-            return false;
-        }
-        var index = items.findIndex(function (p) { return _this.equals(p.key, key); });
-        if (index >= 0) {
-            items.splice(index, 1);
-            this._size--;
-            return true;
-        }
-        else {
-            return false;
-        }
-    };
-    HashMap.prototype.clear = function () {
-        this.map.clear();
-        this._size = 0;
-    };
-    HashMap.prototype.forEach = function (callback) {
-        var _this = this;
-        this.map.forEach(function (items) {
-            for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
-                var _a = items_1[_i], key = _a.key, value = _a.value;
-                callback(value, key, _this);
-            }
-        });
-    };
-    HashMap.prototype.clone = function () {
-        var clone = new HashMap(this.hashCode, this.equals);
-        clone._size = this.size;
-        this.map.forEach(function (value, key) { return clone.map.set(key, tslib_1.__spreadArrays(value)); });
-        return clone;
-    };
-    return HashMap;
-}());
-exports.HashMap = HashMap;
-var MoveDirection;
-(function (MoveDirection) {
-    MoveDirection[MoveDirection["ToStart"] = -1] = "ToStart";
-    MoveDirection[MoveDirection["ToEnd"] = 1] = "ToEnd";
-})(MoveDirection = exports.MoveDirection || (exports.MoveDirection = {}));
-function makeMoveComparator(items, selected, moveDirection) {
-    var orderMap = new Map();
-    var selectionIndexOffset = moveDirection * items.length;
-    items.forEach(function (item, index) {
-        orderMap.set(item, index);
-    });
-    for (var _i = 0, selected_1 = selected; _i < selected_1.length; _i++) {
-        var selectedItem = selected_1[_i];
-        orderMap.set(selectedItem, selectionIndexOffset + orderMap.get(selectedItem));
-    }
-    return function (a, b) {
-        var orderA = orderMap.get(a);
-        var orderB = orderMap.get(b);
-        return (orderA > orderB ? 1 :
-            orderA < orderB ? -1 :
-                0);
-    };
-}
-exports.makeMoveComparator = makeMoveComparator;
-
-
-/***/ }),
-/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3017,6 +2776,20 @@ function findNearestSegmentIndex(polyline, location) {
     return foundIndex;
 }
 exports.findNearestSegmentIndex = findNearestSegmentIndex;
+function findElementAtPoint(elements, point) {
+    for (var i = elements.length - 1; i >= 0; i--) {
+        var element = elements[i];
+        var _a = boundsOf(element), x = _a.x, y = _a.y, width = _a.width, height = _a.height;
+        if (element.temporary) {
+            continue;
+        }
+        if (point.x >= x && point.x <= x + width && point.y >= y && point.y <= y + height) {
+            return element;
+        }
+    }
+    return undefined;
+}
+exports.findElementAtPoint = findElementAtPoint;
 function computeGrouping(elements) {
     var grouping = new Map();
     for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
@@ -3037,7 +2810,7 @@ exports.computeGrouping = computeGrouping;
 
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3045,14 +2818,14 @@ exports.computeGrouping = computeGrouping;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var react_dom_1 = __webpack_require__(58);
-var d3_color_1 = __webpack_require__(59);
-var async_1 = __webpack_require__(60);
+var react_dom_1 = __webpack_require__(57);
+var d3_color_1 = __webpack_require__(58);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
-var react_1 = __webpack_require__(61);
-var keyedObserver_1 = __webpack_require__(62);
-var commands_1 = __webpack_require__(63);
-var view_1 = __webpack_require__(65);
+var react_1 = __webpack_require__(60);
+var keyedObserver_1 = __webpack_require__(61);
+var commands_1 = __webpack_require__(62);
+var view_1 = __webpack_require__(64);
 // tslint:disable:no-bitwise
 var RedrawFlags;
 (function (RedrawFlags) {
@@ -3139,8 +2912,15 @@ var ElementLayer = /** @class */ (function (_super) {
     ElementLayer.prototype.componentDidMount = function () {
         var _this = this;
         var view = this.props.view;
-        this.listener.listen(view.model.events, 'changeCells', function () {
-            _this.requestRedrawAll(RedrawFlags.None);
+        this.listener.listen(view.model.events, 'changeCells', function (e) {
+            if (e.updateAll) {
+                _this.requestRedrawAll(RedrawFlags.None);
+            }
+            else {
+                if (e.changedElement) {
+                    _this.requestRedraw(e.changedElement, RedrawFlags.None);
+                }
+            }
         });
         this.listener.listen(view.events, 'changeLanguage', function () {
             _this.requestRedrawAll(RedrawFlags.RecomputeTemplate);
@@ -3398,6 +3178,12 @@ function computeIsBlurred(element, view) {
 
 
 /***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__57__;
+
+/***/ }),
 /* 58 */
 /***/ (function(module, exports) {
 
@@ -3405,12 +3191,6 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__58__;
 
 /***/ }),
 /* 59 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__59__;
-
-/***/ }),
-/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3551,9 +3331,35 @@ var Cancellation = /** @class */ (function () {
     return Cancellation;
 }());
 exports.Cancellation = Cancellation;
+var CancellationToken;
+(function (CancellationToken) {
+    function throwIfAborted(ct) {
+        if (ct.aborted) {
+            throw new CancelledError();
+        }
+    }
+    CancellationToken.throwIfAborted = throwIfAborted;
+    function mapCancelledToNull(ct, promise) {
+        var onResolve = function (value) {
+            if (ct.aborted) {
+                return null;
+            }
+            return value;
+        };
+        var onReject = function (err) {
+            if (ct.aborted) {
+                return null;
+            }
+            return Promise.reject(err);
+        };
+        return promise.then(onResolve, onReject);
+    }
+    CancellationToken.mapCancelledToNull = mapCancelledToNull;
+})(CancellationToken = exports.CancellationToken || (exports.CancellationToken = {}));
 var CancelledError = /** @class */ (function (_super) {
     tslib_1.__extends(CancelledError, _super);
     function CancelledError(message) {
+        if (message === void 0) { message = 'Operation was cancelled'; }
         var _this = _super.call(this, message) || this;
         _this.name = CancelledError.name;
         Object.setPrototypeOf(_this, CancelledError.prototype);
@@ -3608,7 +3414,7 @@ exports.easeInOutBezier = easeInOutBezier;
 
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3621,7 +3427,7 @@ var PropTypes;
 
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3697,7 +3503,7 @@ exports.observeLinkTypes = observeLinkTypes;
 
 
 /***/ }),
-/* 63 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3705,8 +3511,8 @@ exports.observeLinkTypes = observeLinkTypes;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var model_1 = __webpack_require__(47);
-var geometry_1 = __webpack_require__(56);
-var history_1 = __webpack_require__(64);
+var geometry_1 = __webpack_require__(55);
+var history_1 = __webpack_require__(63);
 var RestoreGeometry = /** @class */ (function () {
     function RestoreGeometry(elementState, linkState) {
         this.elementState = elementState;
@@ -3811,7 +3617,7 @@ exports.setLinkData = setLinkData;
 
 
 /***/ }),
-/* 64 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3878,22 +3684,22 @@ exports.NonRememberingHistory = NonRememberingHistory;
 
 
 /***/ }),
-/* 65 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var d3_color_1 = __webpack_require__(59);
-var lodash_1 = __webpack_require__(66);
-var defaultTypeStyles_1 = __webpack_require__(67);
-var defaultLinkStyles_1 = __webpack_require__(77);
+var d3_color_1 = __webpack_require__(58);
+var lodash_1 = __webpack_require__(65);
+var defaultTypeStyles_1 = __webpack_require__(66);
+var defaultLinkStyles_1 = __webpack_require__(76);
 var templates_1 = __webpack_require__(43);
-var blankNodes_1 = __webpack_require__(78);
+var blankNodes_1 = __webpack_require__(77);
 var utils_1 = __webpack_require__(48);
 var events_1 = __webpack_require__(54);
-var geometry_1 = __webpack_require__(56);
-var linkRouter_1 = __webpack_require__(80);
+var geometry_1 = __webpack_require__(55);
+var linkRouter_1 = __webpack_require__(79);
 var IriClickIntent;
 (function (IriClickIntent) {
     IriClickIntent["JumpToEntity"] = "jumpToEntity";
@@ -4156,27 +3962,27 @@ function resolveLabel(label, fallbackIri) {
 
 
 /***/ }),
-/* 66 */
+/* 65 */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__66__;
+module.exports = __WEBPACK_EXTERNAL_MODULE__65__;
 
 /***/ }),
-/* 67 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var classIcon = __webpack_require__(68);
-var objectPropertyIcon = __webpack_require__(69);
-var datatypePropertyIcon = __webpack_require__(70);
-var personIcon = __webpack_require__(71);
-var countryIcon = __webpack_require__(72);
-var organizationIcon = __webpack_require__(73);
-var locationIcon = __webpack_require__(74);
-var eventIcon = __webpack_require__(75);
-var objectIcon = __webpack_require__(76);
+var classIcon = __webpack_require__(67);
+var objectPropertyIcon = __webpack_require__(68);
+var datatypePropertyIcon = __webpack_require__(69);
+var personIcon = __webpack_require__(70);
+var countryIcon = __webpack_require__(71);
+var organizationIcon = __webpack_require__(72);
+var locationIcon = __webpack_require__(73);
+var eventIcon = __webpack_require__(74);
+var objectIcon = __webpack_require__(75);
 exports.DefaultTypeStyleBundle = function (types) {
     if (types.indexOf('http://www.w3.org/2002/07/owl#Class') !== -1 ||
         types.indexOf('http://www.w3.org/2000/01/rdf-schema#Class') !== -1) {
@@ -4217,61 +4023,61 @@ exports.DefaultTypeStyleBundle = function (types) {
 
 
 /***/ }),
-/* 68 */
+/* 67 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNiAyNiI+CiAgICA8dGV4dCB4PSIzIiB5PSIyMiIgY2xhc3M9InRleHQiIGZpbGw9IiNlYWFjNzciCiAgICAgICAgc3R5bGU9ImZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCAnSGVsdmV0aWNhJywgJ0FyaWFsJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAyNnB4OyBmb250LXdlaWdodDogYm9sZDsiPgogICAgICAgIEMKICAgIDwvdGV4dD4KPC9zdmc+Cg=="
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNiAyNiI+CiAgICA8dGV4dCB4PSIwIiB5PSIyMCIgY2xhc3M9InRleHQiIGZpbGw9IiMzNGM3ZjMiCiAgICAgICAgc3R5bGU9ImZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCAnSGVsdmV0aWNhJywgJ0FyaWFsJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxOHB4OyBmb250LXdlaWdodDogYm9sZDsiPgogICAgICAgIE9QCiAgICA8L3RleHQ+Cjwvc3ZnPgo="
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNiAyNiI+CiAgICA8dGV4dCB4PSIwIiB5PSIyMCIgY2xhc3M9InRleHQiIGZpbGw9IiMzNGM3ZjMiCiAgICAgICAgc3R5bGU9ImZvbnQtZmFtaWx5OiAnSGVsdmV0aWNhIE5ldWUnLCAnSGVsdmV0aWNhJywgJ0FyaWFsJywgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxOHB4OyBmb250LXdlaWdodDogYm9sZDsiPgogICAgICAgIERQCiAgICA8L3RleHQ+Cjwvc3ZnPgo="
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzNTAgMzUwIj4KCTxwYXRoIGZpbGw9IiNlYjc3NzciIGQ9Ik0xNzUsMTcxLjE3M2MzOC45MTQsMCw3MC40NjMtMzguMzE4LDcwLjQ2My04NS41ODZDMjQ1LjQ2MywzOC4zMTgsMjM1LjEwNSwwLDE3NSwwcy03MC40NjUsMzguMzE4LTcwLjQ2NSw4NS41ODcKCQlDMTA0LjUzNSwxMzIuODU1LDEzNi4wODQsMTcxLjE3MywxNzUsMTcxLjE3M3oiLz4KCTxwYXRoIGZpbGw9IiNlYjc3NzciIGQ9Ik00MS45MDksMzAxLjg1M0M0MS44OTcsMjk4Ljk3MSw0MS44ODUsMzAxLjA0MSw0MS45MDksMzAxLjg1M0w0MS45MDksMzAxLjg1M3oiLz4KCTxwYXRoIGZpbGw9IiNlYjc3NzciIGQ9Ik0zMDguMDg1LDMwNC4xMDRDMzA4LjEyMywzMDMuMzE1LDMwOC4wOTgsMjk4LjYzLDMwOC4wODUsMzA0LjEwNEwzMDguMDg1LDMwNC4xMDR6Ii8+Cgk8cGF0aCBmaWxsPSIjZWI3Nzc3IiBkPSJNMzA3LjkzNSwyOTguMzk3Yy0xLjMwNS04Mi4zNDItMTIuMDU5LTEwNS44MDUtOTQuMzUyLTEyMC42NTdjMCwwLTExLjU4NCwxNC43NjEtMzguNTg0LDE0Ljc2MQoJCXMtMzguNTg2LTE0Ljc2MS0zOC41ODYtMTQuNzYxYy04MS4zOTUsMTQuNjktOTIuODAzLDM3LjgwNS05NC4zMDMsMTE3Ljk4MmMtMC4xMjMsNi41NDctMC4xOCw2Ljg5MS0wLjIwMiw2LjEzMQoJCWMwLjAwNSwxLjQyNCwwLjAxMSw0LjA1OCwwLjAxMSw4LjY1MWMwLDAsMTkuNTkyLDM5LjQ5NiwxMzMuMDgsMzkuNDk2YzExMy40ODYsMCwxMzMuMDgtMzkuNDk2LDEzMy4wOC0zOS40OTYKCQljMC0yLjk1MSwwLjAwMi01LjAwMywwLjAwNS02LjM5OUMzMDguMDYyLDMwNC41NzUsMzA4LjAxOCwzMDMuNjY0LDMwNy45MzUsMjk4LjM5N3oiLz4KPC9zdmc+Cg=="
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICAgIDxwYXRoIGZpbGw9IiM3N2NhOTgiIGQ9Ik00NzIuOTI4LDM0Ljc1MmMtNC40MTYtMy4wMDgtMTAuMDE2LTMuNTUyLTE0Ljk0NC0xLjZjLTEuMDI0LDAuNDE2LTEwNi44OCw0Mi4wNDgtMTk1LjE2OCwwLjM4NAoJCQlDMTg2LjcyLTIuNDMyLDEwMi45MTIsMTQuNCw2NCwyNS43NlYxNmMwLTguODMyLTcuMTY4LTE2LTE2LTE2Yy04LjgzMiwwLTE2LDcuMTY4LTE2LDE2djMydjI1NnYxOTJjMCw4LjgzMiw3LjE2OCwxNiwxNiwxNgoJCQljOC44MzIsMCwxNi03LjE2OCwxNi0xNlYzMTUuMzI4YzI4LjM4NC05LjE4NCwxMTIuNjA4LTMxLjEzNiwxODUuMTg0LDMuMTM2YzM0LjU5MiwxNi4zNTIsNzAuNzg0LDIxLjc5MiwxMDMuNjQ4LDIxLjc5MgoJCQljNjMuMiwwLDExNC4wMTYtMjAuMTI4LDExNy4xODQtMjEuNDA4YzYuMDE2LTIuNDY0LDkuOTg0LTguMzIsOS45ODQtMTQuODQ4VjQ4QzQ4MCw0Mi42ODgsNDc3LjM0NCwzNy43MjgsNDcyLjkyOCwzNC43NTJ6Ii8+Cjwvc3ZnPgo="
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICAgIDxwYXRoIGZpbGw9IiM3N2NhOTgiIGQ9Ik0xNTUsMEgxNUM2LjcxNiwwLDAsNi43MTYsMCwxNXYzNWgxNzBWMTVDMTcwLDYuNzE2LDE2My4yODQsMCwxNTUsMHoiLz4KICAgIDxwYXRoIGZpbGw9IiM3N2NhOTgiIGQ9Ik01MDQuNDY0LDE0Mi45ODljLTQuNjYyLTIuNjc0LTEwLjM5Ny0yLjY1MS0xNS4wMzYsMC4wNjNMMzQxLDIyOS44NTJWMTU2YzAtNS4zNzQtMi44NzUtMTAuMzM3LTcuNTM2LTEzLjAxMQoJCQljLTQuNjYyLTIuNjc0LTEwLjM5Ny0yLjY1MS0xNS4wMzYsMC4wNjNMMTcwLDIyOS44NTJWODBIMHY0MTdjMCw4LjI4NCw2LjcxNiwxNSwxNSwxNWg0ODJjOC4yODQsMCwxNS02LjcxNiwxNS0xNVYxNTYKCQkJQzUxMiwxNTAuNjI2LDUwOS4xMjUsMTQ1LjY2Myw1MDQuNDY0LDE0Mi45ODl6IE0yMzAsNDA2LjVjMCw4LjI4NC02LjcxNiwxNS0xNSwxNWgtNjBjLTguMjg0LDAtMTUtNi43MTYtMTUtMTV2LTYwCgkJCWMwLTguMjg0LDYuNzE2LTE1LDE1LTE1aDYwYzguMjg0LDAsMTUsNi43MTYsMTUsMTVWNDA2LjV6IE00MDEsNDA2LjVjMCw4LjI4NC02LjcxNiwxNS0xNSwxNWgtNjBjLTguMjg0LDAtMTUtNi43MTYtMTUtMTV2LTYwCgkJCWMwLTguMjg0LDYuNzE2LTE1LDE1LTE1aDYwYzguMjg0LDAsMTUsNi43MTYsMTUsMTVWNDA2LjV6Ii8+Cjwvc3ZnPgo="
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0Ny44MjVweCIgaGVpZ2h0PSI0Ny44MjVweCIgdmlld0JveD0iMCAwIDQ3LjgyNSA0Ny44MjUiPgogICAgPHBhdGggZmlsbD0iI2JlYmM3MSIgZD0iTTM2LjQzOSwxMi42NDZjMC02LjkxOS01LjYwOC0xMi41MjctMTIuNTI4LTEyLjUyN1MxMS4zODQsNS43MjcsMTEuMzg0LDEyLjY0NmMwLDkuOTEzLDEyLjUyNywyNC41ODIsMTIuNTI3LDI0LjU4MgoJCQkJUzM2LjQzOSwyMi41MDgsMzYuNDM5LDEyLjY0NnogTTE3LjczMywxMS44OThjMC0zLjQxMywyLjc2Ny02LjE3OSw2LjE3OS02LjE3OXM2LjE3OSwyLjc2Niw2LjE3OSw2LjE3OQoJCQkJYzAsMy40MTMtMi43NjcsNi4xNzktNi4xNzksNi4xNzlTMTcuNzMzLDE1LjMxMSwxNy43MzMsMTEuODk4eiIvPgogICAgPGNpcmNsZSBmaWxsPSIjYmViYzcxIiBjeD0iMjMuOTExIiBjeT0iMTEuODk4IiByPSIzLjAzOCIvPgogICAgPHBhdGggZmlsbD0iI2JlYmM3MSIgZD0iTTMwLjk5NCwzMi44N2MtMS4wMjEsMS40NzYtMS45NzksMi43NjEtMi43NzcsMy43OTNjNy45MTYsMC40NzYsMTMuMTA0LDIuMTg1LDE1LjAzNCwzLjQ1NgoJCQkJYy0yLjI2MSwxLjQ5MS04Ljk3OSwzLjU4Ny0xOS4zMzgsMy41ODdjLTEwLjM1OCwwLTE3LjA3Ny0yLjA5Ny0xOS4zMzgtMy41ODdjMS45My0xLjI3MSw3LjExNC0yLjk3OSwxNS4wMjItMy40NTUKCQkJCWMtMC44LTEuMDMyLTEuNzU5LTIuMzE2LTIuNzgxLTMuNzkyQzcuMDc1LDMzLjgzMSwwLDM2LjcxMywwLDQwLjExOGMwLDQuMTksMTAuNzA3LDcuNTg4LDIzLjkxMyw3LjU4OAoJCQkJYzEzLjIwNywwLDIzLjkxMi0zLjM5NiwyMy45MTItNy41ODhDNDcuODI3LDM2LjcxMSw0MC43NDQsMzMuODI4LDMwLjk5NCwzMi44N3oiLz4KPC9zdmc+Cg=="
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI5Ny40NzNweCIgaGVpZ2h0PSI5Ny40NzNweCIgdmlld0JveD0iMCAwIDk3LjQ3MyA5Ny40NzMiPgoJPHJlY3QgZmlsbD0iI2I0YjFmYiIgeD0iNDEuNTY5IiB5PSI0Ny43NTMiIHdpZHRoPSIxNC4zMzMiIGhlaWdodD0iMTQuMzMzIi8+Cgk8cmVjdCBmaWxsPSIjYjRiMWZiIiB4PSI0MS41NjkiIHk9IjY3Ljc1NCIgd2lkdGg9IjE0LjMzMyIgaGVpZ2h0PSIxNC4zMzIiLz4KCTxyZWN0IGZpbGw9IiNiNGIxZmIiIHg9IjE4LjU2OSIgeT0iNjcuNzU0IiB3aWR0aD0iMTQuMzMzIiBoZWlnaHQ9IjE0LjMzMiIvPgoJPHJlY3QgZmlsbD0iI2I0YjFmYiIgeD0iMTguNTY5IiB5PSI0Ny43NTMiIHdpZHRoPSIxNC4zMzMiIGhlaWdodD0iMTQuMzMzIi8+Cgk8cGF0aCBmaWxsPSIjYjRiMWZiIiBkPSJNOTUuNDcyLDE0LjQ2Nkg4NC40MjdWMi43MDFjMC0xLjEwNC0wLjg5Ni0yLTItMkg2NS44MTFjLTEuMTA0LDAtMiwwLjg5Ni0yLDJ2MTEuNzY1SDMzLjY2MlYyLjcwMWMwLTEuMTA0LTAuODk2LTItMi0yCgkJCQlIMTUuMDQ1Yy0xLjEwNCwwLTIsMC44OTYtMiwydjExLjc2NUgyYy0xLjEwNCwwLTIsMC44OTYtMiwydjc4LjMwNWMwLDEuMTA0LDAuODk2LDIsMiwyaDkzLjQ3M2MxLjEwNCwwLDItMC44OTYsMi0yVjE2LjQ2NgoJCQkJQzk3LjQ3MiwxNS4zNjIsOTYuNTc2LDE0LjQ2Niw5NS40NzIsMTQuNDY2eiBNNjkuNjQ1LDguMDM3YzAtMC44MjgsMC42NzItMS41LDEuNS0xLjVoNS45NDdjMC44MjksMCwxLjUsMC42NzIsMS41LDEuNXYyMC4zNAoJCQkJYzAsMC44MjgtMC42NzEsMS41LTEuNSwxLjVoLTUuOTQ3Yy0wLjgyOCwwLTEuNS0wLjY3Mi0xLjUtMS41VjguMDM3eiBNMTguODgsOC4wMzdjMC0wLjgyOCwwLjY3MS0xLjUsMS41LTEuNWg1Ljk0NwoJCQkJYzAuODI5LDAsMS41LDAuNjcyLDEuNSwxLjV2MjAuMzRjMCwwLjgyOC0wLjY3MSwxLjUtMS41LDEuNUgyMC4zOGMtMC44MjksMC0xLjUtMC42NzItMS41LTEuNVY4LjAzN3ogTTg3LjA2OCw4NC45MDIKCQkJCWMwLDAuODI4LTAuNjcsMS41LTEuNSwxLjVIMTEuOTAzYy0wLjgyOSwwLTEuNS0wLjY3Mi0xLjUtMS41di00MGMwLTAuODI4LDAuNjcxLTEuNSwxLjUtMS41aDczLjY2NmMwLjgzLDAsMS41LDAuNjcyLDEuNSwxLjUKCQkJCVY4NC45MDJ6Ii8+Cgk8cmVjdCBmaWxsPSIjYjRiMWZiIiB4PSI2NC41NjgiIHk9IjQ3Ljc1MyIgd2lkdGg9IjE0LjMzNCIgaGVpZ2h0PSIxNC4zMzMiLz4KCTxyZWN0IGZpbGw9IiNiNGIxZmIiIHg9IjY0LjU2OCIgeT0iNjcuNzU0IiB3aWR0aD0iMTQuMzM0IiBoZWlnaHQ9IjE0LjMzMiIvPgo8L3N2Zz4K"
 
 /***/ }),
-/* 76 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiIHZpZXdCb3g9IjAgMCA1MCA1MCI+CiAgICA8cGF0aCBmaWxsPSIjNTNjY2IyIiBkPSJNMjYuMTIsMTQuNDg4YzAuODc5LTEuNDY4LDIuMjctMy41NjksNC4wMjctNS41ODVoMC4wMDJjMS40ODgtMS43MTEsNC40MDItMy45MDcsNC40MDItMy45MDcKCQkJYzAuNDM4LTAuMzMxLDAuMzkxLTAuNzkyLTAuMTA3LTEuMDI0bC0zLjUyMi0xLjY0NmMtMC40OTgtMC4yMzMtMS4xNzUtMC4wNjMtMS41MDUsMC4zNzZjMCwwLTIuNjA1LDMuNzM3LTUuNjcxLDExLjY5MgoJCQljLTkuNDgtNC4yODgtMTguNDkxLDEuNzE4LTE4LjQ5MSwxMi4xNjJjMCwxMC45MDksOC4zOTMsMjcuNDgsMTkuNzQzLDIyLjQ3OGMxMS45NTQsNS4xNzMsMTkuNzQ5LTExLjU2OCwxOS43NDktMjIuNDc4CgkJCUM0NC43NDcsMTYuMDIyLDM2LjY0Nyw5Ljg0NiwyNi4xMiwxNC40ODh6Ii8+CiAgICA8cGF0aCBmaWxsPSIjNTNjY2IyIiBkPSJNMjMuOTk3LDEwLjk1NWMwLjU0OC0wLjA0NiwxLjAzMi0wLjUzMSwxLjA3Ni0xLjA3OGMwLDAsMC4zNTItNC4yNjYtMi42MjEtNy4yNDJjLTIuOTgyLTIuOTc3LTcuMjQtMi42MjItNy4yNC0yLjYyMgoJCQljLTAuNTQ4LDAuMDQ2LTEuMDMyLDAuNTMxLTEuMDc3LDEuMDc4YzAsMC0wLjM1OCw0LjI2OCwyLjYxOSw3LjI0NUMxOS43MjksMTEuMzEsMjMuOTk3LDEwLjk1NSwyMy45OTcsMTAuOTU1eiIvPgo8L3N2Zz4K"
 
 /***/ }),
-/* 77 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4367,7 +4173,7 @@ exports.DefaultLinkTemplateBundle = function (type) {
 
 
 /***/ }),
-/* 78 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4375,7 +4181,7 @@ exports.DefaultLinkTemplateBundle = function (type) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var utils_1 = __webpack_require__(48);
-var sparqlModels_1 = __webpack_require__(79);
+var sparqlModels_1 = __webpack_require__(78);
 exports.MAX_RECURSION_DEEP = 3;
 exports.ENCODED_PREFIX = 'sparql-blank:';
 exports.BLANK_NODE_QUERY_PARAMETERS = '?blankTrgProp ?blankTrg ?blankSrc ?blankSrcProp ?listHead';
@@ -4852,7 +4658,7 @@ function getLinkCountBinding(id) {
 
 
 /***/ }),
-/* 79 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4881,13 +4687,13 @@ exports.isBlankBinding = isBlankBinding;
 
 
 /***/ }),
-/* 80 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var DefaultLinkRouter = /** @class */ (function () {
     function DefaultLinkRouter(gap) {
         if (gap === void 0) { gap = 20; }
@@ -5023,7 +4829,7 @@ function centerOfElement(element) {
 
 
 /***/ }),
-/* 81 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5032,13 +4838,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var react_1 = __webpack_require__(45);
-var async_1 = __webpack_require__(60);
-var collections_1 = __webpack_require__(55);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
-var commands_1 = __webpack_require__(63);
+var commands_1 = __webpack_require__(62);
 var elements_1 = __webpack_require__(52);
-var geometry_1 = __webpack_require__(56);
-var view_1 = __webpack_require__(65);
+var geometry_1 = __webpack_require__(55);
+var view_1 = __webpack_require__(64);
 var UpdateRequest;
 (function (UpdateRequest) {
     /** Some part of layer requested an update */
@@ -5055,11 +4860,11 @@ var LinkLayer = /** @class */ (function (_super) {
         _this.delayedUpdate = new async_1.Debouncer();
         _this.updateState = UpdateRequest.Partial;
         /** List of link IDs to update at the next flush event */
-        _this.scheduledToUpdate = collections_1.createStringMap();
+        _this.scheduledToUpdate = new Set();
         _this.scheduleUpdateAll = function () {
             if (_this.updateState !== UpdateRequest.All) {
                 _this.updateState = UpdateRequest.All;
-                _this.scheduledToUpdate = collections_1.createStringMap();
+                _this.scheduledToUpdate = new Set();
             }
             _this.delayedUpdate.call(_this.performUpdate);
         };
@@ -5090,6 +4895,12 @@ var LinkLayer = /** @class */ (function (_super) {
     LinkLayer.prototype.componentDidMount = function () {
         var _this = this;
         var view = this.props.view;
+        var scheduleUpdateElementLinks = function (element) {
+            for (var _i = 0, _a = element.links; _i < _a.length; _i++) {
+                var link = _a[_i];
+                _this.scheduleUpdateLink(link.id);
+            }
+        };
         this.listener.listen(view.events, 'changeLanguage', this.scheduleUpdateAll);
         this.listener.listen(view.events, 'changeHighlight', this.scheduleUpdateAll);
         var updateChangedRoutes = function (changed, previous) {
@@ -5105,17 +4916,29 @@ var LinkLayer = /** @class */ (function (_super) {
             updateChangedRoutes(newRoutes, previous);
             updateChangedRoutes(previous, newRoutes);
         });
-        this.listener.listen(view.model.events, 'changeCells', this.scheduleUpdateAll);
+        this.listener.listen(view.model.events, 'changeCells', function (e) {
+            if (e.updateAll) {
+                _this.scheduleUpdateAll();
+            }
+            else {
+                if (e.changedElement) {
+                    scheduleUpdateElementLinks(e.changedElement);
+                }
+                if (e.changedLinks) {
+                    for (var _i = 0, _a = e.changedLinks; _i < _a.length; _i++) {
+                        var link = _a[_i];
+                        _this.scheduleUpdateLink(link.id);
+                    }
+                }
+            }
+        });
         this.listener.listen(view.model.events, 'elementEvent', function (_a) {
             var data = _a.data;
             var elementEvent = data.changePosition || data.changeSize;
             if (!elementEvent) {
                 return;
             }
-            for (var _i = 0, _b = elementEvent.source.links; _i < _b.length; _i++) {
-                var link = _b[_i];
-                _this.scheduleUpdateLink(link.id);
-            }
+            scheduleUpdateElementLinks(elementEvent.source);
         });
         this.listener.listen(view.model.events, 'linkEvent', function (_a) {
             var data = _a.data;
@@ -5156,17 +4979,17 @@ var LinkLayer = /** @class */ (function (_super) {
     };
     LinkLayer.prototype.scheduleUpdateLink = function (linkId) {
         if (this.updateState === UpdateRequest.Partial) {
-            this.scheduledToUpdate[linkId] = true;
+            this.scheduledToUpdate.add(linkId);
         }
         this.delayedUpdate.call(this.performUpdate);
     };
     LinkLayer.prototype.popShouldUpdatePredicate = function () {
         var _a = this, updateState = _a.updateState, scheduledToUpdate = _a.scheduledToUpdate;
-        this.scheduledToUpdate = collections_1.createStringMap();
+        this.scheduledToUpdate = new Set();
         this.updateState = UpdateRequest.Partial;
         return updateState === UpdateRequest.All
             ? function () { return true; }
-            : function (link) { return Boolean(scheduledToUpdate[link.id]); };
+            : function (link) { return scheduledToUpdate.has(link.id); };
     };
     LinkLayer.prototype.render = function () {
         var view = this.props.view;
@@ -5540,7 +5363,7 @@ var LinkMarker = /** @class */ (function (_super) {
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5548,15 +5371,15 @@ var LinkMarker = /** @class */ (function (_super) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var polyfills_1 = __webpack_require__(42);
-var react_1 = __webpack_require__(61);
-var toSvg_1 = __webpack_require__(83);
-var commands_1 = __webpack_require__(63);
+var react_1 = __webpack_require__(60);
+var toSvg_1 = __webpack_require__(82);
+var commands_1 = __webpack_require__(62);
 var elements_1 = __webpack_require__(52);
-var geometry_1 = __webpack_require__(56);
-var view_1 = __webpack_require__(65);
+var geometry_1 = __webpack_require__(55);
+var view_1 = __webpack_require__(64);
 var paper_1 = __webpack_require__(51);
 exports.PaperAreaContextTypes = {
     ontodiaPaperArea: react_1.PropTypes.anything,
@@ -6229,17 +6052,17 @@ exports.getContentFittingBox = getContentFittingBox;
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var lodash_1 = __webpack_require__(66);
-var geometry_1 = __webpack_require__(56);
+var lodash_1 = __webpack_require__(65);
+var geometry_1 = __webpack_require__(55);
 var polyfills_1 = __webpack_require__(42);
-var htmlToSvg_1 = __webpack_require__(84);
+var htmlToSvg_1 = __webpack_require__(83);
 var canvg = __webpack_require__(41);
 var SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 /**
@@ -6281,7 +6104,6 @@ function exportSVG(options) {
         height: paddedHeight,
     };
     svgClone.setAttribute('viewBox', viewBox.x + " " + viewBox.y + " " + viewBox.width + " " + viewBox.height);
-    addWatermark(svgClone, viewBox, watermarkSvg);
     var images = [];
     if (!polyfills_1.isIE11()) {
         var nodes = svgClone.querySelectorAll('img');
@@ -6475,39 +6297,17 @@ function exportAsDataUri(original) {
     if (!url || url.startsWith('data:')) {
         return Promise.resolve(url);
     }
-    return loadCrossOriginImage(original.src).then(function (image) {
-        var canvas = document.createElement('canvas');
-        canvas.width = image.width;
-        canvas.height = image.height;
-        var context = canvas.getContext('2d');
-        context.drawImage(image, 0, 0);
-        // match extensions like htttp://example.com/images/foo.JPG&w=200
-        var extensionMatch = url.match(/\.([a-zA-Z0-9]+)[^\.a-zA-Z0-9]?[^\.]*$/);
-        var extension = extensionMatch ? extensionMatch[1].toLowerCase() : 'png';
-        try {
-            var mimeType = 'image/' + (extension === 'jpg' ? 'jpeg' : extension);
-            var dataUri = canvas.toDataURL(mimeType);
-            return Promise.resolve(dataUri);
-        }
-        catch (e) {
-            if (extension !== 'svg') {
-                return Promise.reject('Failed to convert image to data URI');
-            }
-            return fetch(url)
-                .then(function (response) { return response.text(); })
-                .then(function (svg) { return svg.length > 0 ? ('data:image/svg+xml,' + encodeURIComponent(svg)) : ''; });
-        }
+    return fetch(original.src)
+        .then(function (result) { return result.blob(); })
+        .then(function (blob) {
+        return new Promise(function (resolve) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                resolve(reader.result);
+            };
+            reader.readAsDataURL(blob);
+        });
     });
-}
-function loadCrossOriginImage(src) {
-    var image = new Image();
-    image.crossOrigin = 'anonymous';
-    var promise = new Promise(function (resolve, reject) {
-        image.onload = function () { return resolve(image); };
-        image.onerror = function (ev) { return reject(ev); };
-    });
-    image.src = src;
-    return promise;
 }
 function foreachNode(nodeList, callback) {
     for (var i = 0; i < nodeList.length; i++) {
@@ -6654,13 +6454,13 @@ exports.dataURLToBlob = dataURLToBlob;
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lodash_1 = __webpack_require__(66);
+var lodash_1 = __webpack_require__(65);
 function htmlToSvg(htmlView, blackList, mockImages) {
     blackList = blackList || [];
     var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
@@ -6983,7 +6783,7 @@ function arcParameter(rx, ry, xAxisRotation, largeArcFlag, sweepFlag, x, y) {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6992,11 +6792,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var react_1 = __webpack_require__(45);
-var blankNodes_1 = __webpack_require__(78);
+var blankNodes_1 = __webpack_require__(77);
 var utils_1 = __webpack_require__(46);
 var schema_1 = __webpack_require__(53);
-var authoredEntity_1 = __webpack_require__(86);
-var authoringState_1 = __webpack_require__(88);
+var authoredEntity_1 = __webpack_require__(85);
+var authoringState_1 = __webpack_require__(87);
 var spinner_1 = __webpack_require__(89);
 var FOAF_NAME = 'http://xmlns.com/foaf/0.1/name';
 var CLASS_NAME = 'ontodia-standard-template';
@@ -7128,7 +6928,7 @@ exports.StandardTemplate = StandardTemplate;
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7136,10 +6936,10 @@ exports.StandardTemplate = StandardTemplate;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var paperArea_1 = __webpack_require__(82);
-var async_1 = __webpack_require__(60);
-var workspaceContext_1 = __webpack_require__(87);
-var authoringState_1 = __webpack_require__(88);
+var paperArea_1 = __webpack_require__(81);
+var async_1 = __webpack_require__(59);
+var workspaceContext_1 = __webpack_require__(86);
+var authoringState_1 = __webpack_require__(87);
 /**
  * Component to simplify tracking changes in validation messages (property and link type labels).
  */
@@ -7205,8 +7005,8 @@ var AuthoredEntity = /** @class */ (function (_super) {
         var editor = this.context.ontodiaWorkspace.editor;
         var signal = this.queryCancellation.signal;
         this.setState({ canEdit: undefined });
-        editor.metadataApi.canEditElement(data, signal).then(function (canEdit) {
-            if (signal.aborted) {
+        async_1.CancellationToken.mapCancelledToNull(signal, editor.metadataApi.canEditElement(data, signal)).then(function (canEdit) {
+            if (canEdit === null) {
                 return;
             }
             _this.setState({ canEdit: canEdit });
@@ -7217,8 +7017,8 @@ var AuthoredEntity = /** @class */ (function (_super) {
         var editor = this.context.ontodiaWorkspace.editor;
         var signal = this.queryCancellation.signal;
         this.setState({ canDelete: undefined });
-        editor.metadataApi.canDeleteElement(data, signal).then(function (canDelete) {
-            if (signal.aborted) {
+        async_1.CancellationToken.mapCancelledToNull(signal, editor.metadataApi.canDeleteElement(data, signal)).then(function (canDelete) {
+            if (canDelete === null) {
                 return;
             }
             _this.setState({ canDelete: canDelete });
@@ -7246,13 +7046,13 @@ exports.AuthoredEntity = AuthoredEntity;
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __webpack_require__(61);
+var react_1 = __webpack_require__(60);
 var WorkspaceEventKey;
 (function (WorkspaceEventKey) {
     WorkspaceEventKey["searchUpdateCriteria"] = "search:updateCriteria";
@@ -7270,7 +7070,7 @@ exports.WorkspaceContextTypes = {
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7278,7 +7078,7 @@ exports.WorkspaceContextTypes = {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var model_1 = __webpack_require__(47);
-var collections_1 = __webpack_require__(55);
+var collections_1 = __webpack_require__(88);
 var AuthoringKind;
 (function (AuthoringKind) {
     AuthoringKind["ChangeElement"] = "changeElement";
@@ -7520,6 +7320,229 @@ function updateLinkToReferByNewIri(link, oldIri, newIri) {
 
 
 /***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(1);
+function objectValues(obj) {
+    var items = [];
+    for (var key in obj) {
+        if (!Object.prototype.hasOwnProperty.call(obj, key)) {
+            continue;
+        }
+        items.push(obj[key]);
+    }
+    return items;
+}
+exports.objectValues = objectValues;
+function isEmptyMap(map) {
+    for (var key in map) {
+        if (Object.prototype.hasOwnProperty.call(map, key)) {
+            return false;
+        }
+    }
+    return true;
+}
+exports.isEmptyMap = isEmptyMap;
+/**
+ * Clones Map collection. Required due to IE11 not supporing `new Map(map)`.
+ */
+function cloneMap(map) {
+    var clone = new Map();
+    map.forEach(function (value, key) { return clone.set(key, value); });
+    return clone;
+}
+exports.cloneMap = cloneMap;
+/**
+ * Clones Set collection. Required due to IE11 not supporing `new Set(set)`.
+ */
+function cloneSet(set) {
+    var clone = new Set();
+    set.forEach(function (item) { return clone.add(item); });
+    return clone;
+}
+exports.cloneSet = cloneSet;
+function getOrCreateArrayInMap(map, key) {
+    var values = map.get(key);
+    if (!values) {
+        values = [];
+        map.set(key, values);
+    }
+    return values;
+}
+exports.getOrCreateArrayInMap = getOrCreateArrayInMap;
+function getOrCreateSetInMap(map, key) {
+    var values = map.get(key);
+    if (!values) {
+        values = new Set();
+        map.set(key, values);
+    }
+    return values;
+}
+exports.getOrCreateSetInMap = getOrCreateSetInMap;
+var OrderedMap = /** @class */ (function () {
+    function OrderedMap() {
+        this.mapping = new Map();
+        this.ordered = [];
+    }
+    OrderedMap.prototype.reorder = function (compare) {
+        this.ordered.sort(compare);
+    };
+    Object.defineProperty(OrderedMap.prototype, "items", {
+        get: function () {
+            return this.ordered;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    OrderedMap.prototype.get = function (key) {
+        return this.mapping.get(key);
+    };
+    OrderedMap.prototype.push = function (key, value) {
+        if (this.mapping.has(key)) {
+            var previous = this.mapping.get(key);
+            if (previous === value) {
+                return;
+            }
+            var index = this.ordered.indexOf(previous);
+            this.ordered.splice(index, 1);
+        }
+        this.mapping.set(key, value);
+        this.ordered.push(value);
+    };
+    OrderedMap.prototype.delete = function (key) {
+        if (!this.mapping.has(key)) {
+            return undefined;
+        }
+        var previous = this.mapping.get(key);
+        var index = this.ordered.indexOf(previous);
+        this.ordered.splice(index, 1);
+        this.mapping.delete(key);
+        return previous;
+    };
+    return OrderedMap;
+}());
+exports.OrderedMap = OrderedMap;
+var HashMap = /** @class */ (function () {
+    function HashMap(hashCode, equals) {
+        this.hashCode = hashCode;
+        this.equals = equals;
+        this.map = new Map();
+        this._size = 0;
+    }
+    Object.defineProperty(HashMap.prototype, "size", {
+        get: function () {
+            return this._size;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    HashMap.prototype.has = function (key) {
+        var _this = this;
+        var items = this.map.get(this.hashCode(key));
+        if (!items) {
+            return false;
+        }
+        return Boolean(items.find(function (p) { return _this.equals(p.key, key); }));
+    };
+    HashMap.prototype.get = function (key) {
+        var _this = this;
+        var items = this.map.get(this.hashCode(key));
+        if (!items) {
+            return undefined;
+        }
+        var pair = items.find(function (p) { return _this.equals(p.key, key); });
+        return pair ? pair.value : undefined;
+    };
+    HashMap.prototype.set = function (key, value) {
+        var _this = this;
+        var hash = this.hashCode(key);
+        var items = this.map.get(hash);
+        if (items) {
+            var index = items.findIndex(function (p) { return _this.equals(p.key, key); });
+            if (index >= 0) {
+                items.splice(index, 1);
+            }
+            else {
+                this._size++;
+            }
+            items.push({ key: key, value: value });
+        }
+        else {
+            items = [{ key: key, value: value }];
+            this.map.set(hash, items);
+            this._size++;
+        }
+        return this;
+    };
+    HashMap.prototype.delete = function (key) {
+        var _this = this;
+        var items = this.map.get(this.hashCode(key));
+        if (!items) {
+            return false;
+        }
+        var index = items.findIndex(function (p) { return _this.equals(p.key, key); });
+        if (index >= 0) {
+            items.splice(index, 1);
+            this._size--;
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    HashMap.prototype.clear = function () {
+        this.map.clear();
+        this._size = 0;
+    };
+    HashMap.prototype.forEach = function (callback) {
+        var _this = this;
+        this.map.forEach(function (items) {
+            for (var _i = 0, items_1 = items; _i < items_1.length; _i++) {
+                var _a = items_1[_i], key = _a.key, value = _a.value;
+                callback(value, key, _this);
+            }
+        });
+    };
+    HashMap.prototype.clone = function () {
+        var clone = new HashMap(this.hashCode, this.equals);
+        clone._size = this.size;
+        this.map.forEach(function (value, key) { return clone.map.set(key, tslib_1.__spreadArrays(value)); });
+        return clone;
+    };
+    return HashMap;
+}());
+exports.HashMap = HashMap;
+var MoveDirection;
+(function (MoveDirection) {
+    MoveDirection[MoveDirection["ToStart"] = -1] = "ToStart";
+    MoveDirection[MoveDirection["ToEnd"] = 1] = "ToEnd";
+})(MoveDirection = exports.MoveDirection || (exports.MoveDirection = {}));
+function makeMoveComparator(items, selected, moveDirection) {
+    var orderMap = new Map();
+    var selectionIndexOffset = moveDirection * items.length;
+    items.forEach(function (item, index) {
+        orderMap.set(item, index);
+    });
+    for (var _i = 0, selected_1 = selected; _i < selected_1.length; _i++) {
+        var selectedItem = selected_1[_i];
+        orderMap.set(selectedItem, selectionIndexOffset + orderMap.get(selectedItem));
+    }
+    return function (a, b) {
+        var orderA = orderMap.get(a);
+        var orderB = orderMap.get(b);
+        return (orderA > orderB ? 1 :
+            orderA < orderB ? -1 :
+                0);
+    };
+}
+exports.makeMoveComparator = makeMoveComparator;
+
+
+/***/ }),
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7570,7 +7593,7 @@ exports.HtmlSpinner = HtmlSpinner;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lodash_1 = __webpack_require__(66);
+var lodash_1 = __webpack_require__(65);
 var DemoDataProvider = /** @class */ (function () {
     function DemoDataProvider(allClasses, allLinkTypes, allElements, allLinks) {
         this.allClasses = allClasses;
@@ -8507,7 +8530,7 @@ exports.RDFDataProvider = RDFDataProvider;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var rdf_ext_1 = __webpack_require__(93);
-var lodash_1 = __webpack_require__(66);
+var lodash_1 = __webpack_require__(65);
 var DEFAULT_STORAGE_TYPE = 'text/turtle';
 var DEFAULT_STORAGE_URI = 'http://ontodia.org/defaultGraph';
 function prefixFactory(prefix) {
@@ -8900,10 +8923,10 @@ exports.RDFCompositeParser = RDFCompositeParser;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var collections_1 = __webpack_require__(55);
+var collections_1 = __webpack_require__(88);
 var responseHandler_1 = __webpack_require__(97);
 var sparqlDataProviderSettings_1 = __webpack_require__(98);
-var BlankNodes = __webpack_require__(78);
+var BlankNodes = __webpack_require__(77);
 var turtle_1 = __webpack_require__(99);
 var SparqlQueryMethod;
 (function (SparqlQueryMethod) {
@@ -9709,9 +9732,9 @@ function escapeIri(iri) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var sparqlModels_1 = __webpack_require__(79);
+var sparqlModels_1 = __webpack_require__(78);
 var model_1 = __webpack_require__(47);
-var collections_1 = __webpack_require__(55);
+var collections_1 = __webpack_require__(88);
 var LABEL_URI = 'http://www.w3.org/2000/01/rdf-schema#label';
 var RDF_TYPE_URI = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
 var EMPTY_MAP = new Map();
@@ -11039,7 +11062,7 @@ exports.mergeClassModel = mergeClassModel;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var lodash_1 = __webpack_require__(66);
+var lodash_1 = __webpack_require__(65);
 var schema_1 = __webpack_require__(53);
 var serializedDiagram_1 = __webpack_require__(104);
 var layout_1 = __webpack_require__(105);
@@ -11124,7 +11147,7 @@ exports.makeLayout = makeLayout;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var lodash_1 = __webpack_require__(66);
+var lodash_1 = __webpack_require__(65);
 var schema_1 = __webpack_require__(53);
 var serializedCellProperties = [
     // common properties
@@ -11233,9 +11256,9 @@ exports.makeLayoutData = makeLayoutData;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var cola = __webpack_require__(106);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var events_1 = __webpack_require__(54);
-var paperArea_1 = __webpack_require__(82);
+var paperArea_1 = __webpack_require__(81);
 function groupForceLayout(params) {
     var layout = new cola.Layout()
         .nodes(params.nodes)
@@ -11611,7 +11634,7 @@ var schema_1 = __webpack_require__(53);
 var events_1 = __webpack_require__(54);
 var elements_1 = __webpack_require__(52);
 var graph_1 = __webpack_require__(109);
-var history_1 = __webpack_require__(64);
+var history_1 = __webpack_require__(63);
 /**
  * Model of diagram.
  */
@@ -11659,8 +11682,8 @@ var DiagramModel = /** @class */ (function () {
     };
     DiagramModel.prototype.subscribeGraph = function () {
         var _this = this;
-        this.graphListener.listen(this.graph.events, 'changeCells', function () {
-            _this.source.trigger('changeCells', {});
+        this.graphListener.listen(this.graph.events, 'changeCells', function (e) {
+            _this.source.trigger('changeCells', e);
         });
         this.graphListener.listen(this.graph.events, 'elementEvent', function (e) {
             _this.source.trigger('elementEvent', e);
@@ -11674,7 +11697,7 @@ var DiagramModel = /** @class */ (function () {
         this.graphListener.listen(this.graph.events, 'classEvent', function (e) {
             _this.source.trigger('classEvent', e);
         });
-        this.source.trigger('changeCells', { source: this });
+        this.source.trigger('changeCells', { updateAll: true });
     };
     DiagramModel.prototype.reorderElements = function (compare) {
         this.graph.reorderElements(compare);
@@ -11692,8 +11715,11 @@ var DiagramModel = /** @class */ (function () {
             : elementIriOrModel;
         data = tslib_1.__assign(tslib_1.__assign({}, data), { id: data.id });
         var element = new elements_1.Element({ id: schema_1.GenerateID.forElement(), data: data, group: group });
-        this.history.execute(addElement(this.graph, element, []));
+        this.addElement(element);
         return element;
+    };
+    DiagramModel.prototype.addElement = function (element) {
+        this.history.execute(addElement(this.graph, element, []));
     };
     DiagramModel.prototype.removeElement = function (elementId) {
         var element = this.getElement(elementId);
@@ -11823,7 +11849,7 @@ function removeElement(graph, element) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var collections_1 = __webpack_require__(55);
+var collections_1 = __webpack_require__(88);
 var events_1 = __webpack_require__(54);
 var Graph = /** @class */ (function () {
     function Graph() {
@@ -11875,24 +11901,25 @@ var Graph = /** @class */ (function () {
     };
     Graph.prototype.addElement = function (element) {
         if (this.getElement(element.id)) {
-            throw new Error("Link type '" + element.id + "' already exists.");
+            throw new Error("Element '" + element.id + "' already exists.");
         }
         element.events.onAny(this.onElementEvent);
         this.elements.push(element.id, element);
-        this.source.trigger('changeCells', {});
+        this.source.trigger('changeCells', { updateAll: false, changedElement: element });
     };
     Graph.prototype.removeElement = function (elementId) {
         var element = this.elements.get(elementId);
         if (element) {
             var options = { silent: true };
             // clone links to prevent modifications during iteration
-            for (var _i = 0, _a = tslib_1.__spreadArrays(element.links); _i < _a.length; _i++) {
-                var link = _a[_i];
+            var changedLinks = tslib_1.__spreadArrays(element.links);
+            for (var _i = 0, changedLinks_1 = changedLinks; _i < changedLinks_1.length; _i++) {
+                var link = changedLinks_1[_i];
                 this.removeLink(link.id, options);
             }
             this.elements.delete(elementId);
             element.events.offAny(this.onElementEvent);
-            this.source.trigger('changeCells', {});
+            this.source.trigger('changeCells', { updateAll: false, changedElement: element, changedLinks: changedLinks });
         }
     };
     Graph.prototype.addLink = function (link) {
@@ -11906,14 +11933,13 @@ var Graph = /** @class */ (function () {
         this.registerLink(link);
     };
     Graph.prototype.registerLink = function (link) {
-        var typeId = link.typeId;
         this.sourceOf(link).links.push(link);
         if (link.sourceId !== link.targetId) {
             this.targetOf(link).links.push(link);
         }
         link.events.onAny(this.onLinkEvent);
         this.links.push(link.id, link);
-        this.source.trigger('changeCells', {});
+        this.source.trigger('changeCells', { updateAll: false, changedLinks: [link] });
     };
     Graph.prototype.removeLink = function (linkId, options) {
         var link = this.links.delete(linkId);
@@ -11922,7 +11948,7 @@ var Graph = /** @class */ (function () {
             link.events.offAny(this.onLinkEvent);
             this.removeLinkReferences(typeId, sourceId, targetId);
             if (!(options && options.silent)) {
-                this.source.trigger('changeCells', {});
+                this.source.trigger('changeCells', { updateAll: false, changedLinks: [link] });
             }
         }
     };
@@ -12015,7 +12041,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var schema_1 = __webpack_require__(53);
 var elements_1 = __webpack_require__(52);
-var history_1 = __webpack_require__(64);
+var history_1 = __webpack_require__(63);
 var model_1 = __webpack_require__(108);
 var dataFetcher_1 = __webpack_require__(111);
 var serializedDiagram_1 = __webpack_require__(104);
@@ -12303,8 +12329,7 @@ exports.restoreLinksBetweenElements = restoreLinksBetweenElements;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var async_1 = __webpack_require__(60);
-var collections_1 = __webpack_require__(55);
+var async_1 = __webpack_require__(59);
 var DataFetcher = /** @class */ (function () {
     function DataFetcher(graph, dataProvider) {
         var _this = this;
@@ -12353,7 +12378,7 @@ var DataFetcher = /** @class */ (function () {
         };
         this.onPropertyTypesLoaded = function (propertyModels) {
             for (var propId in propertyModels) {
-                if (!collections_1.hasOwnProperty(propertyModels, propId)) {
+                if (!Object.prototype.hasOwnProperty.call(propertyModels, propId)) {
                     continue;
                 }
                 var _a = propertyModels[propId], id = _a.id, label = _a.label;
@@ -12398,11 +12423,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var model_1 = __webpack_require__(47);
-var commands_1 = __webpack_require__(63);
+var commands_1 = __webpack_require__(62);
 var elements_1 = __webpack_require__(52);
-var geometry_1 = __webpack_require__(56);
-var history_1 = __webpack_require__(64);
-var view_1 = __webpack_require__(65);
+var geometry_1 = __webpack_require__(55);
+var history_1 = __webpack_require__(63);
+var view_1 = __webpack_require__(64);
 var events_1 = __webpack_require__(54);
 var dialog_1 = __webpack_require__(113);
 var connectionsMenu_1 = __webpack_require__(115);
@@ -12417,11 +12442,11 @@ var elementDecorator_1 = __webpack_require__(129);
 var layout_1 = __webpack_require__(105);
 var spinner_1 = __webpack_require__(89);
 var asyncModel_1 = __webpack_require__(110);
-var authoringState_1 = __webpack_require__(88);
+var authoringState_1 = __webpack_require__(87);
 var editLayer_1 = __webpack_require__(130);
 var validation_1 = __webpack_require__(131);
-var async_1 = __webpack_require__(60);
-var collections_1 = __webpack_require__(55);
+var async_1 = __webpack_require__(59);
+var collections_1 = __webpack_require__(88);
 var DialogTypes;
 (function (DialogTypes) {
     DialogTypes[DialogTypes["ConnectionsMenu"] = 0] = "ConnectionsMenu";
@@ -12653,7 +12678,11 @@ var EditorController = /** @class */ (function () {
         if (this.selection.length === 0) {
             return;
         }
-        var newSelection = this.selection.filter(function (el) { return _this.model.getElement(el.id); });
+        var newSelection = this.selection.filter(function (item) {
+            return item instanceof elements_1.Element ? _this.model.getElement(item.id) :
+                item instanceof elements_1.Link ? _this.model.getLinkById(item.id) :
+                    false;
+        });
         if (newSelection.length < this.selection.length) {
             this.setSelection(newSelection);
         }
@@ -12686,7 +12715,6 @@ var EditorController = /** @class */ (function () {
             return;
         }
         this.model.reorderElements(collections_1.makeMoveComparator(this.model.elements, this.selection.filter(function (item) { return item instanceof elements_1.Element; }), collections_1.MoveDirection.ToEnd));
-        this.view.performSyncUpdate();
     };
     EditorController.prototype.renderDefaultHalo = function () {
         var _this = this;
@@ -12754,7 +12782,7 @@ var EditorController = /** @class */ (function () {
     EditorController.prototype.classSelector = function () {
         return this.options.classSelector;
     };
-    EditorController.prototype.showEditElementTypeForm = function (_a) {
+    EditorController.prototype.showEditElementTypeForm = function (_a, fn) {
         var _this = this;
         var link = _a.link, source = _a.source, target = _a.target;
         var dialogType = DialogTypes.EditEntityTypeForm;
@@ -12764,44 +12792,53 @@ var EditorController = /** @class */ (function () {
             _this.hideDialog();
         };
         var content = (React.createElement(editElementTypeForm_1.EditElementTypeForm, { editor: this, view: this.view, metadataApi: this.metadataApi, link: link.data, source: source.data, target: target.data, onChangeElement: function (data) {
-                _this.setTemporaryState(authoringState_1.TemporaryState.deleteElement(_this.temporaryState, target.data));
-                target.setData(data);
-                _this.setTemporaryState(authoringState_1.TemporaryState.addElement(_this.temporaryState, target.data));
+                var existingTarget = _this.view.model.elements.find(function (_a) {
+                    var iri = _a.iri, group = _a.group;
+                    return iri === data.id && group === undefined;
+                });
+                if (existingTarget && existingTarget !== target) {
+                    onCancel();
+                    var newLink = new elements_1.Link({
+                        typeId: link.data.linkTypeId,
+                        sourceId: link.sourceId,
+                        targetId: existingTarget.id,
+                        data: tslib_1.__assign(tslib_1.__assign({}, link.data), { targetId: existingTarget.id }),
+                    });
+                    fn(_this.createNewLink({ link: newLink, temporary: true }));
+                }
+                else {
+                    _this.setTemporaryState(authoringState_1.TemporaryState.deleteElement(_this.temporaryState, target.data));
+                    target.setData(data);
+                    _this.setTemporaryState(authoringState_1.TemporaryState.addElement(_this.temporaryState, target.data));
+                }
             }, onChangeLink: function (data) {
                 _this.removeTemporaryLink(link);
-                var newLink = createLinkAndChangeDirection({
-                    data: data,
-                    originalData: link.data,
-                    sourceId: link.sourceId,
-                    targetId: link.targetId,
-                });
+                var newLink = makeLinkWithDirection(link, data);
                 link = _this.createNewLink({ link: newLink, temporary: true });
             }, onApply: function (elementData, linkData) {
                 var isNewElement = target.iri === elementData.id;
-                var position = target.position;
                 _this.removeTemporaryElement(target);
                 _this.removeTemporaryLink(link);
                 var batch = _this.model.history.startBatch();
-                var newTarget = _this.model.createElement(elementData);
-                newTarget.setPosition(position);
+                _this.model.addElement(target);
                 if (isNewElement) {
-                    newTarget.setExpanded(true);
-                    _this.addNewEntity(newTarget.data);
+                    target.setExpanded(true);
+                    _this.addNewEntity(target.data);
                 }
                 else {
                     _this.model.requestLinksOfType();
                 }
-                var newLink = createLinkAndChangeDirection({
-                    data: linkData,
-                    originalData: link.data,
+                var newLink = makeLinkWithDirection(new elements_1.Link({
+                    typeId: link.typeId,
                     sourceId: source.id,
-                    targetId: newTarget.id,
-                });
+                    targetId: target.id,
+                    data: tslib_1.__assign(tslib_1.__assign({}, link.data), { sourceId: source.iri, targetId: target.iri })
+                }), linkData);
                 _this.createNewLink({ link: newLink });
                 batch.store();
                 _this.hideDialog();
                 if (isNewElement) {
-                    _this.showEditEntityForm(newTarget);
+                    _this.showEditEntityForm(target);
                 }
             }, onCancel: onCancel }));
         this.showDialog({
@@ -12823,23 +12860,13 @@ var EditorController = /** @class */ (function () {
         var content = (React.createElement(editLinkForm_1.EditLinkForm, { editor: this, view: this.view, metadataApi: this.metadataApi, link: link.data, source: source, target: target, onChange: function (data) {
                 if (_this.temporaryState.links.has(link.data)) {
                     _this.removeTemporaryLink(link);
-                    var newLink = createLinkAndChangeDirection({
-                        data: data,
-                        originalData: link.data,
-                        sourceId: link.sourceId,
-                        targetId: link.targetId,
-                    });
+                    var newLink = makeLinkWithDirection(link, data);
                     _this.showEditLinkForm(_this.createNewLink({ link: newLink, temporary: true }));
                 }
             }, onApply: function (data) {
                 if (_this.temporaryState.links.has(link.data)) {
                     _this.removeTemporaryLink(link);
-                    var newLink = createLinkAndChangeDirection({
-                        data: data,
-                        originalData: link.data,
-                        sourceId: link.sourceId,
-                        targetId: link.targetId,
-                    });
+                    var newLink = makeLinkWithDirection(link, data);
                     _this.createNewLink({ link: newLink });
                 }
                 else {
@@ -12888,7 +12915,7 @@ var EditorController = /** @class */ (function () {
         this.dialogType = dialogType;
         var dialog = (React.createElement(dialog_1.Dialog, { view: this.view, target: target, size: size, caption: caption, offset: offset, calculatePosition: calculatePosition, onClose: onClose, className: className }, content));
         this.view.setPaperWidget({ key: 'dialog', widget: dialog, attachment: view_1.WidgetAttachment.OverElements });
-        this.source.trigger('toggleDialog', { isOpened: false });
+        this.source.trigger('toggleDialog', { isOpened: true });
     };
     EditorController.prototype.hideDialog = function () {
         if (this.dialogTarget) {
@@ -13018,14 +13045,17 @@ var EditorController = /** @class */ (function () {
         this.setAuthoringState(authoringState_1.AuthoringState.deleteElement(state, model));
         batch.store();
     };
-    EditorController.prototype.createNewLink = function (_a) {
-        var base = _a.link, temporary = _a.temporary;
+    EditorController.prototype.createNewLink = function (params) {
+        var base = params.link, temporary = params.temporary;
         var existingLink = this.model.findLink(base.typeId, base.sourceId, base.targetId);
         if (existingLink) {
             throw Error('The link already exists');
         }
         var batch = this.model.history.startBatch('Create new link');
-        this.model.createLinks(base.data);
+        var addedLink = this.model.addLink(base);
+        if (!temporary) {
+            this.model.createLinks(base.data);
+        }
         var links = this.model.links.filter(function (link) { return model_1.sameLink(link.data, base.data); });
         if (links.length > 0) {
             if (temporary) {
@@ -13040,10 +13070,7 @@ var EditorController = /** @class */ (function () {
         else {
             batch.discard();
         }
-        return links.find(function (_a) {
-            var sourceId = _a.sourceId, targetId = _a.targetId;
-            return sourceId === base.sourceId && targetId === base.targetId;
-        });
+        return addedLink;
     };
     EditorController.prototype.changeLink = function (oldData, newData) {
         var _this = this;
@@ -13104,12 +13131,13 @@ var EditorController = /** @class */ (function () {
         batch.store();
     };
     EditorController.prototype.startEditing = function (params) {
+        var _this = this;
         var target = params.target, mode = params.mode, point = params.point;
-        var editLayer = (React.createElement(editLayer_1.EditLayer, { view: this.view, editor: this, metadataApi: this.metadataApi, mode: mode, target: target, point: point }));
+        var onFinishEditing = function () {
+            _this.view.setPaperWidget({ key: 'editLayer', widget: undefined, attachment: view_1.WidgetAttachment.OverElements });
+        };
+        var editLayer = (React.createElement(editLayer_1.EditLayer, { view: this.view, editor: this, metadataApi: this.metadataApi, mode: mode, target: target, point: point, onFinishEditing: onFinishEditing }));
         this.view.setPaperWidget({ key: 'editLayer', widget: editLayer, attachment: view_1.WidgetAttachment.OverElements });
-    };
-    EditorController.prototype.finishEditing = function () {
-        this.view.setPaperWidget({ key: 'editLayer', widget: undefined, attachment: view_1.WidgetAttachment.OverElements });
     };
     EditorController.prototype.addNewEntity = function (element) {
         var batch = this.model.history.startBatch('Create new entity');
@@ -13206,12 +13234,18 @@ var LoadingWidget = /** @class */ (function (_super) {
 }(React.Component));
 function placeElements(view, dragged, position) {
     var elements = dragged.map(function (item) { return view.model.createElement(item); });
+    for (var _i = 0, elements_3 = elements; _i < elements_3.length; _i++) {
+        var element = elements_3[_i];
+        // intialally anchor element at top left corner to preserve canvas scroll state,
+        // measure it and only then move to center-anchored position
+        element.setPosition(position);
+    }
     view.performSyncUpdate();
     var x = position.x, y = position.y;
     var isFirst = true;
-    for (var _i = 0, elements_3 = elements; _i < elements_3.length; _i++) {
-        var element = elements_3[_i];
-        var _a = geometry_1.boundsOf(element), width = _a.width, height = _a.height;
+    for (var _a = 0, elements_4 = elements; _a < elements_4.length; _a++) {
+        var element = elements_4[_a];
+        var _b = geometry_1.boundsOf(element), width = _b.width, height = _b.height;
         if (width === 0) {
             width = 100;
         }
@@ -13228,17 +13262,19 @@ function placeElements(view, dragged, position) {
     }
     return elements;
 }
-function createLinkAndChangeDirection(_a) {
-    var _b;
-    var data = _a.data, originalData = _a.originalData, sourceId = _a.sourceId, targetId = _a.targetId;
-    // some of the ids can be totally different because of generating IRI so we use "OR" instead of "AND"
-    var directionHasChanged = originalData.sourceId === data.targetId || originalData.targetId === data.sourceId;
-    if (directionHasChanged) {
-        _b = [targetId, sourceId], sourceId = _b[0], targetId = _b[1];
+function makeLinkWithDirection(original, data) {
+    if (!(data.sourceId === original.data.sourceId || data.sourceId === original.data.targetId)) {
+        throw new Error('New link source IRI is unrelated to original link');
     }
+    if (!(data.targetId === original.data.sourceId || data.targetId === original.data.targetId)) {
+        throw new Error('New link target IRI is unrelated to original link');
+    }
+    var sourceId = data.sourceId === original.data.sourceId
+        ? original.sourceId : original.targetId;
+    var targetId = data.targetId === original.data.targetId
+        ? original.targetId : original.sourceId;
     return new elements_1.Link({ typeId: data.linkTypeId, sourceId: sourceId, targetId: targetId, data: data });
 }
-exports.createLinkAndChangeDirection = createLinkAndChangeDirection;
 
 
 /***/ }),
@@ -13252,7 +13288,7 @@ var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var elements_1 = __webpack_require__(52);
 var events_1 = __webpack_require__(54);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var draggableHandle_1 = __webpack_require__(114);
 var DEFAULT_WIDTH = 300;
 var DEFAULT_HEIGHT = 300;
@@ -13556,7 +13592,7 @@ var events_1 = __webpack_require__(54);
 var progressBar_1 = __webpack_require__(116);
 var listElementView_1 = __webpack_require__(117);
 var searchResults_1 = __webpack_require__(118);
-var workspaceContext_1 = __webpack_require__(87);
+var workspaceContext_1 = __webpack_require__(86);
 var MAX_LINK_COUNT = 100;
 var ALL_RELATED_ELEMENTS_LINK = new elements_1.FatLinkType({
     id: 'allRelatedElements',
@@ -14108,7 +14144,7 @@ exports.ProgressBar = ProgressBar;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var d3_color_1 = __webpack_require__(59);
+var d3_color_1 = __webpack_require__(58);
 var CLASS_NAME = 'ontodia-list-element-view';
 var ListElementView = /** @class */ (function (_super) {
     tslib_1.__extends(ListElementView, _super);
@@ -14181,8 +14217,8 @@ exports.highlightSubstring = highlightSubstring;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var collections_1 = __webpack_require__(55);
-var async_1 = __webpack_require__(60);
+var collections_1 = __webpack_require__(88);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var listElementView_1 = __webpack_require__(117);
 var CLASS_NAME = 'ontodia-search-results';
@@ -14504,7 +14540,7 @@ var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var model_1 = __webpack_require__(47);
 var elements_1 = __webpack_require__(52);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var progressBar_1 = __webpack_require__(116);
 var elementTypeSelector_1 = __webpack_require__(121);
 var linkTypeSelector_1 = __webpack_require__(123);
@@ -14611,7 +14647,7 @@ var React = __webpack_require__(45);
 var schema_1 = __webpack_require__(53);
 var instancesSearch_1 = __webpack_require__(122);
 var listElementView_1 = __webpack_require__(117);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var spinner_1 = __webpack_require__(89);
 var CLASS_NAME = 'ontodia-edit-form';
 var ElementTypeSelector = /** @class */ (function (_super) {
@@ -14634,10 +14670,10 @@ var ElementTypeSelector = /** @class */ (function (_super) {
                         type = this.props.editor.model.createClass(classId);
                         typeName = this.props.view.formatLabel(type.label, type.id);
                         types = [classId];
-                        return [4 /*yield*/, metadataApi.generateNewElementIri(types, signal)];
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.generateNewElementIri(types, signal))];
                     case 1:
                         newId = _b.sent();
-                        if (signal.aborted) {
+                        if (newId === null) {
                             return [2 /*return*/];
                         }
                         this.setState({ isLoading: false });
@@ -14670,17 +14706,26 @@ var ElementTypeSelector = /** @class */ (function (_super) {
         this.newIriCancellation.abort();
     };
     ElementTypeSelector.prototype.fetchPossibleElementTypes = function () {
-        var _this = this;
-        var _a = this.props, view = _a.view, metadataApi = _a.metadataApi, source = _a.source;
-        if (!metadataApi) {
-            return;
-        }
-        metadataApi.typesOfElementsDraggedFrom(source, this.cancellation.signal).then(function (elementTypes) {
-            if (_this.cancellation.signal.aborted) {
-                return;
-            }
-            elementTypes.sort(makeElementTypeComparatorByLabel(view));
-            _this.setState({ elementTypes: elementTypes });
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, view, metadataApi, source, elementTypes;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this.props, view = _a.view, metadataApi = _a.metadataApi, source = _a.source;
+                        if (!metadataApi) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.typesOfElementsDraggedFrom(source, this.cancellation.signal))];
+                    case 1:
+                        elementTypes = _b.sent();
+                        if (elementTypes === null) {
+                            return [2 /*return*/];
+                        }
+                        elementTypes.sort(makeElementTypeComparatorByLabel(view));
+                        this.setState({ elementTypes: elementTypes });
+                        return [2 /*return*/];
+                }
+            });
         });
     };
     ElementTypeSelector.prototype.searchExistingElements = function () {
@@ -14738,12 +14783,13 @@ var ElementTypeSelector = /** @class */ (function (_super) {
         }
         if (existingElements.length > 0) {
             return existingElements.map(function (element) {
-                var isAlreadyOnDiagram = Boolean(view.model.elements.find(function (_a) {
+                var _a;
+                var elementFromDiagram = view.model.elements.find(function (_a) {
                     var iri = _a.iri, group = _a.group;
                     return iri === element.id && group === undefined;
-                }));
+                });
                 var hasAppropriateType = Boolean(elementTypes.find(function (type) { return element.types.indexOf(type) >= 0; }));
-                return (React.createElement(listElementView_1.ListElementView, { key: element.id, view: view, model: element, disabled: isAlreadyOnDiagram || !hasAppropriateType, selected: element.id === elementValue.value.id, onClick: function (e, model) { return onChange(model); } }));
+                return (React.createElement(listElementView_1.ListElementView, { key: element.id, view: view, model: ((_a = elementFromDiagram) === null || _a === void 0 ? void 0 : _a.data) || element, disabled: !hasAppropriateType, selected: element.id === elementValue.value.id, onClick: function (e, model) { return onChange(model); } }));
             });
         }
         return React.createElement("span", null, "No results");
@@ -14792,7 +14838,7 @@ var React = __webpack_require__(45);
 var events_1 = __webpack_require__(54);
 var progressBar_1 = __webpack_require__(116);
 var searchResults_1 = __webpack_require__(118);
-var workspaceContext_1 = __webpack_require__(87);
+var workspaceContext_1 = __webpack_require__(86);
 var DirectionInImage = __webpack_require__(9);
 var DirectionOutImage = __webpack_require__(10);
 var CLASS_NAME = 'ontodia-instances-search';
@@ -15010,7 +15056,7 @@ var model_1 = __webpack_require__(47);
 var schema_1 = __webpack_require__(53);
 var elements_1 = __webpack_require__(52);
 var events_1 = __webpack_require__(54);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var spinner_1 = __webpack_require__(89);
 var CLASS_NAME = 'ontodia-edit-form';
 var LinkTypeSelector = /** @class */ (function (_super) {
@@ -15057,24 +15103,33 @@ var LinkTypeSelector = /** @class */ (function (_super) {
         this.cancellation.abort();
     };
     LinkTypeSelector.prototype.fetchPossibleLinkTypes = function () {
-        var _this = this;
-        var _a = this.props, view = _a.view, metadataApi = _a.metadataApi, source = _a.source, target = _a.target;
-        if (!metadataApi) {
-            return;
-        }
-        metadataApi.possibleLinkTypes(source, target, this.cancellation.signal).then(function (linkTypes) {
-            if (_this.cancellation.signal.aborted) {
-                return;
-            }
-            var fatLinkTypes = [];
-            linkTypes.forEach(function (_a) {
-                var linkTypeIri = _a.linkTypeIri, direction = _a.direction;
-                var fatLinkType = view.model.createLinkType(linkTypeIri);
-                fatLinkTypes.push({ fatLinkType: fatLinkType, direction: direction });
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, view, metadataApi, source, target, linkTypes, fatLinkTypes;
+            return tslib_1.__generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this.props, view = _a.view, metadataApi = _a.metadataApi, source = _a.source, target = _a.target;
+                        if (!metadataApi) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.possibleLinkTypes(source, target, this.cancellation.signal))];
+                    case 1:
+                        linkTypes = _b.sent();
+                        if (linkTypes === null) {
+                            return [2 /*return*/];
+                        }
+                        fatLinkTypes = [];
+                        linkTypes.forEach(function (_a) {
+                            var linkTypeIri = _a.linkTypeIri, direction = _a.direction;
+                            var fatLinkType = view.model.createLinkType(linkTypeIri);
+                            fatLinkTypes.push({ fatLinkType: fatLinkType, direction: direction });
+                        });
+                        fatLinkTypes.sort(makeLinkTypeComparatorByLabelAndDirection(view));
+                        this.setState({ fatLinkTypes: fatLinkTypes });
+                        this.listenToLinkLabels(fatLinkTypes);
+                        return [2 /*return*/];
+                }
             });
-            fatLinkTypes.sort(makeLinkTypeComparatorByLabelAndDirection(view));
-            _this.setState({ fatLinkTypes: fatLinkTypes });
-            _this.listenToLinkLabels(fatLinkTypes);
         });
     };
     LinkTypeSelector.prototype.listenToLinkLabels = function (fatLinkTypes) {
@@ -15173,7 +15228,7 @@ var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var model_1 = __webpack_require__(47);
 var elements_1 = __webpack_require__(52);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var progressBar_1 = __webpack_require__(116);
 var linkTypeSelector_1 = __webpack_require__(123);
 var CLASS_NAME = 'ontodia-edit-form';
@@ -15307,10 +15362,10 @@ exports.EditLinkLabelForm = EditLinkLabelForm;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var geometry_1 = __webpack_require__(56);
-var authoringState_1 = __webpack_require__(88);
+var geometry_1 = __webpack_require__(55);
+var authoringState_1 = __webpack_require__(87);
 var events_1 = __webpack_require__(54);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var spinner_1 = __webpack_require__(89);
 var CLASS_NAME = 'ontodia-halo';
 var Halo = /** @class */ (function (_super) {
@@ -15384,9 +15439,9 @@ var Halo = /** @class */ (function (_super) {
         }
         else {
             this.setState({ canLink: undefined });
-            var signal_1 = this.queryCancellation.signal;
-            metadataApi.canLinkElement(target.data, signal_1).then(function (canLink) {
-                if (signal_1.aborted) {
+            var signal = this.queryCancellation.signal;
+            async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.canLinkElement(target.data, signal)).then(function (canLink) {
+                if (canLink === null) {
                     return;
                 }
                 if (_this.props.target.iri === target.iri) {
@@ -15453,9 +15508,9 @@ exports.Halo = Halo;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var events_1 = __webpack_require__(54);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var spinner_1 = __webpack_require__(89);
 var CLASS_NAME = 'ontodia-halo-link';
 var BUTTON_SIZE = 20;
@@ -15524,9 +15579,9 @@ var HaloLink = /** @class */ (function (_super) {
             this.setState({ canDelete: undefined });
             var source = view.model.getElement(link.sourceId);
             var target = view.model.getElement(link.targetId);
-            var signal_1 = this.queryCancellation.signal;
-            metadataApi.canDeleteLink(link.data, source.data, target.data, signal_1).then(function (canDelete) {
-                if (signal_1.aborted) {
+            var signal = this.queryCancellation.signal;
+            async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.canDeleteLink(link.data, source.data, target.data, signal)).then(function (canDelete) {
+                if (canDelete === null) {
                     return;
                 }
                 if (_this.props.target.id === link.id) {
@@ -15549,9 +15604,9 @@ var HaloLink = /** @class */ (function (_super) {
             this.setState({ canEdit: undefined });
             var source = view.model.getElement(link.sourceId);
             var target = view.model.getElement(link.targetId);
-            var signal_2 = this.queryCancellation.signal;
-            metadataApi.canEditLink(link.data, source.data, target.data, signal_2).then(function (canEdit) {
-                if (signal_2.aborted) {
+            var signal = this.queryCancellation.signal;
+            async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.canEditLink(link.data, source.data, target.data, signal)).then(function (canEdit) {
+                if (canEdit === null) {
                     return;
                 }
                 if (_this.props.target.id === link.id) {
@@ -15703,13 +15758,13 @@ function isSourceOrTargetDeleted(state, link) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var paper_1 = __webpack_require__(51);
-var view_1 = __webpack_require__(65);
-var async_1 = __webpack_require__(60);
+var view_1 = __webpack_require__(64);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var spinner_1 = __webpack_require__(89);
-var authoringState_1 = __webpack_require__(88);
+var authoringState_1 = __webpack_require__(87);
 var CLASS_NAME = "ontodia-authoring-state";
 var LINK_LABEL_MARGIN = 5;
 var LinkStateWidget = /** @class */ (function (_super) {
@@ -15914,7 +15969,7 @@ exports.LinkStateWidget = LinkStateWidget;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var spinner_1 = __webpack_require__(89);
 var CLASS_NAME = "ontodia-authoring-state";
@@ -15939,13 +15994,25 @@ var ElementDecorator = /** @class */ (function (_super) {
             return _this.forceUpdate();
         });
         this.listener.listen(editor.events, 'changeAuthoringState', function () {
-            return _this.setState({ state: editor.authoringState.elements.get(model.iri) });
+            var state = editor.authoringState.elements.get(model.iri);
+            if (_this.state.state === state) {
+                return;
+            }
+            _this.setState({ state: state });
         });
         this.listener.listen(editor.events, 'changeValidationState', function () {
-            return _this.setState({ validation: editor.validationState.elements.get(model.iri) });
+            var validation = editor.validationState.elements.get(model.iri);
+            if (_this.state.validation === validation) {
+                return;
+            }
+            _this.setState({ validation: validation });
         });
         this.listener.listen(editor.events, 'changeTemporaryState', function () {
-            return _this.setState({ isTemporary: editor.temporaryState.elements.has(model.iri) });
+            var isTemporary = editor.temporaryState.elements.has(model.iri);
+            if (_this.state.isTemporary === isTemporary) {
+                return;
+            }
+            _this.setState({ isTemporary: isTemporary });
         });
         this.listener.listen(model.events, 'changeData', function (event) {
             if (event.previous.id !== model.iri) {
@@ -16082,13 +16149,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var schema_1 = __webpack_require__(53);
-var linkLayer_1 = __webpack_require__(81);
+var linkLayer_1 = __webpack_require__(80);
 var elements_1 = __webpack_require__(52);
-var geometry_1 = __webpack_require__(56);
+var geometry_1 = __webpack_require__(55);
 var paper_1 = __webpack_require__(51);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var spinner_1 = __webpack_require__(89);
+var authoringState_1 = __webpack_require__(87);
 var EditLayerMode;
 (function (EditLayerMode) {
     EditLayerMode[EditLayerMode["establishLink"] = 0] = "establishLink";
@@ -16101,60 +16169,46 @@ var EditLayer = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.listener = new events_1.EventObserver();
         _this.cancellation = new async_1.Cancellation();
+        _this.canDropOnElementCancellation = new async_1.Cancellation();
         _this.beginCreatingLink = function (params) {
-            var model = _this.props.view.model;
+            var editor = _this.props.editor;
             var sourceId = params.sourceId, point = params.point;
             var temporaryElement = _this.createTemporaryElement(point);
-            var temporaryLink = model.addLink(new elements_1.Link({
+            var linkTemplate = new elements_1.Link({
                 typeId: schema_1.PLACEHOLDER_LINK_TYPE,
                 sourceId: sourceId,
                 targetId: temporaryElement.id,
-            }));
-            var fatLinkType = model.createLinkType(temporaryLink.typeId);
+            });
+            var temporaryLink = editor.createNewLink({ link: linkTemplate, temporary: true });
+            var fatLinkType = editor.model.createLinkType(temporaryLink.typeId);
             fatLinkType.setVisibility({ visible: true, showLabel: false });
             _this.temporaryElement = temporaryElement;
             _this.temporaryLink = temporaryLink;
         };
         _this.onMouseMove = function (e) {
-            var targetElement = _this.state.targetElement;
+            var _a = _this.props, view = _a.view, paperArea = _a.paperArea;
+            var _b = _this.state, targetElement = _b.targetElement, waitingForMetadata = _b.waitingForMetadata;
             e.preventDefault();
             e.stopPropagation();
-            var point = _this.props.paperArea.pageToPaperCoords(e.pageX, e.pageY);
+            if (waitingForMetadata) {
+                return;
+            }
+            var point = paperArea.pageToPaperCoords(e.pageX, e.pageY);
             _this.temporaryElement.setPosition(point);
-            var newTargetElement = _this.findElementFormPoint(point);
-            if (newTargetElement && (!targetElement || newTargetElement.iri !== targetElement.iri)) {
-                _this.canDropOnElement(newTargetElement);
+            var newTargetElement = geometry_1.findElementAtPoint(view.model.elements, point);
+            if (newTargetElement !== targetElement) {
+                _this.queryCanDropOnElement(newTargetElement);
             }
             _this.setState({ targetElement: newTargetElement });
         };
         _this.onMouseUp = function (e) {
-            var _a = _this.props, editor = _a.editor, mode = _a.mode;
-            var _b = _this.state, targetElement = _b.targetElement, canDropOnElement = _b.canDropOnElement, canDropOnCanvas = _b.canDropOnCanvas;
-            var batch = editor.model.history.startBatch();
-            editor.model.removeElement(_this.temporaryElement.id);
-            batch.discard();
-            if (targetElement || (mode === EditLayerMode.moveLinkSource || mode === EditLayerMode.moveLinkTarget)) {
-                _this.endChangingLink({ link: _this.temporaryLink, targetElement: targetElement, canDrop: canDropOnElement }).then(function (link) {
-                    if (link) {
-                        editor.setSelection([link]);
-                        editor.showEditLinkForm(link);
-                    }
-                });
+            if (_this.state.waitingForMetadata) {
+                return;
             }
-            else if (canDropOnCanvas) {
-                var point_1 = _this.props.paperArea.pageToPaperCoords(e.pageX, e.pageY);
-                var source_1 = editor.model.getElement(_this.temporaryLink.sourceId);
-                _this.createNewElement(source_1.data).then(function (target) {
-                    target.setPosition(point_1);
-                    _this.endChangingLink({
-                        link: _this.temporaryLink, targetElement: target, canDrop: canDropOnCanvas,
-                    }).then(function (link) {
-                        editor.setSelection([target]);
-                        editor.showEditElementTypeForm({ link: link, source: source_1, target: target });
-                    });
-                });
-            }
-            editor.finishEditing();
+            // show spinner while waiting for additinal MetadataApi queries
+            _this.setState({ waitingForMetadata: true });
+            var selectedPosition = _this.props.paperArea.pageToPaperCoords(e.pageX, e.pageY);
+            _this.executeEditOperation(selectedPosition);
         };
         _this.createNewElement = function (source) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
             var _a, editor, metadataApi, elementTypes, classId, type, typeName, labelText, types, entityIri, elementModel;
@@ -16165,17 +16219,23 @@ var EditLayer = /** @class */ (function (_super) {
                         if (!metadataApi) {
                             return [2 /*return*/];
                         }
-                        return [4 /*yield*/, metadataApi.typesOfElementsDraggedFrom(source, this.cancellation.signal)];
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.typesOfElementsDraggedFrom(source, this.cancellation.signal))];
                     case 1:
                         elementTypes = _b.sent();
+                        if (elementTypes === null) {
+                            return [2 /*return*/];
+                        }
                         classId = elementTypes.length === 1 ? elementTypes[0] : schema_1.PLACEHOLDER_ELEMENT_TYPE;
                         type = this.props.editor.model.createClass(classId);
                         typeName = this.props.view.formatLabel(type.label, type.id);
                         labelText = classId === schema_1.PLACEHOLDER_ELEMENT_TYPE ? 'New Entity' : "New " + typeName;
                         types = [classId];
-                        return [4 /*yield*/, metadataApi.generateNewElementIri(types, async_1.Cancellation.NEVER_SIGNAL)];
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.generateNewElementIri(types, this.cancellation.signal))];
                     case 2:
                         entityIri = _b.sent();
+                        if (entityIri === null) {
+                            return [2 /*return*/];
+                        }
                         elementModel = {
                             id: entityIri,
                             types: types,
@@ -16195,43 +16255,35 @@ var EditLayer = /** @class */ (function (_super) {
             this.beginCreatingLink({ sourceId: target.id, point: point });
         }
         else if (mode === EditLayerMode.moveLinkSource || mode === EditLayerMode.moveLinkTarget) {
-            this.beginMovingLink({ link: target, point: point });
+            this.beginMovingLink(target, point);
         }
         else {
             throw new Error('Unknown edit mode');
         }
         this.forceUpdate();
-        this.canDropOnCanvas();
+        this.queryCanLinkFrom();
+        this.queryCanDropOnCanvas();
         document.addEventListener('mousemove', this.onMouseMove);
         document.addEventListener('mouseup', this.onMouseUp);
     };
     EditLayer.prototype.componentWillUnmount = function () {
         this.listener.stopListening();
         this.cancellation.abort();
+        this.canDropOnElementCancellation.abort();
         document.removeEventListener('mousemove', this.onMouseMove);
         document.removeEventListener('mouseup', this.onMouseUp);
     };
-    EditLayer.prototype.beginMovingLink = function (params) {
+    EditLayer.prototype.beginMovingLink = function (target, startingPoint) {
         var _a = this.props, editor = _a.editor, mode = _a.mode;
-        var link = params.link, point = params.point;
-        this.oldLink = link;
-        editor.model.removeLink(link.id);
-        var id = link.id, typeId = link.typeId, sourceId = link.sourceId, targetId = link.targetId, data = link.data, vertices = link.vertices;
-        var temporaryElement = this.createTemporaryElement(point);
-        var temporaryLink;
-        if (mode === EditLayerMode.moveLinkSource) {
-            temporaryLink = editor.model.addLink(new elements_1.Link({
-                id: id, typeId: typeId, sourceId: temporaryElement.id, targetId: targetId, data: data, vertices: vertices,
-            }));
+        if (!(mode === EditLayerMode.moveLinkSource || mode === EditLayerMode.moveLinkTarget)) {
+            throw new Error('Unexpected edit mode for moving link');
         }
-        else if (mode === EditLayerMode.moveLinkTarget) {
-            temporaryLink = editor.model.addLink(new elements_1.Link({
-                id: id, typeId: typeId, sourceId: sourceId, targetId: temporaryElement.id, data: data, vertices: vertices,
-            }));
-        }
-        else {
-            throw new Error('Unknown edit mode');
-        }
+        this.oldLink = target;
+        editor.model.removeLink(target.id);
+        var id = target.id, typeId = target.typeId, sourceId = target.sourceId, targetId = target.targetId, otherProps = tslib_1.__rest(target, ["id", "typeId", "sourceId", "targetId"]);
+        var temporaryElement = this.createTemporaryElement(startingPoint);
+        var linkTemplate = new elements_1.Link(tslib_1.__assign({ typeId: typeId, sourceId: mode === EditLayerMode.moveLinkSource ? temporaryElement.id : sourceId, targetId: mode === EditLayerMode.moveLinkTarget ? temporaryElement.id : targetId }, otherProps));
+        var temporaryLink = editor.createNewLink({ link: linkTemplate, temporary: true });
         this.temporaryElement = temporaryElement;
         this.temporaryLink = temporaryLink;
     };
@@ -16240,7 +16292,27 @@ var EditLayer = /** @class */ (function (_super) {
         temporaryElement.setPosition(point);
         return temporaryElement;
     };
-    EditLayer.prototype.canDropOnCanvas = function () {
+    EditLayer.prototype.queryCanLinkFrom = function () {
+        var _this = this;
+        var _a = this.props, editor = _a.editor, metadataApi = _a.metadataApi;
+        if (!metadataApi) {
+            this.setState({ canLinkFrom: false });
+            return;
+        }
+        this.setState({ canLinkFrom: undefined });
+        var source = editor.model.getElement(this.temporaryLink.sourceId);
+        async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.canLinkElement(source.data, this.cancellation.signal)).then(function (canLinkFrom) {
+            if (canLinkFrom === null) {
+                return;
+            }
+            _this.setState({ canLinkFrom: canLinkFrom });
+        }, function (error) {
+            // tslint:disable-next-line: no-console
+            console.error('Error calling canLinkElement:', error);
+            _this.setState({ canLinkFrom: false });
+        });
+    };
+    EditLayer.prototype.queryCanDropOnCanvas = function () {
         var _this = this;
         var _a = this.props, mode = _a.mode, editor = _a.editor, metadataApi = _a.metadataApi;
         if (!metadataApi || mode !== EditLayerMode.establishLink) {
@@ -16248,17 +16320,24 @@ var EditLayer = /** @class */ (function (_super) {
             return;
         }
         this.setState({ canDropOnCanvas: undefined });
-        var source = editor.model.getElement(this.temporaryLink.sourceId).data;
-        metadataApi.canDropOnCanvas(source, this.cancellation.signal).then(function (canDropOnCanvas) {
-            if (!_this.cancellation.signal.aborted) {
-                _this.setState({ canDropOnCanvas: canDropOnCanvas });
+        var source = editor.model.getElement(this.temporaryLink.sourceId);
+        async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.canDropOnCanvas(source.data, this.cancellation.signal)).then(function (canDropOnCanvas) {
+            if (canDropOnCanvas === null) {
+                return;
             }
+            _this.setState({ canDropOnCanvas: canDropOnCanvas });
+        }, function (error) {
+            // tslint:disable-next-line: no-console
+            console.error('Error calling canDropOnCanvas:', error);
+            _this.setState({ canDropOnCanvas: false });
         });
     };
-    EditLayer.prototype.canDropOnElement = function (targetElement) {
+    EditLayer.prototype.queryCanDropOnElement = function (targetElement) {
         var _this = this;
         var _a = this.props, mode = _a.mode, editor = _a.editor, metadataApi = _a.metadataApi;
-        if (!metadataApi) {
+        this.canDropOnElementCancellation.abort();
+        this.canDropOnElementCancellation = new async_1.Cancellation();
+        if (!(metadataApi && targetElement)) {
             this.setState({ canDropOnElement: false });
             return;
         }
@@ -16273,106 +16352,182 @@ var EditLayer = /** @class */ (function (_super) {
             source = targetElement.data;
             target = editor.model.getElement(this.temporaryLink.targetId).data;
         }
-        metadataApi.canDropOnElement(source, target, this.cancellation.signal).then(function (canDropOnElement) {
-            if (!_this.cancellation.signal.aborted) {
-                _this.setState({ canDropOnElement: canDropOnElement });
+        var signal = this.canDropOnElementCancellation.signal;
+        async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.canDropOnElement(source, target, signal)).then(function (canDropOnElement) {
+            if (canDropOnElement === null) {
+                return;
             }
+            _this.setState({ canDropOnElement: canDropOnElement });
         });
     };
-    EditLayer.prototype.endChangingLink = function (params) {
-        var _a = this.props, editor = _a.editor, mode = _a.mode;
-        var link = params.link, targetElement = params.targetElement, canDrop = params.canDrop;
-        var originalLink;
-        editor.model.removeLink(link.id);
-        if (this.oldLink) {
-            originalLink = editor.model.addLink(this.oldLink);
-        }
-        if (mode === EditLayerMode.establishLink) {
-            var sourceElement = editor.model.getElement(link.sourceId);
-            if (canDrop && targetElement) {
-                return this.createNewLink(sourceElement, targetElement);
-            }
-        }
-        else if (mode === EditLayerMode.moveLinkSource) {
-            if (canDrop && targetElement) {
-                return Promise.resolve(editor.moveLinkSource({ link: link, newSource: targetElement }));
-            }
-        }
-        else if (mode === EditLayerMode.moveLinkTarget) {
-            if (canDrop && targetElement) {
-                return Promise.resolve(editor.moveLinkTarget({ link: link, newTarget: targetElement }));
-            }
-        }
-        else {
-            throw new Error('Unknown edit mode');
-        }
-        return Promise.resolve(originalLink);
+    EditLayer.prototype.executeEditOperation = function (selectedPosition) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, view, editor, mode, _b, targetElement, canLinkFrom, canDropOnCanvas, canDropOnElement, canDrop, modifiedLink, createdTarget, _c, source, sourceElement, focusedLink, source;
+            return tslib_1.__generator(this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        _a = this.props, view = _a.view, editor = _a.editor, mode = _a.mode;
+                        _d.label = 1;
+                    case 1:
+                        _d.trys.push([1, , 11, 12]);
+                        _b = this.state, targetElement = _b.targetElement, canLinkFrom = _b.canLinkFrom, canDropOnCanvas = _b.canDropOnCanvas, canDropOnElement = _b.canDropOnElement;
+                        if (this.oldLink) {
+                            editor.model.addLink(this.oldLink);
+                        }
+                        canDrop = targetElement ? canDropOnElement : canDropOnCanvas;
+                        if (!(canLinkFrom && canDrop)) return [3 /*break*/, 10];
+                        modifiedLink = void 0;
+                        createdTarget = targetElement;
+                        _c = mode;
+                        switch (_c) {
+                            case EditLayerMode.establishLink: return [3 /*break*/, 2];
+                            case EditLayerMode.moveLinkSource: return [3 /*break*/, 6];
+                            case EditLayerMode.moveLinkTarget: return [3 /*break*/, 7];
+                        }
+                        return [3 /*break*/, 8];
+                    case 2:
+                        if (!!createdTarget) return [3 /*break*/, 4];
+                        source = editor.model.getElement(this.temporaryLink.sourceId);
+                        return [4 /*yield*/, this.createNewElement(source.data)];
+                    case 3:
+                        createdTarget = _d.sent();
+                        createdTarget.setPosition(selectedPosition);
+                        view.performSyncUpdate();
+                        centerElementAtPoint(createdTarget, selectedPosition);
+                        _d.label = 4;
+                    case 4:
+                        sourceElement = editor.model.getElement(this.temporaryLink.sourceId);
+                        return [4 /*yield*/, this.createNewLink(sourceElement, createdTarget)];
+                    case 5:
+                        modifiedLink = _d.sent();
+                        return [3 /*break*/, 9];
+                    case 6:
+                        {
+                            modifiedLink = editor.moveLinkSource({ link: this.oldLink, newSource: targetElement });
+                            return [3 /*break*/, 9];
+                        }
+                        _d.label = 7;
+                    case 7:
+                        {
+                            modifiedLink = editor.moveLinkTarget({ link: this.oldLink, newTarget: targetElement });
+                            return [3 /*break*/, 9];
+                        }
+                        _d.label = 8;
+                    case 8:
+                        {
+                            throw new Error('Unknown edit mode');
+                        }
+                        _d.label = 9;
+                    case 9:
+                        if (targetElement) {
+                            focusedLink = modifiedLink || this.oldLink;
+                            editor.setSelection([focusedLink]);
+                            editor.showEditLinkForm(focusedLink);
+                        }
+                        else if (createdTarget && modifiedLink) {
+                            editor.setSelection([createdTarget]);
+                            source = editor.model.getElement(modifiedLink.sourceId);
+                            editor.showEditElementTypeForm({ link: modifiedLink, source: source, target: createdTarget }, function (newLink) {
+                                if (newLink) {
+                                    editor.setSelection([newLink]);
+                                    editor.showEditLinkForm(newLink);
+                                }
+                            });
+                        }
+                        _d.label = 10;
+                    case 10: return [3 /*break*/, 12];
+                    case 11:
+                        this.cleanupAndFinish();
+                        return [7 /*endfinally*/];
+                    case 12: return [2 /*return*/];
+                }
+            });
+        });
     };
     EditLayer.prototype.createNewLink = function (source, target) {
-        var _a = this.props, editor = _a.editor, metadataApi = _a.metadataApi;
-        if (!metadataApi) {
-            return Promise.resolve(undefined);
-        }
-        return metadataApi.possibleLinkTypes(source.data, target.data, this.cancellation.signal).then(function (linkTypes) {
-            var _a;
-            var placeholder = { linkTypeIri: schema_1.PLACEHOLDER_LINK_TYPE, direction: elements_1.LinkDirection.out };
-            var _b = linkTypes.length === 1 ? linkTypes[0] : placeholder, typeId = _b.linkTypeIri, direction = _b.direction;
-            var data = {
-                linkTypeId: typeId,
-                sourceId: source.iri,
-                targetId: target.iri,
-            };
-            var _c = [source.id, target.id], sourceId = _c[0], targetId = _c[1];
-            // switches source and target if the direction equals 'in'
-            if (direction === elements_1.LinkDirection.in) {
-                data.sourceId = target.iri;
-                data.targetId = source.iri;
-                _a = [targetId, sourceId], sourceId = _a[0], targetId = _a[1];
-            }
-            var link = new elements_1.Link({ typeId: typeId, sourceId: sourceId, targetId: targetId, data: data });
-            var existingLink = editor.model.findLink(link.typeId, link.sourceId, link.targetId);
-            return existingLink || editor.createNewLink({ link: link, temporary: true });
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            var _a, editor, metadataApi, linkTypes, placeholder, _b, typeId, direction, data, _c, sourceId, targetId, link, existingLink;
+            var _d;
+            return tslib_1.__generator(this, function (_e) {
+                switch (_e.label) {
+                    case 0:
+                        _a = this.props, editor = _a.editor, metadataApi = _a.metadataApi;
+                        if (!metadataApi) {
+                            return [2 /*return*/, undefined];
+                        }
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(this.cancellation.signal, metadataApi.possibleLinkTypes(source.data, target.data, this.cancellation.signal))];
+                    case 1:
+                        linkTypes = _e.sent();
+                        if (linkTypes === null) {
+                            return [2 /*return*/, undefined];
+                        }
+                        placeholder = { linkTypeIri: schema_1.PLACEHOLDER_LINK_TYPE, direction: elements_1.LinkDirection.out };
+                        _b = linkTypes.length === 1 ? linkTypes[0] : placeholder, typeId = _b.linkTypeIri, direction = _b.direction;
+                        data = {
+                            linkTypeId: typeId,
+                            sourceId: source.iri,
+                            targetId: target.iri,
+                        };
+                        _c = [source.id, target.id], sourceId = _c[0], targetId = _c[1];
+                        // switches source and target if the direction equals 'in'
+                        if (direction === elements_1.LinkDirection.in) {
+                            data.sourceId = target.iri;
+                            data.targetId = source.iri;
+                            _d = [targetId, sourceId], sourceId = _d[0], targetId = _d[1];
+                        }
+                        link = new elements_1.Link({ typeId: typeId, sourceId: sourceId, targetId: targetId, data: data });
+                        existingLink = editor.model.findLink(link.typeId, link.sourceId, link.targetId);
+                        return [2 /*return*/, existingLink || editor.createNewLink({ link: link, temporary: true })];
+                }
+            });
         });
     };
-    EditLayer.prototype.findElementFormPoint = function (point) {
-        var elements = this.props.view.model.elements;
-        for (var i = elements.length - 1; i >= 0; i--) {
-            var element = elements[i];
-            var _a = geometry_1.boundsOf(element), x = _a.x, y = _a.y, width = _a.width, height = _a.height;
-            if (element.temporary) {
-                continue;
-            }
-            if (point.x >= x && point.x <= x + width && point.y >= y && point.y <= y + height) {
-                return element;
-            }
+    EditLayer.prototype.cleanupAndFinish = function () {
+        var _a = this.props, editor = _a.editor, onFinishEditing = _a.onFinishEditing;
+        var batch = editor.model.history.startBatch();
+        editor.model.removeElement(this.temporaryElement.id);
+        editor.model.removeLink(this.temporaryLink.id);
+        editor.setTemporaryState(authoringState_1.TemporaryState.deleteLink(editor.temporaryState, this.temporaryLink.data));
+        batch.discard();
+        onFinishEditing();
+    };
+    EditLayer.prototype.render = function () {
+        var _a = this.props, view = _a.view, paperTransform = _a.paperTransform;
+        var waitingForMetadata = this.state.waitingForMetadata;
+        if (!this.temporaryLink) {
+            return null;
         }
-        return undefined;
+        return (React.createElement(paper_1.TransformedSvgCanvas, { paperTransform: paperTransform, style: { overflow: 'visible' } },
+            React.createElement(linkLayer_1.LinkMarkers, { view: view }),
+            this.renderHighlight(),
+            this.renderCanDropIndicator(),
+            waitingForMetadata ? null : React.createElement(linkLayer_1.LinkLayer, { view: view, links: [this.temporaryLink] })));
     };
     EditLayer.prototype.renderHighlight = function () {
-        var _a = this.state, targetElement = _a.targetElement, canDropOnElement = _a.canDropOnElement;
+        var _a = this.state, targetElement = _a.targetElement, canLinkFrom = _a.canLinkFrom, canDropOnElement = _a.canDropOnElement, waitingForMetadata = _a.waitingForMetadata;
         if (!targetElement) {
             return null;
         }
         var _b = geometry_1.boundsOf(targetElement), x = _b.x, y = _b.y, width = _b.width, height = _b.height;
-        if (canDropOnElement === undefined) {
+        if (canLinkFrom === undefined || canDropOnElement === undefined || waitingForMetadata) {
             return (React.createElement("g", { transform: "translate(" + x + "," + y + ")" },
                 React.createElement("rect", { width: width, height: height, fill: 'white', fillOpacity: 0.5 }),
                 React.createElement(spinner_1.Spinner, { size: 30, position: { x: width / 2, y: height / 2 } })));
         }
-        var stroke = canDropOnElement ? '#5cb85c' : '#c9302c';
+        var stroke = (canLinkFrom && canDropOnElement) ? '#5cb85c' : '#c9302c';
         return (React.createElement("rect", { x: x, y: y, width: width, height: height, fill: 'transparent', stroke: stroke, strokeWidth: 3 }));
     };
     EditLayer.prototype.renderCanDropIndicator = function () {
-        var _a = this.state, targetElement = _a.targetElement, canDropOnCanvas = _a.canDropOnCanvas;
+        var _a = this.state, targetElement = _a.targetElement, canLinkFrom = _a.canLinkFrom, canDropOnCanvas = _a.canDropOnCanvas, waitingForMetadata = _a.waitingForMetadata;
         if (targetElement) {
             return null;
         }
         var _b = this.temporaryElement.position, x = _b.x, y = _b.y;
         var indicator;
-        if (canDropOnCanvas === undefined) {
+        if (canLinkFrom === undefined || canDropOnCanvas === undefined) {
             indicator = React.createElement(spinner_1.Spinner, { size: 1.2, position: { x: 0.5, y: -0.5 } });
         }
-        else if (canDropOnCanvas) {
+        else if (canLinkFrom && canDropOnCanvas) {
             indicator = React.createElement("path", { d: 'M0.5,0 L0.5,-1 M0,-0.5 L1,-0.5', strokeWidth: 0.2, stroke: '#5cb85c' });
         }
         else {
@@ -16382,22 +16537,19 @@ var EditLayer = /** @class */ (function (_super) {
         }
         return (React.createElement("g", { transform: "translate(" + x + " " + y + ")scale(40)" },
             React.createElement("rect", { x: -0.5, y: -0.5, width: 1, height: 1, fill: 'rgba(0, 0, 0, 0.1)', rx: 0.25, ry: 0.25 }),
-            React.createElement("g", { transform: "translate(" + 0.5 + ", -" + 0.5 + ")scale(" + 0.25 + ")" }, indicator)));
-    };
-    EditLayer.prototype.render = function () {
-        var _a = this.props, view = _a.view, paperTransform = _a.paperTransform;
-        if (!this.temporaryLink) {
-            return null;
-        }
-        return (React.createElement(paper_1.TransformedSvgCanvas, { paperTransform: paperTransform, style: { overflow: 'visible' } },
-            React.createElement(linkLayer_1.LinkMarkers, { view: view }),
-            this.renderHighlight(),
-            this.renderCanDropIndicator(),
-            React.createElement(linkLayer_1.LinkLayer, { view: view, links: [this.temporaryLink] })));
+            waitingForMetadata
+                ? React.createElement(spinner_1.Spinner, { size: 0.8 })
+                : React.createElement("g", { transform: "translate(" + 0.5 + ", -" + 0.5 + ")scale(" + 0.25 + ")" }, indicator)));
     };
     return EditLayer;
 }(React.Component));
 exports.EditLayer = EditLayer;
+function centerElementAtPoint(element, point) {
+    element.setPosition({
+        x: point.x - element.size.width / 2,
+        y: point.y - element.size.height / 2,
+    });
+}
 
 
 /***/ }),
@@ -16409,7 +16561,8 @@ exports.EditLayer = EditLayer;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var model_1 = __webpack_require__(47);
-var collections_1 = __webpack_require__(55);
+var async_1 = __webpack_require__(59);
+var collections_1 = __webpack_require__(88);
 var ValidationState;
 (function (ValidationState) {
     ValidationState.empty = createMutable();
@@ -16478,7 +16631,7 @@ function changedElementsToValidate(previousAuthoring, editor) {
     return toValidate;
 }
 exports.changedElementsToValidate = changedElementsToValidate;
-function validateElements(targets, validationApi, editor, cancellation) {
+function validateElements(targets, validationApi, editor, cancellationToken) {
     var previousState = editor.validationState;
     var newState = ValidationState.createMutable();
     var _loop_1 = function (element) {
@@ -16497,9 +16650,9 @@ function validateElements(targets, validationApi, editor, cancellation) {
                 outboundLinks: outboundLinks,
                 state: editor.authoringState,
                 model: editor.model,
-                cancellation: cancellation,
+                cancellation: cancellationToken,
             };
-            var result = validationApi.validate(event_1);
+            var result = async_1.CancellationToken.mapCancelledToNull(cancellationToken, validationApi.validate(event_1));
             var loadingElement = { loading: true, errors: [] };
             var loadingLink_1 = { loading: true, errors: [] };
             newState.elements.set(element.iri, loadingElement);
@@ -16532,6 +16685,10 @@ function processValidationResult(result, previousElement, previousLink, e, edito
                     return [4 /*yield*/, result];
                 case 1:
                     allErrors = _a.sent();
+                    if (allErrors === null) {
+                        // validation was cancelled
+                        return [2 /*return*/];
+                    }
                     return [3 /*break*/, 3];
                 case 2:
                     err_1 = _a.sent();
@@ -16665,20 +16822,20 @@ exports.DefaultToolbar = DefaultToolbar;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var react_1 = __webpack_require__(45);
-var ReactDOM = __webpack_require__(58);
+var ReactDOM = __webpack_require__(57);
 var saveAs = __webpack_require__(134);
-var commands_1 = __webpack_require__(63);
-var history_1 = __webpack_require__(64);
-var view_1 = __webpack_require__(65);
+var commands_1 = __webpack_require__(62);
+var history_1 = __webpack_require__(63);
+var view_1 = __webpack_require__(64);
 var asyncModel_1 = __webpack_require__(110);
-var authoringState_1 = __webpack_require__(88);
+var authoringState_1 = __webpack_require__(87);
 var editorController_1 = __webpack_require__(112);
 var events_1 = __webpack_require__(54);
-var toSvg_1 = __webpack_require__(83);
+var toSvg_1 = __webpack_require__(82);
 var navigator_1 = __webpack_require__(135);
 var toolbar_1 = __webpack_require__(132);
 var workspaceMarkup_1 = __webpack_require__(136);
-var workspaceContext_1 = __webpack_require__(87);
+var workspaceContext_1 = __webpack_require__(86);
 var layout_1 = __webpack_require__(105);
 var ONTODIA_WEBSITE = 'https://ontodia.org/';
 var ONTODIA_LOGO_SVG = __webpack_require__(149);
@@ -16906,7 +17063,6 @@ var Workspace = /** @class */ (function (_super) {
     Workspace.prototype.preventTextSelectionUntilMouseUp = function () { this.markup.preventTextSelection(); };
     Workspace.prototype.showWaitIndicatorWhile = function (operation) {
         var _this = this;
-        this.markup.paperArea.centerTo();
         this.editor.setSpinner({});
         if (operation) {
             operation.then(function () {
@@ -17010,8 +17166,8 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__134__;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var d3_color_1 = __webpack_require__(59);
-var async_1 = __webpack_require__(60);
+var d3_color_1 = __webpack_require__(58);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var paper_1 = __webpack_require__(51);
 var CLASS_NAME = 'ontodia-navigator';
@@ -17240,12 +17396,13 @@ function paperFromCanvasCoords(canvas, pt, nt) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var paperArea_1 = __webpack_require__(82);
+var view_1 = __webpack_require__(64);
+var paperArea_1 = __webpack_require__(81);
 var classTree_1 = __webpack_require__(137);
 var instancesSearch_1 = __webpack_require__(122);
 var linksToolbox_1 = __webpack_require__(145);
-var workspaceContext_1 = __webpack_require__(87);
-var async_1 = __webpack_require__(60);
+var workspaceContext_1 = __webpack_require__(86);
+var async_1 = __webpack_require__(59);
 var layout_1 = __webpack_require__(146);
 var WorkspaceMarkup = /** @class */ (function (_super) {
     tslib_1.__extends(WorkspaceMarkup, _super);
@@ -17258,13 +17415,6 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
             if (onWorkspaceEvent) {
                 onWorkspaceEvent(key);
             }
-        };
-        _this.renderToolbar = function () {
-            var _a = _this.props, hideToolbar = _a.hideToolbar, toolbar = _a.toolbar;
-            if (hideToolbar) {
-                return null;
-            }
-            return React.createElement("div", { className: 'ontodia__header' }, toolbar);
         };
         _this.onCreateInstance = function (classId, position) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
             var _a, editor, view, model, metadataApi, batch, type, typeName, types, signal, newEntityIri, elementModel, element, targetPosition;
@@ -17280,10 +17430,10 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
                         typeName = view.formatLabel(type.label, type.id);
                         types = [classId];
                         signal = this.cancellation.signal;
-                        return [4 /*yield*/, metadataApi.generateNewElementIri(types, signal)];
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(signal, metadataApi.generateNewElementIri(types, signal))];
                     case 2:
                         newEntityIri = _b.sent();
-                        if (signal.aborted) {
+                        if (newEntityIri === null) {
                             return [2 /*return*/];
                         }
                         elementModel = {
@@ -17293,8 +17443,9 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
                             properties: {},
                         };
                         element = editor.createNewEntity({ elementModel: elementModel });
-                        view.performSyncUpdate();
                         targetPosition = position || getViewportCenterInPaperCoords(this.paperArea);
+                        element.setPosition(targetPosition);
+                        view.performSyncUpdate();
                         centerElementToPosition(element, targetPosition);
                         batch.store();
                         editor.setSelection([element]);
@@ -17327,6 +17478,16 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
         var editor = this.props.editor;
         var ontodiaWorkspace = { editor: editor, triggerWorkspaceEvent: this.triggerWorkspaceEvent };
         return { ontodiaWorkspace: ontodiaWorkspace };
+    };
+    WorkspaceMarkup.prototype.addToolbarWidgetToPaper = function () {
+        var _a = this.props, hideToolbar = _a.hideToolbar, view = _a.view, toolbar = _a.toolbar;
+        if (!hideToolbar) {
+            view.setPaperWidget({
+                key: 'toolbar',
+                widget: React.createElement(ToolbarWidget, null, toolbar),
+                attachment: view_1.WidgetAttachment.Viewport,
+            });
+        }
     };
     WorkspaceMarkup.prototype.getLeftPanelLayout = function () {
         var _a = this.props, view = _a.view, editor = _a.editor, model = _a.model, searchCriteria = _a.searchCriteria, onSearchCriteriaChanged = _a.onSearchCriteriaChanged;
@@ -17394,7 +17555,6 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
             ]
         };
         return (React.createElement("div", { ref: function (e) { return _this.element = e; }, className: 'ontodia' },
-            this.renderToolbar(),
             React.createElement("div", { className: 'ontodia__workspace' },
                 React.createElement(layout_1.WorkspaceLayout, { layout: workspaceLayout, _onStartResize: function (direction) {
                         return _this.untilMouseUp({
@@ -17406,6 +17566,7 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
     };
     WorkspaceMarkup.prototype.componentDidMount = function () {
         document.addEventListener('mouseup', this.onDocumentMouseUp);
+        this.addToolbarWidgetToPaper();
     };
     WorkspaceMarkup.prototype.componentWillUnmount = function () {
         document.removeEventListener('mouseup', this.onDocumentMouseUp);
@@ -17434,6 +17595,16 @@ var WorkspaceMarkup = /** @class */ (function (_super) {
     return WorkspaceMarkup;
 }(React.Component));
 exports.WorkspaceMarkup = WorkspaceMarkup;
+var ToolbarWidget = /** @class */ (function (_super) {
+    tslib_1.__extends(ToolbarWidget, _super);
+    function ToolbarWidget() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ToolbarWidget.prototype.render = function () {
+        return (React.createElement("div", { className: 'ontodia__toolbar-widget' }, this.props.children));
+    };
+    return ToolbarWidget;
+}(React.Component));
 function forceNonReactExecutionContext() {
     // force non-React executing context to resolve forceUpdate() synchronously
     return Promise.resolve();
@@ -17498,8 +17669,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
 var elements_1 = __webpack_require__(52);
-var async_1 = __webpack_require__(60);
-var collections_1 = __webpack_require__(55);
+var async_1 = __webpack_require__(59);
+var collections_1 = __webpack_require__(88);
 var events_1 = __webpack_require__(54);
 var spinner_1 = __webpack_require__(89);
 var progressBar_1 = __webpack_require__(116);
@@ -17680,10 +17851,10 @@ var ClassTree = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.props.editor.metadataApi.filterConstructibleTypes(typeIris, ct)];
+                        return [4 /*yield*/, async_1.CancellationToken.mapCancelledToNull(ct, this.props.editor.metadataApi.filterConstructibleTypes(typeIris, ct))];
                     case 1:
                         result_1 = _a.sent();
-                        if (ct.aborted) {
+                        if (result_1 === null) {
                             return [2 /*return*/];
                         }
                         this.setState(function (state) {
@@ -17930,9 +18101,9 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
 var React = __webpack_require__(45);
-var commands_1 = __webpack_require__(63);
+var commands_1 = __webpack_require__(62);
 var elements_1 = __webpack_require__(52);
-var async_1 = __webpack_require__(60);
+var async_1 = __webpack_require__(59);
 var events_1 = __webpack_require__(54);
 var listElementView_1 = __webpack_require__(117);
 var progressBar_1 = __webpack_require__(116);
@@ -18675,19 +18846,19 @@ module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(1);
-var defaultLinkStyles_1 = __webpack_require__(77);
+var defaultLinkStyles_1 = __webpack_require__(76);
 exports.LINK_SHOW_IRI = defaultLinkStyles_1.LINK_SHOW_IRI;
 var schema_1 = __webpack_require__(53);
 exports.TemplateProperties = schema_1.TemplateProperties;
 tslib_1.__exportStar(__webpack_require__(51), exports);
-tslib_1.__exportStar(__webpack_require__(82), exports);
-tslib_1.__exportStar(__webpack_require__(60), exports);
-tslib_1.__exportStar(__webpack_require__(55), exports);
-tslib_1.__exportStar(__webpack_require__(62), exports);
+tslib_1.__exportStar(__webpack_require__(81), exports);
+tslib_1.__exportStar(__webpack_require__(59), exports);
+tslib_1.__exportStar(__webpack_require__(88), exports);
+tslib_1.__exportStar(__webpack_require__(61), exports);
 tslib_1.__exportStar(__webpack_require__(89), exports);
 tslib_1.__exportStar(__webpack_require__(117), exports);
 tslib_1.__exportStar(__webpack_require__(118), exports);
-var workspaceContext_1 = __webpack_require__(87);
+var workspaceContext_1 = __webpack_require__(86);
 exports.WorkspaceContextTypes = workspaceContext_1.WorkspaceContextTypes;
 var layout_1 = __webpack_require__(105);
 exports.groupForceLayout = layout_1.groupForceLayout;

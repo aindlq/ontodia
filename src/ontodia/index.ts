@@ -40,6 +40,7 @@ export { AuthoredEntity, AuthoredEntityProps, AuthoredEntityContext } from './ed
 export * from './editor/authoringState';
 export {
     EditorOptions, EditorEvents, EditorController, PropertyEditor, PropertyEditorOptions,
+    LinkSelectorOptions, ClassSelectorOptions,
 } from './editor/editorController';
 export { ValidationState, ElementValidation, LinkValidation } from './editor/validation';
 

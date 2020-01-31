@@ -3,53 +3,53 @@
 //   ../../../react
 
 declare module 'ontodia' {
-    export * from 'ontodia/ontodia/customization/props';
-    export * from 'ontodia/ontodia/customization/templates';
-    export * from 'ontodia/ontodia/data/model';
-    export * from 'ontodia/ontodia/data/metadataApi';
-    export * from 'ontodia/ontodia/data/validationApi';
-    export * from 'ontodia/ontodia/data/provider';
-    export * from 'ontodia/ontodia/data/demo/provider';
-    export { RdfNode, RdfIri, RdfLiteral, Triple } from 'ontodia/ontodia/data/sparql/sparqlModels';
-    export * from 'ontodia/ontodia/data/rdf/rdfDataProvider';
-    export * from 'ontodia/ontodia/data/sparql/sparqlDataProvider';
-    export * from 'ontodia/ontodia/data/composite/composite';
-    export * from 'ontodia/ontodia/data/sparql/sparqlDataProviderSettings';
-    export * from 'ontodia/ontodia/data/sparql/graphBuilder';
-    export * from 'ontodia/ontodia/data/sparql/sparqlGraphBuilder';
-    export { DIAGRAM_CONTEXT_URL_V1 } from 'ontodia/ontodia/data/schema';
-    export { RestoreGeometry, setElementExpanded, setElementData, setLinkData } from 'ontodia/ontodia/diagram/commands';
-    export { Element, ElementEvents, ElementTemplateState, Link, LinkEvents, LinkTemplateState, LinkVertex, Cell, LinkDirection } from 'ontodia/ontodia/diagram/elements';
-    export { EmbeddedLayer } from 'ontodia/ontodia/diagram/embeddedLayer';
-    export * from 'ontodia/ontodia/diagram/geometry';
-    export * from 'ontodia/ontodia/diagram/history';
-    export { DiagramModel, DiagramModelEvents } from 'ontodia/ontodia/diagram/model';
-    export * from 'ontodia/ontodia/diagram/view';
-    export { PointerEvent, PointerUpEvent, getContentFittingBox, ViewportOptions, ScaleOptions, } from 'ontodia/ontodia/diagram/paperArea';
-    export * from 'ontodia/ontodia/editor/asyncModel';
-    export { AuthoredEntity, AuthoredEntityProps, AuthoredEntityContext } from 'ontodia/ontodia/editor/authoredEntity';
-    export * from 'ontodia/ontodia/editor/authoringState';
-    export { EditorOptions, EditorEvents, EditorController, PropertyEditor, PropertyEditorOptions, LinkSelectorOptions, ClassSelectorOptions } from 'ontodia/ontodia/editor/editorController';
-    export { ValidationState, ElementValidation, LinkValidation } from 'ontodia/ontodia/editor/validation';
-    export { LayoutData, LayoutElement, LayoutLink, SerializedDiagram, convertToSerializedDiagram, makeSerializedDiagram, LinkTypeOptions, makeLayoutData } from 'ontodia/ontodia/editor/serializedDiagram';
-    export { calculateLayout, removeOverlaps, CalculatedLayout, UnzippedCalculatedLayout, LayoutNode, applyLayout, forceLayout, } from 'ontodia/ontodia/viewUtils/layout';
-    export { Cancellation, CancellationToken } from 'ontodia/ontodia/viewUtils/async';
-    export * from 'ontodia/ontodia/viewUtils/events';
-    export { PropertySuggestionParams, PropertyScore } from 'ontodia/ontodia/widgets/connectionsMenu';
-    export { DefaultToolbar, ToolbarProps } from 'ontodia/ontodia/workspace/toolbar';
-    export { Workspace, WorkspaceProps, WorkspaceState, WorkspaceLanguage, renderTo, } from 'ontodia/ontodia/workspace/workspace';
-    export { WorkspaceEventHandler, WorkspaceEventKey } from 'ontodia/ontodia/workspace/workspaceContext';
-    export { DraggableHandle } from 'ontodia/ontodia/workspace/draggableHandle';
-    export * from 'ontodia/ontodia/workspace/layout/layout';
+    export * from 'ontodia/customization/props';
+    export * from 'ontodia/customization/templates';
+    export * from 'ontodia/data/model';
+    export * from 'ontodia/data/metadataApi';
+    export * from 'ontodia/data/validationApi';
+    export * from 'ontodia/data/provider';
+    export * from 'ontodia/data/demo/provider';
+    export { RdfNode, RdfIri, RdfLiteral, Triple } from 'ontodia/data/sparql/sparqlModels';
+    export * from 'ontodia/data/rdf/rdfDataProvider';
+    export * from 'ontodia/data/sparql/sparqlDataProvider';
+    export * from 'ontodia/data/composite/composite';
+    export * from 'ontodia/data/sparql/sparqlDataProviderSettings';
+    export * from 'ontodia/data/sparql/graphBuilder';
+    export * from 'ontodia/data/sparql/sparqlGraphBuilder';
+    export { DIAGRAM_CONTEXT_URL_V1 } from 'ontodia/data/schema';
+    export { RestoreGeometry, setElementExpanded, setElementData, setLinkData } from 'ontodia/diagram/commands';
+    export { Element, ElementEvents, ElementTemplateState, Link, LinkEvents, LinkTemplateState, LinkVertex, Cell, LinkDirection } from 'ontodia/diagram/elements';
+    export { EmbeddedLayer } from 'ontodia/diagram/embeddedLayer';
+    export * from 'ontodia/diagram/geometry';
+    export * from 'ontodia/diagram/history';
+    export { DiagramModel, DiagramModelEvents } from 'ontodia/diagram/model';
+    export * from 'ontodia/diagram/view';
+    export { PointerEvent, PointerUpEvent, getContentFittingBox, ViewportOptions, ScaleOptions, } from 'ontodia/diagram/paperArea';
+    export * from 'ontodia/editor/asyncModel';
+    export { AuthoredEntity, AuthoredEntityProps, AuthoredEntityContext } from 'ontodia/editor/authoredEntity';
+    export * from 'ontodia/editor/authoringState';
+    export { EditorOptions, EditorEvents, EditorController, PropertyEditor, PropertyEditorOptions, LinkSelectorOptions, ClassSelectorOptions, } from 'ontodia/editor/editorController';
+    export { ValidationState, ElementValidation, LinkValidation } from 'ontodia/editor/validation';
+    export { LayoutData, LayoutElement, LayoutLink, SerializedDiagram, convertToSerializedDiagram, makeSerializedDiagram, LinkTypeOptions, makeLayoutData } from 'ontodia/editor/serializedDiagram';
+    export { calculateLayout, removeOverlaps, CalculatedLayout, UnzippedCalculatedLayout, LayoutNode, applyLayout, forceLayout, } from 'ontodia/viewUtils/layout';
+    export { Cancellation, CancellationToken, CancelledError } from 'ontodia/viewUtils/async';
+    export * from 'ontodia/viewUtils/events';
+    export { PropertySuggestionParams, PropertyScore } from 'ontodia/widgets/connectionsMenu';
+    export { DefaultToolbar, ToolbarProps } from 'ontodia/workspace/toolbar';
+    export { Workspace, WorkspaceProps, WorkspaceState, WorkspaceLanguage, renderTo, } from 'ontodia/workspace/workspace';
+    export { WorkspaceEventHandler, WorkspaceEventKey } from 'ontodia/workspace/workspaceContext';
+    export { DraggableHandle } from 'ontodia/workspace/draggableHandle';
+    export * from 'ontodia/workspace/layout/layout';
     import * as InternalApi from 'ontodia/internalApi';
     export { InternalApi };
 }
 
-declare module 'ontodia/ontodia/customization/props' {
+declare module 'ontodia/customization/props' {
     import { ComponentClass } from 'react';
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
-    import { ElementIri, ElementModel, Dictionary, LocalizedString, Property } from 'ontodia/ontodia/data/model';
-    import { Link } from 'ontodia/ontodia/diagram/elements';
+    import { DiagramModel } from 'ontodia/diagram/model';
+    import { ElementIri, ElementModel, Dictionary, LocalizedString, Property } from 'ontodia/data/model';
+    import { Link } from 'ontodia/diagram/elements';
     export type TypeStyleResolver = (types: string[]) => CustomTypeStyle | undefined;
     export type LinkTemplateResolver = (linkType: string) => LinkTemplate | undefined;
     export type TemplateResolver = (types: string[]) => ElementTemplate | undefined;
@@ -139,16 +139,16 @@ declare module 'ontodia/ontodia/customization/props' {
     }
 }
 
-declare module 'ontodia/ontodia/customization/templates' {
-    import { TemplateResolver } from 'ontodia/ontodia/customization/props';
-    export * from 'ontodia/ontodia/customization/templates/default';
-    export * from 'ontodia/ontodia/customization/templates/group';
-    export * from 'ontodia/ontodia/customization/templates/standard';
+declare module 'ontodia/customization/templates' {
+    import { TemplateResolver } from 'ontodia/customization/props';
+    export * from 'ontodia/customization/templates/default';
+    export * from 'ontodia/customization/templates/group';
+    export * from 'ontodia/customization/templates/standard';
     export const DefaultElementTemplateBundle: TemplateResolver;
 }
 
-declare module 'ontodia/ontodia/data/model' {
-    import { RdfIri } from 'ontodia/ontodia/data/sparql/sparqlModels';
+declare module 'ontodia/data/model' {
+    import { RdfIri } from 'ontodia/data/sparql/sparqlModels';
     export interface Dictionary<T> {
         [key: string]: T;
     }
@@ -234,10 +234,10 @@ declare module 'ontodia/ontodia/data/model' {
     export function sameElement(left: ElementModel, right: ElementModel): boolean;
 }
 
-declare module 'ontodia/ontodia/data/metadataApi' {
-    import { ElementModel, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LinkModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { LinkDirection } from 'ontodia/ontodia/diagram/elements';
-    import { CancellationToken } from 'ontodia/ontodia/viewUtils/async';
+declare module 'ontodia/data/metadataApi' {
+    import { ElementModel, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LinkModel, ElementIri } from 'ontodia/data/model';
+    import { LinkDirection } from 'ontodia/diagram/elements';
+    import { CancellationToken } from 'ontodia/viewUtils/async';
     export interface MetadataApi {
             /**
                 * Can user create element and link from this element?
@@ -250,10 +250,7 @@ declare module 'ontodia/ontodia/data/metadataApi' {
             /**
                 * Links of which types can we create between elements?
                 */
-            possibleLinkTypes(source: ElementModel, target: ElementModel, ct: CancellationToken): Promise<Array<{
-                    linkTypeIri: LinkTypeIri;
-                    direction: LinkDirection;
-            }>>;
+            possibleLinkTypes(source: ElementModel, target: ElementModel, ct: CancellationToken): Promise<DirectedLinkType[]>;
             /**
                 * If new element is created by dragging link from existing element, this should return available element types.
                 */
@@ -276,11 +273,11 @@ declare module 'ontodia/ontodia/data/metadataApi' {
     }
 }
 
-declare module 'ontodia/ontodia/data/validationApi' {
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
-    import { AuthoringState } from 'ontodia/ontodia/editor/authoringState';
-    import { CancellationToken } from 'ontodia/ontodia/viewUtils/async';
-    import { ElementModel, LinkModel, ElementIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/validationApi' {
+    import { DiagramModel } from 'ontodia/diagram/model';
+    import { AuthoringState } from 'ontodia/editor/authoringState';
+    import { CancellationToken } from 'ontodia/viewUtils/async';
+    import { ElementModel, LinkModel, ElementIri, PropertyTypeIri } from 'ontodia/data/model';
     export interface ElementError {
         readonly type: 'element';
         readonly target: ElementIri;
@@ -307,8 +304,8 @@ declare module 'ontodia/ontodia/data/validationApi' {
     }
 }
 
-declare module 'ontodia/ontodia/data/provider' {
-    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/provider' {
+    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
     /**
         * DataProvider is responsible for getting data into Ontodia
         *
@@ -436,9 +433,9 @@ declare module 'ontodia/ontodia/data/provider' {
     }
 }
 
-declare module 'ontodia/ontodia/data/demo/provider' {
-    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/ontodia/data/provider';
-    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, ElementIri, ElementTypeIri, LinkTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/demo/provider' {
+    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/data/provider';
+    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, ElementIri, ElementTypeIri, LinkTypeIri } from 'ontodia/data/model';
     export class DemoDataProvider implements DataProvider {
         constructor(allClasses: ClassModel[], allLinkTypes: LinkType[], allElements: Dictionary<ElementModel>, allLinks: LinkModel[]);
         classTree(): Promise<ClassModel[]>;
@@ -464,7 +461,7 @@ declare module 'ontodia/ontodia/data/demo/provider' {
     }
 }
 
-declare module 'ontodia/ontodia/data/sparql/sparqlModels' {
+declare module 'ontodia/data/sparql/sparqlModels' {
     export type RdfNode = RdfIri | RdfLiteral | RdfBlank;
     export interface RdfIri {
         type: 'uri';
@@ -557,9 +554,9 @@ declare module 'ontodia/ontodia/data/sparql/sparqlModels' {
     }
 }
 
-declare module 'ontodia/ontodia/data/rdf/rdfDataProvider' {
-    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/ontodia/data/provider';
-    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/rdf/rdfDataProvider' {
+    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/data/provider';
+    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
     export interface RDFFile {
         content: string;
         fileName?: string;
@@ -608,11 +605,11 @@ declare module 'ontodia/ontodia/data/rdf/rdfDataProvider' {
     }
 }
 
-declare module 'ontodia/ontodia/data/sparql/sparqlDataProvider' {
-    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/ontodia/data/provider';
-    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LocalizedString } from 'ontodia/ontodia/data/model';
-    import { SparqlResponse, Triple } from 'ontodia/ontodia/data/sparql/sparqlModels';
-    import { SparqlDataProviderSettings } from 'ontodia/ontodia/data/sparql/sparqlDataProviderSettings';
+declare module 'ontodia/data/sparql/sparqlDataProvider' {
+    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/data/provider';
+    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LocalizedString } from 'ontodia/data/model';
+    import { SparqlResponse, Triple } from 'ontodia/data/sparql/sparqlModels';
+    import { SparqlDataProviderSettings } from 'ontodia/data/sparql/sparqlDataProviderSettings';
     export enum SparqlQueryMethod {
             GET = 1,
             POST = 2
@@ -701,9 +698,9 @@ declare module 'ontodia/ontodia/data/sparql/sparqlDataProvider' {
     export function executeSparqlConstruct(endpoint: string, query: string, method: SparqlQueryMethod, queryFunction: QueryFunction): Promise<Triple[]>;
 }
 
-declare module 'ontodia/ontodia/data/composite/composite' {
-    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/ontodia/data/provider';
-    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/composite/composite' {
+    import { DataProvider, LinkElementsParams, FilterParams } from 'ontodia/data/provider';
+    import { Dictionary, ClassModel, LinkType, ElementModel, LinkModel, LinkCount, PropertyModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
     export interface DPDefinition {
         name: string;
         dataProvider: DataProvider;
@@ -742,7 +739,7 @@ declare module 'ontodia/ontodia/data/composite/composite' {
     }
 }
 
-declare module 'ontodia/ontodia/data/sparql/sparqlDataProviderSettings' {
+declare module 'ontodia/data/sparql/sparqlDataProviderSettings' {
     /**
         * Dataset-schema specific settings for SPARQL data provider.
         */
@@ -1055,11 +1052,11 @@ declare module 'ontodia/ontodia/data/sparql/sparqlDataProviderSettings' {
     export const DBPediaSettings: SparqlDataProviderSettings;
 }
 
-declare module 'ontodia/ontodia/data/sparql/graphBuilder' {
-    import { SerializedDiagram } from 'ontodia/ontodia/editor/serializedDiagram';
-    import { Dictionary, ElementModel, LinkModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { DataProvider } from 'ontodia/ontodia/data/provider';
-    import { Triple } from 'ontodia/ontodia/data/sparql/sparqlModels';
+declare module 'ontodia/data/sparql/graphBuilder' {
+    import { SerializedDiagram } from 'ontodia/editor/serializedDiagram';
+    import { Dictionary, ElementModel, LinkModel, ElementIri } from 'ontodia/data/model';
+    import { DataProvider } from 'ontodia/data/provider';
+    import { Triple } from 'ontodia/data/sparql/sparqlModels';
     export class GraphBuilder {
         dataProvider: DataProvider;
         constructor(dataProvider: DataProvider);
@@ -1086,11 +1083,11 @@ declare module 'ontodia/ontodia/data/sparql/graphBuilder' {
     export function makeLayout(elementsIds: ReadonlyArray<ElementIri>, linksInfo: ReadonlyArray<LinkModel>): SerializedDiagram;
 }
 
-declare module 'ontodia/ontodia/data/sparql/sparqlGraphBuilder' {
-    import { SerializedDiagram } from 'ontodia/ontodia/editor/serializedDiagram';
-    import { Dictionary, ElementModel } from 'ontodia/ontodia/data/model';
-    import { GraphBuilder } from 'ontodia/ontodia/data/sparql/graphBuilder';
-    import { SparqlDataProvider } from 'ontodia/ontodia/data/sparql/sparqlDataProvider';
+declare module 'ontodia/data/sparql/sparqlGraphBuilder' {
+    import { SerializedDiagram } from 'ontodia/editor/serializedDiagram';
+    import { Dictionary, ElementModel } from 'ontodia/data/model';
+    import { GraphBuilder } from 'ontodia/data/sparql/graphBuilder';
+    import { SparqlDataProvider } from 'ontodia/data/sparql/sparqlDataProvider';
     export class SparqlGraphBuilder {
         dataProvider: SparqlDataProvider;
         graphBuilder: GraphBuilder;
@@ -1102,8 +1099,8 @@ declare module 'ontodia/ontodia/data/sparql/sparqlGraphBuilder' {
     }
 }
 
-declare module 'ontodia/ontodia/data/schema' {
-    import { ElementTypeIri, LinkTypeIri } from 'ontodia/ontodia/data/model';
+declare module 'ontodia/data/schema' {
+    import { ElementTypeIri, LinkTypeIri } from 'ontodia/data/model';
     export const DIAGRAM_CONTEXT_URL_V1 = "https://ontodia.org/context/v1.json";
     export const PLACEHOLDER_ELEMENT_TYPE: ElementTypeIri;
     export const PLACEHOLDER_LINK_TYPE: LinkTypeIri;
@@ -1117,12 +1114,12 @@ declare module 'ontodia/ontodia/data/schema' {
     }
 }
 
-declare module 'ontodia/ontodia/diagram/commands' {
-    import { ElementModel, ElementIri, LinkModel } from 'ontodia/ontodia/data/model';
-    import { Element, Link, FatLinkType } from 'ontodia/ontodia/diagram/elements';
-    import { Vector } from 'ontodia/ontodia/diagram/geometry';
-    import { Command } from 'ontodia/ontodia/diagram/history';
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
+declare module 'ontodia/diagram/commands' {
+    import { ElementModel, ElementIri, LinkModel } from 'ontodia/data/model';
+    import { Element, Link, FatLinkType } from 'ontodia/diagram/elements';
+    import { Vector } from 'ontodia/diagram/geometry';
+    import { Command } from 'ontodia/diagram/history';
+    import { DiagramModel } from 'ontodia/diagram/model';
     export class RestoreGeometry implements Command {
         readonly title = "Move elements and links";
         constructor(elementState: ReadonlyArray<{
@@ -1149,10 +1146,10 @@ declare module 'ontodia/ontodia/diagram/commands' {
     export function setLinkData(model: DiagramModel, oldData: LinkModel, newData: LinkModel): Command;
 }
 
-declare module 'ontodia/ontodia/diagram/elements' {
-    import { ElementModel, LinkModel, LocalizedString, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
-    import { Events, PropertyChange } from 'ontodia/ontodia/viewUtils/events';
-    import { Vector, Size, Rect } from 'ontodia/ontodia/diagram/geometry';
+declare module 'ontodia/diagram/elements' {
+    import { ElementModel, LinkModel, LocalizedString, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
+    import { Events, PropertyChange } from 'ontodia/viewUtils/events';
+    import { Vector, Size, Rect } from 'ontodia/diagram/geometry';
     export type Cell = Element | Link | LinkVertex;
     export enum LinkDirection {
             in = "in",
@@ -1336,10 +1333,10 @@ declare module 'ontodia/ontodia/diagram/elements' {
     }
 }
 
-declare module 'ontodia/ontodia/diagram/embeddedLayer' {
+declare module 'ontodia/diagram/embeddedLayer' {
     import * as React from 'react';
-    import { PaperAreaContextWrapper } from 'ontodia/ontodia/diagram/paperArea';
-    import { ElementContextWrapper } from 'ontodia/ontodia/diagram/elementLayer';
+    import { PaperAreaContextWrapper } from 'ontodia/diagram/paperArea';
+    import { ElementContextWrapper } from 'ontodia/diagram/elementLayer';
     export interface State {
         paperWidth?: number;
         paperHeight?: number;
@@ -1359,8 +1356,8 @@ declare module 'ontodia/ontodia/diagram/embeddedLayer' {
     }
 }
 
-declare module 'ontodia/ontodia/diagram/geometry' {
-    import { Element as DiagramElement } from 'ontodia/ontodia/diagram/elements';
+declare module 'ontodia/diagram/geometry' {
+    import { Element } from 'ontodia/diagram/elements';
     export interface Vector {
         readonly x: number;
         readonly y: number;
@@ -1391,17 +1388,18 @@ declare module 'ontodia/ontodia/diagram/geometry' {
             y: number;
         };
     }
-    export function boundsOf(element: DiagramElement): Rect;
+    export function boundsOf(element: Element): Rect;
     export function isPolylineEqual(left: ReadonlyArray<Vector>, right: ReadonlyArray<Vector>): boolean;
-    export function computePolyline(source: DiagramElement, target: DiagramElement, vertices: ReadonlyArray<Vector>): Vector[];
+    export function computePolyline(source: Element, target: Element, vertices: ReadonlyArray<Vector>): Vector[];
     export function computePolylineLength(polyline: ReadonlyArray<Vector>): number;
     export function getPointAlongPolyline(polyline: ReadonlyArray<Vector>, offset: number): Vector;
     export function findNearestSegmentIndex(polyline: ReadonlyArray<Vector>, location: Vector): number;
-    export function computeGrouping(elements: ReadonlyArray<DiagramElement>): Map<string, DiagramElement[]>;
+    export function findElementAtPoint(elements: ReadonlyArray<Element>, point: Vector): Element | undefined;
+    export function computeGrouping(elements: ReadonlyArray<Element>): Map<string, Element[]>;
 }
 
-declare module 'ontodia/ontodia/diagram/history' {
-    import { Events } from 'ontodia/ontodia/viewUtils/events';
+declare module 'ontodia/diagram/history' {
+    import { Events } from 'ontodia/viewUtils/events';
     export interface Command {
         readonly title?: string;
         readonly invoke: CommandAction;
@@ -1446,14 +1444,14 @@ declare module 'ontodia/ontodia/diagram/history' {
     }
 }
 
-declare module 'ontodia/ontodia/diagram/model' {
-    import { ElementModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
-    import { EventSource, Events, EventObserver, AnyEvent } from 'ontodia/ontodia/viewUtils/events';
-    import { Element, ElementEvents, Link, LinkEvents, FatLinkType, FatLinkTypeEvents, FatClassModel, FatClassModelEvents, RichProperty } from 'ontodia/ontodia/diagram/elements';
-    import { Graph } from 'ontodia/ontodia/diagram/graph';
-    import { CommandHistory } from 'ontodia/ontodia/diagram/history';
+declare module 'ontodia/diagram/model' {
+    import { ElementModel, ElementIri, ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
+    import { EventSource, Events, EventObserver, AnyEvent } from 'ontodia/viewUtils/events';
+    import { Element, ElementEvents, Link, LinkEvents, FatLinkType, FatLinkTypeEvents, FatClassModel, FatClassModelEvents, RichProperty } from 'ontodia/diagram/elements';
+    import { Graph, CellsChangedEvent } from 'ontodia/diagram/graph';
+    import { CommandHistory } from 'ontodia/diagram/history';
     export interface DiagramModelEvents {
-        changeCells: {};
+        changeCells: CellsChangedEvent;
         elementEvent: AnyEvent<ElementEvents>;
         linkEvent: AnyEvent<LinkEvents>;
         linkTypeEvent: AnyEvent<FatLinkTypeEvents>;
@@ -1485,6 +1483,7 @@ declare module 'ontodia/ontodia/diagram/model' {
         subscribeGraph(): void;
         reorderElements(compare: (a: Element, b: Element) => number): void;
         createElement(elementIriOrModel: ElementIri | ElementModel, group?: string): Element;
+        addElement(element: Element): void;
         removeElement(elementId: string): void;
         addLink(link: Link): Link;
         removeLink(linkId: string): void;
@@ -1501,15 +1500,15 @@ declare module 'ontodia/ontodia/diagram/model' {
     export function placeholderDataFromIri(iri: ElementIri): ElementModel;
 }
 
-declare module 'ontodia/ontodia/diagram/view' {
+declare module 'ontodia/diagram/view' {
     import { ReactNode } from 'react';
     import { ReactElement, MouseEvent } from 'react';
-    import { LinkRouter, TypeStyleResolver, LinkTemplateResolver, TemplateResolver, ElementTemplate, LinkTemplate, RoutedLink, RoutedLinks } from 'ontodia/ontodia/customization/props';
-    import { ElementModel, LocalizedString, ElementTypeIri, LinkTypeIri } from 'ontodia/ontodia/data/model';
-    import { Events, PropertyChange } from 'ontodia/ontodia/viewUtils/events';
-    import { Element, Link, FatLinkType } from 'ontodia/ontodia/diagram/elements';
-    import { Vector } from 'ontodia/ontodia/diagram/geometry';
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
+    import { LinkRouter, TypeStyleResolver, LinkTemplateResolver, TemplateResolver, ElementTemplate, LinkTemplate, RoutedLink, RoutedLinks } from 'ontodia/customization/props';
+    import { ElementModel, LocalizedString, ElementTypeIri, LinkTypeIri } from 'ontodia/data/model';
+    import { Events, PropertyChange } from 'ontodia/viewUtils/events';
+    import { Element, Link, FatLinkType } from 'ontodia/diagram/elements';
+    import { Vector } from 'ontodia/diagram/geometry';
+    import { DiagramModel } from 'ontodia/diagram/model';
     export enum IriClickIntent {
         JumpToEntity = "jumpToEntity",
         OpenEntityIri = "openEntityIri",
@@ -1613,14 +1612,14 @@ declare module 'ontodia/ontodia/diagram/view' {
     }
 }
 
-declare module 'ontodia/ontodia/diagram/paperArea' {
+declare module 'ontodia/diagram/paperArea' {
     import * as React from 'react';
-    import { Events, PropertyChange } from 'ontodia/ontodia/viewUtils/events';
-    import { ToDataURLOptions } from 'ontodia/ontodia/viewUtils/toSvg';
-    import { Element, Link, Cell } from 'ontodia/ontodia/diagram/elements';
-    import { Vector, Rect } from 'ontodia/ontodia/diagram/geometry';
-    import { DiagramView, WidgetDescription } from 'ontodia/ontodia/diagram/view';
-    import { PaperTransform } from 'ontodia/ontodia/diagram/paper';
+    import { Events, PropertyChange } from 'ontodia/viewUtils/events';
+    import { ToDataURLOptions } from 'ontodia/viewUtils/toSvg';
+    import { Element, Link, Cell } from 'ontodia/diagram/elements';
+    import { Vector, Rect } from 'ontodia/diagram/geometry';
+    import { DiagramView, WidgetDescription } from 'ontodia/diagram/view';
+    import { PaperTransform } from 'ontodia/diagram/paper';
     export interface PaperAreaProps {
             view: DiagramView;
             zoomOptions?: ZoomOptions;
@@ -1761,7 +1760,6 @@ declare module 'ontodia/ontodia/diagram/paperArea' {
                     offsetWidth: number;
                     offsetHeight: number;
             };
-            adjustPaper: (callback?: () => void) => void;
             centerTo(paperPosition?: {
                     x: number;
                     y: number;
@@ -1796,14 +1794,14 @@ declare module 'ontodia/ontodia/diagram/paperArea' {
     export {};
 }
 
-declare module 'ontodia/ontodia/editor/asyncModel' {
-    import { Dictionary, ElementModel, LinkModel, ElementIri, LinkTypeIri, ElementTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
-    import { DataProvider } from 'ontodia/ontodia/data/provider';
-    import { FatLinkType, FatClassModel, RichProperty } from 'ontodia/ontodia/diagram/elements';
-    import { CommandHistory, Command } from 'ontodia/ontodia/diagram/history';
-    import { DiagramModel, DiagramModelEvents } from 'ontodia/ontodia/diagram/model';
-    import { Events } from 'ontodia/ontodia/viewUtils/events';
-    import { SerializedDiagram } from 'ontodia/ontodia/editor/serializedDiagram';
+declare module 'ontodia/editor/asyncModel' {
+    import { Dictionary, ElementModel, LinkModel, ElementIri, LinkTypeIri, ElementTypeIri, PropertyTypeIri } from 'ontodia/data/model';
+    import { DataProvider } from 'ontodia/data/provider';
+    import { FatLinkType, FatClassModel, RichProperty } from 'ontodia/diagram/elements';
+    import { CommandHistory, Command } from 'ontodia/diagram/history';
+    import { DiagramModel, DiagramModelEvents } from 'ontodia/diagram/model';
+    import { Events } from 'ontodia/viewUtils/events';
+    import { SerializedDiagram } from 'ontodia/editor/serializedDiagram';
     export interface GroupBy {
         linkType: string;
         linkDirection: 'in' | 'out';
@@ -1851,13 +1849,13 @@ declare module 'ontodia/ontodia/editor/asyncModel' {
     export function restoreLinksBetweenElements(model: AsyncModel): Command;
 }
 
-declare module 'ontodia/ontodia/editor/authoredEntity' {
+declare module 'ontodia/editor/authoredEntity' {
     import * as React from 'react';
-    import { TemplateProps } from 'ontodia/ontodia/customization/props';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
-    import { PaperAreaContextWrapper } from 'ontodia/ontodia/diagram/paperArea';
-    import { WorkspaceContextWrapper } from 'ontodia/ontodia/workspace/workspaceContext';
-    import { EditorController } from 'ontodia/ontodia/editor/editorController';
+    import { TemplateProps } from 'ontodia/customization/props';
+    import { DiagramView } from 'ontodia/diagram/view';
+    import { PaperAreaContextWrapper } from 'ontodia/diagram/paperArea';
+    import { WorkspaceContextWrapper } from 'ontodia/workspace/workspaceContext';
+    import { EditorController } from 'ontodia/editor/editorController';
     export interface AuthoredEntityProps {
         templateProps: TemplateProps;
         children: (context: AuthoredEntityContext) => React.ReactElement<any>;
@@ -1892,9 +1890,9 @@ declare module 'ontodia/ontodia/editor/authoredEntity' {
     }
 }
 
-declare module 'ontodia/ontodia/editor/authoringState' {
-    import { ElementModel, LinkModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { HashMap, ReadonlyHashMap } from 'ontodia/ontodia/viewUtils/collections';
+declare module 'ontodia/editor/authoringState' {
+    import { ElementModel, LinkModel, ElementIri } from 'ontodia/data/model';
+    import { HashMap, ReadonlyHashMap } from 'ontodia/viewUtils/collections';
     export interface AuthoringState {
         readonly elements: ReadonlyMap<ElementIri, ElementChange>;
         readonly links: ReadonlyHashMap<LinkModel, LinkChange>;
@@ -1968,21 +1966,21 @@ declare module 'ontodia/ontodia/editor/authoringState' {
     export {};
 }
 
-declare module 'ontodia/ontodia/editor/editorController' {
+declare module 'ontodia/editor/editorController' {
     import * as React from 'react';
-    import { MetadataApi } from 'ontodia/ontodia/data/metadataApi';
-    import { ValidationApi } from 'ontodia/ontodia/data/validationApi';
-    import { ElementModel, LinkModel, ElementIri, ElementTypeIri } from 'ontodia/ontodia/data/model';
-    import { Element, Link, FatLinkType } from 'ontodia/ontodia/diagram/elements';
-    import { Vector } from 'ontodia/ontodia/diagram/geometry';
-    import { PaperArea } from 'ontodia/ontodia/diagram/paperArea';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
-    import { Events, PropertyChange } from 'ontodia/ontodia/viewUtils/events';
-    import { PropertySuggestionHandler } from 'ontodia/ontodia/widgets/connectionsMenu';
-    import { SpinnerProps } from 'ontodia/ontodia/viewUtils/spinner';
-    import { AsyncModel } from 'ontodia/ontodia/editor/asyncModel';
-    import { AuthoringState, AuthoringEvent, TemporaryState } from 'ontodia/ontodia/editor/authoringState';
-    import { ValidationState } from 'ontodia/ontodia/editor/validation';
+    import { MetadataApi } from 'ontodia/data/metadataApi';
+    import { ValidationApi } from 'ontodia/data/validationApi';
+    import { ElementModel, LinkModel, ElementIri, ElementTypeIri } from 'ontodia/data/model';
+    import { Element, Link, FatLinkType } from 'ontodia/diagram/elements';
+    import { Vector } from 'ontodia/diagram/geometry';
+    import { PaperArea } from 'ontodia/diagram/paperArea';
+    import { DiagramView } from 'ontodia/diagram/view';
+    import { Events, PropertyChange } from 'ontodia/viewUtils/events';
+    import { PropertySuggestionHandler } from 'ontodia/widgets/connectionsMenu';
+    import { SpinnerProps } from 'ontodia/viewUtils/spinner';
+    import { AsyncModel } from 'ontodia/editor/asyncModel';
+    import { AuthoringState, AuthoringEvent, TemporaryState } from 'ontodia/editor/authoringState';
+    import { ValidationState } from 'ontodia/editor/validation';
     export interface PropertyEditorOptions {
         elementData: ElementModel;
         onSubmit: (newData: ElementModel) => void;
@@ -2065,7 +2063,7 @@ declare module 'ontodia/ontodia/editor/editorController' {
             link: Link;
             source: Element;
             target: Element;
-        }): void;
+        }, fn: any): void;
         showEditLinkForm(link: Link): void;
         showDialog(params: {
             target: SelectionItem;
@@ -2090,7 +2088,7 @@ declare module 'ontodia/ontodia/editor/editorController' {
         }): Element;
         changeEntityData(targetIri: ElementIri, newData: ElementModel): void;
         deleteEntity(elementIri: ElementIri): void;
-        createNewLink({ link: base, temporary }: {
+        createNewLink(params: {
             link: Link;
             temporary?: boolean;
         }): Link;
@@ -2104,24 +2102,17 @@ declare module 'ontodia/ontodia/editor/editorController' {
             newTarget: Element;
         }): Link;
         deleteLink(model: LinkModel): void;
-        finishEditing(): void;
         discardChange(event: AuthoringEvent): void;
     }
-    export function createLinkAndChangeDirection({ data, originalData, sourceId, targetId }: {
-        data: LinkModel;
-        originalData: LinkModel;
-        sourceId: string;
-        targetId: string;
-    }): Link;
 }
 
-declare module 'ontodia/ontodia/editor/validation' {
-    import { ElementIri, LinkModel } from 'ontodia/ontodia/data/model';
-    import { ValidationApi, ElementError, LinkError } from 'ontodia/ontodia/data/validationApi';
-    import { CancellationToken } from 'ontodia/ontodia/viewUtils/async';
-    import { HashMap, ReadonlyHashMap } from 'ontodia/ontodia/viewUtils/collections';
-    import { AuthoringState } from 'ontodia/ontodia/editor/authoringState';
-    import { EditorController } from 'ontodia/ontodia/editor/editorController';
+declare module 'ontodia/editor/validation' {
+    import { ElementIri, LinkModel } from 'ontodia/data/model';
+    import { ValidationApi, ElementError, LinkError } from 'ontodia/data/validationApi';
+    import { CancellationToken } from 'ontodia/viewUtils/async';
+    import { HashMap, ReadonlyHashMap } from 'ontodia/viewUtils/collections';
+    import { AuthoringState } from 'ontodia/editor/authoringState';
+    import { EditorController } from 'ontodia/editor/editorController';
     export interface ValidationState {
         readonly elements: ReadonlyMap<ElementIri, ElementValidation>;
         readonly links: ReadonlyHashMap<LinkModel, LinkValidation>;
@@ -2146,13 +2137,13 @@ declare module 'ontodia/ontodia/editor/validation' {
         function setLinkErrors(state: ValidationState, target: LinkModel, errors: ReadonlyArray<LinkError>): ValidationState;
     }
     export function changedElementsToValidate(previousAuthoring: AuthoringState, editor: EditorController): Set<ElementIri>;
-    export function validateElements(targets: ReadonlySet<ElementIri>, validationApi: ValidationApi, editor: EditorController, cancellation: CancellationToken): void;
+    export function validateElements(targets: ReadonlySet<ElementIri>, validationApi: ValidationApi, editor: EditorController, cancellationToken: CancellationToken): void;
 }
 
-declare module 'ontodia/ontodia/editor/serializedDiagram' {
-    import { ElementIri, LinkTypeIri } from 'ontodia/ontodia/data/model';
-    import { Element, ElementTemplateState, Link, LinkTemplateState } from 'ontodia/ontodia/diagram/elements';
-    import { Vector, Size } from 'ontodia/ontodia/diagram/geometry';
+declare module 'ontodia/editor/serializedDiagram' {
+    import { ElementIri, LinkTypeIri } from 'ontodia/data/model';
+    import { Element, ElementTemplateState, Link, LinkTemplateState } from 'ontodia/diagram/elements';
+    import { Vector, Size } from 'ontodia/diagram/geometry';
     export interface SerializedDiagram {
         '@context': any;
         '@type': 'Diagram';
@@ -2207,10 +2198,10 @@ declare module 'ontodia/ontodia/editor/serializedDiagram' {
     export function makeLayoutData(modelElements: ReadonlyArray<Element>, modelLinks: ReadonlyArray<Link>): LayoutData;
 }
 
-declare module 'ontodia/ontodia/viewUtils/layout' {
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
-    import { Vector } from 'ontodia/ontodia/diagram/geometry';
-    import { Element } from 'ontodia/ontodia/diagram/elements';
+declare module 'ontodia/viewUtils/layout' {
+    import { DiagramModel } from 'ontodia/diagram/model';
+    import { Vector } from 'ontodia/diagram/geometry';
+    import { Element } from 'ontodia/diagram/elements';
     export interface LayoutNode {
         id?: string;
         x: number;
@@ -2291,7 +2282,7 @@ declare module 'ontodia/ontodia/viewUtils/layout' {
     };
 }
 
-declare module 'ontodia/ontodia/viewUtils/async' {
+declare module 'ontodia/viewUtils/async' {
     export abstract class BatchingScheduler {
         readonly waitingTime: number;
         constructor(waitingTime?: number);
@@ -2321,15 +2312,19 @@ declare module 'ontodia/ontodia/viewUtils/async' {
         addEventListener(event: 'abort', handler: () => void): void;
         removeEventListener(event: 'abort', handler: () => void): void;
     }
+    export namespace CancellationToken {
+        function throwIfAborted(ct: CancellationToken): void;
+        function mapCancelledToNull<T>(ct: CancellationToken, promise: Promise<T>): Promise<T | null>;
+    }
     export class CancelledError extends Error {
-        constructor(message: string);
+        constructor(message?: string);
     }
     export function delay(timeout: number): Promise<unknown>;
     export function animateInterval(duration: number, onProgress: (progress: number) => void, cancellation?: Cancellation): Promise<void>;
     export function easeInOutBezier(t: number): number;
 }
 
-declare module 'ontodia/ontodia/viewUtils/events' {
+declare module 'ontodia/viewUtils/events' {
     export type Listener<Data, Key extends keyof Data> = (data: Data[Key], key: Key) => void;
     export type AnyListener<Data> = (data: Partial<Data>, key: string) => void;
     export type Unsubscribe = () => void;
@@ -2362,13 +2357,13 @@ declare module 'ontodia/ontodia/viewUtils/events' {
     }
 }
 
-declare module 'ontodia/ontodia/widgets/connectionsMenu' {
+declare module 'ontodia/widgets/connectionsMenu' {
     import * as React from 'react';
-    import { Dictionary, ElementModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { FatLinkType, Element } from 'ontodia/ontodia/diagram/elements';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
-    import { EditorController } from 'ontodia/ontodia/editor/editorController';
-    import { WorkspaceContextWrapper } from 'ontodia/ontodia/workspace/workspaceContext';
+    import { Dictionary, ElementModel, ElementIri } from 'ontodia/data/model';
+    import { FatLinkType, Element } from 'ontodia/diagram/elements';
+    import { DiagramView } from 'ontodia/diagram/view';
+    import { EditorController } from 'ontodia/editor/editorController';
+    import { WorkspaceContextWrapper } from 'ontodia/workspace/workspaceContext';
     export interface ReactElementModel {
         model: ElementModel;
         presentOnDiagram: boolean;
@@ -2413,9 +2408,9 @@ declare module 'ontodia/ontodia/widgets/connectionsMenu' {
     }
 }
 
-declare module 'ontodia/ontodia/workspace/toolbar' {
+declare module 'ontodia/workspace/toolbar' {
     import * as React from 'react';
-    import { WorkspaceLanguage } from 'ontodia/ontodia/workspace/workspace';
+    import { WorkspaceLanguage } from 'ontodia/workspace/workspace';
     export interface ToolbarProps {
         canSaveDiagram?: boolean;
         onSaveDiagram?: () => void;
@@ -2439,20 +2434,20 @@ declare module 'ontodia/ontodia/workspace/toolbar' {
     }
 }
 
-declare module 'ontodia/ontodia/workspace/workspace' {
+declare module 'ontodia/workspace/workspace' {
     import { Component, ReactElement } from 'react';
-    import { LinkRouter, LinkTemplateResolver, TemplateResolver, TypeStyleResolver } from 'ontodia/ontodia/customization/props';
-    import { MetadataApi } from 'ontodia/ontodia/data/metadataApi';
-    import { ValidationApi } from 'ontodia/ontodia/data/validationApi';
-    import { Rect } from 'ontodia/ontodia/diagram/geometry';
-    import { CommandHistory } from 'ontodia/ontodia/diagram/history';
-    import { PaperArea, ZoomOptions, PointerEvent, PointerUpEvent } from 'ontodia/ontodia/diagram/paperArea';
-    import { DiagramView, IriClickHandler, LabelLanguageSelector } from 'ontodia/ontodia/diagram/view';
-    import { AsyncModel, GroupBy } from 'ontodia/ontodia/editor/asyncModel';
-    import { EditorController, PropertyEditor, LinkSelector, ClassSelector } from 'ontodia/ontodia/editor/editorController';
-    import { PropertySuggestionHandler } from 'ontodia/ontodia/widgets/connectionsMenu';
-    import { SearchCriteria } from 'ontodia/ontodia/widgets/instancesSearch';
-    import { WorkspaceEventHandler } from 'ontodia/ontodia/workspace/workspaceContext';
+    import { LinkRouter, LinkTemplateResolver, TemplateResolver, TypeStyleResolver } from 'ontodia/customization/props';
+    import { MetadataApi } from 'ontodia/data/metadataApi';
+    import { ValidationApi } from 'ontodia/data/validationApi';
+    import { Rect } from 'ontodia/diagram/geometry';
+    import { CommandHistory } from 'ontodia/diagram/history';
+    import { PaperArea, ZoomOptions, PointerEvent, PointerUpEvent } from 'ontodia/diagram/paperArea';
+    import { DiagramView, IriClickHandler, LabelLanguageSelector } from 'ontodia/diagram/view';
+    import { AsyncModel, GroupBy } from 'ontodia/editor/asyncModel';
+    import { EditorController, PropertyEditor, LinkSelector, ClassSelector } from 'ontodia/editor/editorController';
+    import { PropertySuggestionHandler } from 'ontodia/widgets/connectionsMenu';
+    import { SearchCriteria } from 'ontodia/widgets/instancesSearch';
+    import { WorkspaceEventHandler } from 'ontodia/workspace/workspaceContext';
     export interface WorkspaceProps {
             /** Saves diagram layout (position and state of elements and links). */
             onSaveDiagram?: (workspace: Workspace) => void;
@@ -2572,8 +2567,8 @@ declare module 'ontodia/ontodia/workspace/workspace' {
     export function renderTo<WorkspaceComponentProps>(workspace: React.ComponentClass<WorkspaceComponentProps>, container: HTMLElement, props: WorkspaceComponentProps): void;
 }
 
-declare module 'ontodia/ontodia/workspace/workspaceContext' {
-    import { EditorController } from 'ontodia/ontodia/editor/editorController';
+declare module 'ontodia/workspace/workspaceContext' {
+    import { EditorController } from 'ontodia/editor/editorController';
     export type WorkspaceEventHandler = (key: WorkspaceEventKey) => void;
     export enum WorkspaceEventKey {
         searchUpdateCriteria = "search:updateCriteria",
@@ -2597,7 +2592,7 @@ declare module 'ontodia/ontodia/workspace/workspaceContext' {
     };
 }
 
-declare module 'ontodia/ontodia/workspace/draggableHandle' {
+declare module 'ontodia/workspace/draggableHandle' {
     import * as React from 'react';
     export interface Props extends React.HTMLAttributes<HTMLDivElement> {
         onBeginDragHandle: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -2610,7 +2605,7 @@ declare module 'ontodia/ontodia/workspace/draggableHandle' {
     }
 }
 
-declare module 'ontodia/ontodia/workspace/layout/layout' {
+declare module 'ontodia/workspace/layout/layout' {
     import * as React from 'react';
     export enum WorkspaceLayoutType {
         Row = "row",
@@ -2652,51 +2647,51 @@ declare module 'ontodia/ontodia/workspace/layout/layout' {
 }
 
 declare module 'ontodia/internalApi' {
-    export { LINK_SHOW_IRI } from 'ontodia/ontodia/customization/defaultLinkStyles';
-    export { TemplateProperties } from 'ontodia/ontodia/data/schema';
-    export * from 'ontodia/ontodia/diagram/paper';
-    export * from 'ontodia/ontodia/diagram/paperArea';
-    export * from 'ontodia/ontodia/viewUtils/async';
-    export * from 'ontodia/ontodia/viewUtils/collections';
-    export * from 'ontodia/ontodia/viewUtils/keyedObserver';
-    export * from 'ontodia/ontodia/viewUtils/spinner';
-    export * from 'ontodia/ontodia/widgets/listElementView';
-    export * from 'ontodia/ontodia/widgets/searchResults';
-    export { WorkspaceContext, WorkspaceContextWrapper, WorkspaceContextTypes, } from 'ontodia/ontodia/workspace/workspaceContext';
-    export { groupForceLayout, groupRemoveOverlaps, padded, biasFreePadded, getContentFittingBoxForLayout, } from 'ontodia/ontodia/viewUtils/layout';
+    export { LINK_SHOW_IRI } from 'ontodia/customization/defaultLinkStyles';
+    export { TemplateProperties } from 'ontodia/data/schema';
+    export * from 'ontodia/diagram/paper';
+    export * from 'ontodia/diagram/paperArea';
+    export * from 'ontodia/viewUtils/async';
+    export * from 'ontodia/viewUtils/collections';
+    export * from 'ontodia/viewUtils/keyedObserver';
+    export * from 'ontodia/viewUtils/spinner';
+    export * from 'ontodia/widgets/listElementView';
+    export * from 'ontodia/widgets/searchResults';
+    export { WorkspaceContext, WorkspaceContextWrapper, WorkspaceContextTypes, } from 'ontodia/workspace/workspaceContext';
+    export { groupForceLayout, groupRemoveOverlaps, padded, biasFreePadded, getContentFittingBoxForLayout, } from 'ontodia/viewUtils/layout';
 }
 
-declare module 'ontodia/ontodia/customization/templates/default' {
+declare module 'ontodia/customization/templates/default' {
     import * as React from 'react';
-    import { TemplateProps } from 'ontodia/ontodia/customization/props';
+    import { TemplateProps } from 'ontodia/customization/props';
     export class DefaultElementTemplate extends React.Component<TemplateProps, {}> {
         render(): JSX.Element;
         renderPropertyTable(): JSX.Element;
     }
 }
 
-declare module 'ontodia/ontodia/customization/templates/group' {
+declare module 'ontodia/customization/templates/group' {
     import * as React from 'react';
-    import { TemplateProps } from 'ontodia/ontodia/customization/props';
+    import { TemplateProps } from 'ontodia/customization/props';
     export class GroupTemplate extends React.Component<TemplateProps, {}> {
         render(): JSX.Element;
     }
 }
 
-declare module 'ontodia/ontodia/customization/templates/standard' {
+declare module 'ontodia/customization/templates/standard' {
     import { Component } from 'react';
-    import { TemplateProps } from 'ontodia/ontodia/customization/props';
+    import { TemplateProps } from 'ontodia/customization/props';
     export class StandardTemplate extends Component<TemplateProps, {}> {
         render(): JSX.Element;
         protected getTypesLabel(): string;
     }
 }
 
-declare module 'ontodia/ontodia/diagram/elementLayer' {
+declare module 'ontodia/diagram/elementLayer' {
     import * as React from 'react';
-    import { TemplateProps } from 'ontodia/ontodia/customization/props';
-    import { Element } from 'ontodia/ontodia/diagram/elements';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
+    import { TemplateProps } from 'ontodia/customization/props';
+    import { Element } from 'ontodia/diagram/elements';
+    import { DiagramView } from 'ontodia/diagram/view';
     export interface Props {
         view: DiagramView;
         group?: string;
@@ -2729,16 +2724,21 @@ declare module 'ontodia/ontodia/diagram/elementLayer' {
     export {};
 }
 
-declare module 'ontodia/ontodia/diagram/graph' {
-    import { ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
-    import { Events, AnyEvent } from 'ontodia/ontodia/viewUtils/events';
-    import { Element as DiagramElement, ElementEvents, Link as DiagramLink, LinkEvents, FatLinkType, FatLinkTypeEvents, FatClassModel, FatClassModelEvents, RichProperty } from 'ontodia/ontodia/diagram/elements';
+declare module 'ontodia/diagram/graph' {
+    import { ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
+    import { Events, AnyEvent } from 'ontodia/viewUtils/events';
+    import { Element as DiagramElement, ElementEvents, Link as DiagramLink, LinkEvents, FatLinkType, FatLinkTypeEvents, FatClassModel, FatClassModelEvents, RichProperty } from 'ontodia/diagram/elements';
     export interface GraphEvents {
-        changeCells: {};
+        changeCells: CellsChangedEvent;
         elementEvent: AnyEvent<ElementEvents>;
         linkEvent: AnyEvent<LinkEvents>;
         linkTypeEvent: AnyEvent<FatLinkTypeEvents>;
         classEvent: AnyEvent<FatClassModelEvents>;
+    }
+    export interface CellsChangedEvent {
+        readonly updateAll: boolean;
+        readonly changedElement?: DiagramElement;
+        readonly changedLinks?: ReadonlyArray<DiagramLink>;
     }
     export class Graph {
         readonly events: Events<GraphEvents>;
@@ -2767,9 +2767,9 @@ declare module 'ontodia/ontodia/diagram/graph' {
     }
 }
 
-declare module 'ontodia/ontodia/viewUtils/toSvg' {
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
-    import { Rect } from 'ontodia/ontodia/diagram/geometry';
+declare module 'ontodia/viewUtils/toSvg' {
+    import { DiagramModel } from 'ontodia/diagram/model';
+    import { Rect } from 'ontodia/diagram/geometry';
     export interface ToSVGOptions {
             model: DiagramModel;
             paper: SVGSVGElement;
@@ -2807,12 +2807,12 @@ declare module 'ontodia/ontodia/viewUtils/toSvg' {
     export function dataURLToBlob(dataURL: string): Blob;
 }
 
-declare module 'ontodia/ontodia/diagram/paper' {
+declare module 'ontodia/diagram/paper' {
     import * as React from 'react';
     import { Component } from 'react';
-    import { Cell } from 'ontodia/ontodia/diagram/elements';
-    import { Vector } from 'ontodia/ontodia/diagram/geometry';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
+    import { Cell } from 'ontodia/diagram/elements';
+    import { Vector } from 'ontodia/diagram/geometry';
+    import { DiagramView } from 'ontodia/diagram/view';
     export interface PaperProps {
             view: DiagramView;
             paperTransform: PaperTransform;
@@ -2851,14 +2851,7 @@ declare module 'ontodia/ontodia/diagram/paper' {
     export function paperFromPaneCoords(pane: Vector, pt: PaperTransform): Vector;
 }
 
-declare module 'ontodia/ontodia/viewUtils/collections' {
-    export function createStringMap<V>(): {
-            [key: string]: V;
-    };
-    export function createNumberMap<V>(): {
-            [key: number]: V;
-    };
-    export function hasOwnProperty(collection: object, key: string | number): boolean;
+declare module 'ontodia/viewUtils/collections' {
     export function objectValues<T>(obj: {
             [key: string]: T;
     }): T[];
@@ -2874,7 +2867,6 @@ declare module 'ontodia/ontodia/viewUtils/collections' {
     export function getOrCreateArrayInMap<K, V>(map: Map<K, V[]>, key: K): V[];
     export function getOrCreateSetInMap<K, V>(map: Map<K, Set<V>>, key: K): Set<V>;
     export class OrderedMap<V> {
-            constructor();
             reorder(compare: (a: V, b: V) => number): void;
             get items(): ReadonlyArray<V>;
             get(key: string): V | undefined;
@@ -2906,7 +2898,7 @@ declare module 'ontodia/ontodia/viewUtils/collections' {
     export function makeMoveComparator<T>(items: ReadonlyArray<T>, selected: ReadonlyArray<T>, moveDirection: MoveDirection): (a: T, b: T) => number;
 }
 
-declare module 'ontodia/ontodia/viewUtils/spinner' {
+declare module 'ontodia/viewUtils/spinner' {
     import * as React from 'react';
     export interface SpinnerProps {
         size?: number;
@@ -2929,14 +2921,14 @@ declare module 'ontodia/ontodia/viewUtils/spinner' {
     }
 }
 
-declare module 'ontodia/ontodia/widgets/instancesSearch' {
+declare module 'ontodia/widgets/instancesSearch' {
     import * as React from 'react';
-    import { ElementModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { FilterParams } from 'ontodia/ontodia/data/provider';
-    import { Element as DiagramElement, FatLinkType, FatClassModel } from 'ontodia/ontodia/diagram/elements';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
-    import { AsyncModel } from 'ontodia/ontodia/editor/asyncModel';
-    import { WorkspaceContextWrapper } from 'ontodia/ontodia/workspace/workspaceContext';
+    import { ElementModel, ElementIri } from 'ontodia/data/model';
+    import { FilterParams } from 'ontodia/data/provider';
+    import { Element as DiagramElement, FatLinkType, FatClassModel } from 'ontodia/diagram/elements';
+    import { DiagramView } from 'ontodia/diagram/view';
+    import { AsyncModel } from 'ontodia/editor/asyncModel';
+    import { WorkspaceContextWrapper } from 'ontodia/workspace/workspaceContext';
     export interface InstancesSearchProps {
         className?: string;
         model: AsyncModel;
@@ -2974,17 +2966,17 @@ declare module 'ontodia/ontodia/widgets/instancesSearch' {
     export function createRequest(criteria: SearchCriteria, language: string): FilterParams;
 }
 
-declare module 'ontodia/ontodia/customization/defaultLinkStyles' {
-    import { LinkTemplate, LinkTemplateResolver } from 'ontodia/ontodia/customization/props';
+declare module 'ontodia/customization/defaultLinkStyles' {
+    import { LinkTemplate, LinkTemplateResolver } from 'ontodia/customization/props';
     export const LINK_SHOW_IRI: LinkTemplate;
     export const DefaultLinkTemplateBundle: LinkTemplateResolver;
 }
 
-declare module 'ontodia/ontodia/viewUtils/keyedObserver' {
-    import { ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/ontodia/data/model';
-    import { FatClassModelEvents, FatLinkTypeEvents, RichPropertyEvents } from 'ontodia/ontodia/diagram/elements';
-    import { DiagramModel } from 'ontodia/ontodia/diagram/model';
-    import { Unsubscribe, Listener } from 'ontodia/ontodia/viewUtils/events';
+declare module 'ontodia/viewUtils/keyedObserver' {
+    import { ElementTypeIri, LinkTypeIri, PropertyTypeIri } from 'ontodia/data/model';
+    import { FatClassModelEvents, FatLinkTypeEvents, RichPropertyEvents } from 'ontodia/diagram/elements';
+    import { DiagramModel } from 'ontodia/diagram/model';
+    import { Unsubscribe, Listener } from 'ontodia/viewUtils/events';
     export class KeyedObserver<Key extends string> {
         readonly subscribe: (key: Key) => Unsubscribe | undefined;
         constructor(subscribe: (key: Key) => Unsubscribe | undefined);
@@ -2996,10 +2988,10 @@ declare module 'ontodia/ontodia/viewUtils/keyedObserver' {
     export function observeLinkTypes<Event extends keyof FatLinkTypeEvents>(model: DiagramModel, event: Event, listener: Listener<FatLinkTypeEvents, Event>): KeyedObserver<LinkTypeIri>;
 }
 
-declare module 'ontodia/ontodia/widgets/listElementView' {
+declare module 'ontodia/widgets/listElementView' {
     import * as React from 'react';
-    import { ElementModel } from 'ontodia/ontodia/data/model';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
+    import { ElementModel } from 'ontodia/data/model';
+    import { DiagramView } from 'ontodia/diagram/view';
     export interface ListElementViewProps {
         className?: string;
         view: DiagramView;
@@ -3017,10 +3009,10 @@ declare module 'ontodia/ontodia/widgets/listElementView' {
     export function highlightSubstring(text: string, substring: string | undefined, highlightProps?: React.HTMLProps<HTMLSpanElement>): JSX.Element;
 }
 
-declare module 'ontodia/ontodia/widgets/searchResults' {
+declare module 'ontodia/widgets/searchResults' {
     import * as React from 'react';
-    import { ElementModel, ElementIri } from 'ontodia/ontodia/data/model';
-    import { DiagramView } from 'ontodia/ontodia/diagram/view';
+    import { ElementModel, ElementIri } from 'ontodia/data/model';
+    import { DiagramView } from 'ontodia/diagram/view';
     export interface SearchResultProps {
         view: DiagramView;
         items: ReadonlyArray<ElementModel>;
