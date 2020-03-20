@@ -94,7 +94,7 @@ function exportSVG(options: ToSVGOptions): Promise<SVGElement> {
             if (!options.convertImagesToDataUris) {
                 return Promise.resolve();
             }
-            return exportAsDataUri(img).then(dataUri => {
+            return exportImageAsDataUri(img).then(dataUri => {
                 // check for empty svg data URI which happens when mockJointXHR catches an exception
                 if (dataUri && dataUri !== 'data:image/svg+xml,') {
                     img.src = dataUri;
@@ -108,9 +108,9 @@ function exportSVG(options: ToSVGOptions): Promise<SVGElement> {
         }
     }));
 
-    return convertingImages.then(() => {
+    return convertingImages.then(async () => {
         // workaround to include only ontodia-related stylesheets
-        const exportedCssText = extractCSSFromDocument(svgClone);
+        const exportedCssText = await extractCSSFromDocument(svgClone);
 
         const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
         defs.innerHTML = `<style>${exportedCssText}</style>`;
@@ -190,8 +190,10 @@ function clearAttributes(svg: SVGElement) {
     }
 }
 
-function extractCSSFromDocument(targetSubtree: Element): string {
-    const exportedRules = new Set<CSSStyleRule>();
+const extractFontUrlRegex = /url\("(.*?)"\)/gm;
+async function extractCSSFromDocument(targetSubtree: Element): Promise<string> {
+    const exportedRules = new Set<CSSRule>();
+    const fontRules: Array<CSSFontFaceRule> = [];
     for (let i = 0; i < document.styleSheets.length; i++) {
         let rules: CSSRuleList;
         try {
@@ -202,20 +204,47 @@ function extractCSSFromDocument(targetSubtree: Element): string {
 
         for (let j = 0; j < rules.length; j++) {
             const rule = rules[j];
-            if (rule instanceof CSSStyleRule) {
-         //       if (targetSubtree.querySelector(rule.selectorText)) {
-                    exportedRules.add(rule);
-         //       }
+            if (rule instanceof CSSFontFaceRule) {
+                fontRules.push(rule);
+               ;
+            } else {
+                exportedRules.add(rule);
             }
         }
     }
 
-    const exportedCssTexts: string[] = [];
+    // we need to fetch all fonts and embed them as url data
+    const modifiedFontCssText = await Promise.all(
+        fontRules.map(
+            async rule => {
+                const fontSrc = rule.style.getPropertyValue('src');
+                const fontUrls: Array<string> = [];
+                let m;
+                while ((m = extractFontUrlRegex.exec(fontSrc)) !== null) {
+                    if (m.index === extractFontUrlRegex.lastIndex) {
+                        extractFontUrlRegex.lastIndex++;
+                    }
+                    fontUrls.push(m[1]);
+                }
 
-    // FIX for Google Chrome bug, where foreignObject is replaced with foreignobject in the cssText
-    const chromeFixRegex = /foreignobject/gi;
+                const fonts = await Promise.all(fontUrls.map(exportAsDataUri));
+                const ruleText = rule.cssText;
+                const fontRuleText =
+                    fontUrls.reduce(
+                        (ruleText, url, i) => ruleText.replace(url, fonts[i]),
+                        ruleText
+                    );
+                return fontRuleText;
+            }
+        )
+    );
+
+    const exportedCssTexts: string[] = [];
+    modifiedFontCssText.forEach(
+        cssText => exportedCssTexts.push(cssText)
+    );
     exportedRules.forEach(
-        rule => exportedCssTexts.push(rule.cssText.replace(chromeFixRegex, 'foreignObject'))
+        rule => exportedCssTexts.push(rule.cssText)
     );
     return exportedCssTexts.join('\n');
 }
@@ -240,6 +269,7 @@ function clonePaperSvg(options: ToSVGOptions, elementSizePadding: number): {
 
     const viewport = findViewport();
     viewport.removeAttribute('transform');
+    viewport.setAttribute('class', 'rs-application');
 
     const imageBounds: { [path: string]: Bounds } = {};
 
@@ -283,13 +313,17 @@ function clonePaperSvg(options: ToSVGOptions, elementSizePadding: number): {
     return {svgClone, imageBounds};
 }
 
-function exportAsDataUri(original: HTMLImageElement): Promise<string> {
+function exportImageAsDataUri(original: HTMLImageElement): Promise<string> {
     const url = original.src;
     if (!url || url.startsWith('data:')) {
         return Promise.resolve(url);
     }
 
-    return fetch(original.src)
+    return exportAsDataUri(url);
+}
+
+function exportAsDataUri(url: string): Promise<string> {
+    return fetch(url)
         .then(result => result.blob())
         .then(blob => {
             return new Promise<string>(resolve => {
