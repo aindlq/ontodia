@@ -6082,6 +6082,7 @@ function toSVG(options) {
 }
 exports.toSVG = toSVG;
 function exportSVG(options) {
+    var _this = this;
     var bbox = options.contentBox, watermarkSvg = options.watermarkSvg;
     var _a = clonePaperSvg(options, FOREIGN_OBJECT_SIZE_PADDING), svgClone = _a.svgClone, imageBounds = _a.imageBounds;
     if (polyfills_1.isIE11()) {
@@ -6119,7 +6120,7 @@ function exportSVG(options) {
             if (!options.convertImagesToDataUris) {
                 return Promise.resolve();
             }
-            return exportAsDataUri(img).then(function (dataUri) {
+            return exportImageAsDataUri(img).then(function (dataUri) {
                 // check for empty svg data URI which happens when mockJointXHR catches an exception
                 if (dataUri && dataUri !== 'data:image/svg+xml,') {
                     img.src = dataUri;
@@ -6133,17 +6134,23 @@ function exportSVG(options) {
             return Promise.resolve();
         }
     }));
-    return convertingImages.then(function () {
-        // workaround to include only ontodia-related stylesheets
-        var exportedCssText = extractCSSFromDocument(svgClone);
-        var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-        defs.innerHTML = "<style>" + exportedCssText + "</style>";
-        svgClone.insertBefore(defs, svgClone.firstChild);
-        if (options.elementsToRemoveSelector) {
-            foreachNode(svgClone.querySelectorAll(options.elementsToRemoveSelector), function (node) { return node.remove(); });
-        }
-        return svgClone;
-    });
+    return convertingImages.then(function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+        var exportedCssText, defs;
+        return tslib_1.__generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, extractCSSFromDocument(svgClone)];
+                case 1:
+                    exportedCssText = _a.sent();
+                    defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                    defs.innerHTML = "<style>" + exportedCssText + "</style>";
+                    svgClone.insertBefore(defs, svgClone.firstChild);
+                    if (options.elementsToRemoveSelector) {
+                        foreachNode(svgClone.querySelectorAll(options.elementsToRemoveSelector), function (node) { return node.remove(); });
+                    }
+                    return [2 /*return*/, svgClone];
+            }
+        });
+    }); });
 }
 function addWatermark(svg, viewBox, watermarkSvg) {
     var WATERMARK_CLASS = 'ontodia-exported-watermark';
@@ -6205,34 +6212,70 @@ function clearAttributes(svg) {
         }
     }
 }
+var extractFontUrlRegex = /url\("(.*?)"\)/gm;
 function extractCSSFromDocument(targetSubtree) {
-    var exportedRules = new Set();
-    for (var i = 0; i < document.styleSheets.length; i++) {
-        var rules = void 0;
-        try {
-            var cssSheet = document.styleSheets[i];
-            rules = cssSheet.cssRules || cssSheet.rules;
-            if (!rules) {
-                continue;
+    return tslib_1.__awaiter(this, void 0, void 0, function () {
+        var exportedRules, fontRules, i, rules, cssSheet, j, rule, modifiedFontCssText, exportedCssTexts;
+        var _this = this;
+        return tslib_1.__generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    exportedRules = new Set();
+                    fontRules = [];
+                    for (i = 0; i < document.styleSheets.length; i++) {
+                        rules = void 0;
+                        try {
+                            cssSheet = document.styleSheets[i];
+                            rules = cssSheet.cssRules || cssSheet.rules;
+                            if (!rules) {
+                                continue;
+                            }
+                        }
+                        catch (e) {
+                            continue;
+                        }
+                        for (j = 0; j < rules.length; j++) {
+                            rule = rules[j];
+                            if (rule instanceof CSSFontFaceRule) {
+                                fontRules.push(rule);
+                                ;
+                            }
+                            else {
+                                exportedRules.add(rule);
+                            }
+                        }
+                    }
+                    return [4 /*yield*/, Promise.all(fontRules.map(function (rule) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+                            var fontSrc, fontUrls, m, fonts, ruleText, fontRuleText;
+                            return tslib_1.__generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        fontSrc = rule.style.getPropertyValue('src');
+                                        fontUrls = [];
+                                        while ((m = extractFontUrlRegex.exec(fontSrc)) !== null) {
+                                            if (m.index === extractFontUrlRegex.lastIndex) {
+                                                extractFontUrlRegex.lastIndex++;
+                                            }
+                                            fontUrls.push(m[1]);
+                                        }
+                                        return [4 /*yield*/, Promise.all(fontUrls.map(exportAsDataUri))];
+                                    case 1:
+                                        fonts = _a.sent();
+                                        ruleText = rule.cssText;
+                                        fontRuleText = fontUrls.reduce(function (ruleText, url, i) { return ruleText.replace(url, fonts[i]); }, ruleText);
+                                        return [2 /*return*/, fontRuleText];
+                                }
+                            });
+                        }); }))];
+                case 1:
+                    modifiedFontCssText = _a.sent();
+                    exportedCssTexts = [];
+                    modifiedFontCssText.forEach(function (cssText) { return exportedCssTexts.push(cssText); });
+                    exportedRules.forEach(function (rule) { return exportedCssTexts.push(rule.cssText); });
+                    return [2 /*return*/, exportedCssTexts.join('\n')];
             }
-        }
-        catch (e) {
-            continue;
-        }
-        for (var j = 0; j < rules.length; j++) {
-            var rule = rules[j];
-            if (rule instanceof CSSStyleRule) {
-                //       if (targetSubtree.querySelector(rule.selectorText)) {
-                exportedRules.add(rule);
-                //       }
-            }
-        }
-    }
-    var exportedCssTexts = [];
-    // FIX for Google Chrome bug, where foreignObject is replaced with foreignobject in the cssText
-    var chromeFixRegex = /foreignobject/gi;
-    exportedRules.forEach(function (rule) { return exportedCssTexts.push(rule.cssText.replace(chromeFixRegex, 'foreignObject')); });
-    return exportedCssTexts.join('\n');
+        });
+    });
 }
 function clonePaperSvg(options, elementSizePadding) {
     var model = options.model, paper = options.paper, getOverlayedElement = options.getOverlayedElement;
@@ -6251,6 +6294,7 @@ function clonePaperSvg(options, elementSizePadding) {
     }
     var viewport = findViewport();
     viewport.removeAttribute('transform');
+    viewport.setAttribute('class', 'rs-application');
     var imageBounds = {};
     var _loop_1 = function (element) {
         var modelId = element.id;
@@ -6292,12 +6336,15 @@ function clonePaperSvg(options, elementSizePadding) {
     }
     return { svgClone: svgClone, imageBounds: imageBounds };
 }
-function exportAsDataUri(original) {
+function exportImageAsDataUri(original) {
     var url = original.src;
     if (!url || url.startsWith('data:')) {
         return Promise.resolve(url);
     }
-    return fetch(original.src)
+    return exportAsDataUri(url);
+}
+function exportAsDataUri(url) {
+    return fetch(url)
         .then(function (result) { return result.blob(); })
         .then(function (blob) {
         return new Promise(function (resolve) {
