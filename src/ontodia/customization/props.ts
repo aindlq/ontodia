@@ -3,6 +3,7 @@ import { DiagramModel } from '../diagram/model';
 
 import { ElementIri, ElementModel, Dictionary, LocalizedString, Property } from '../data/model';
 import { Link } from '../diagram/elements';
+import { Size } from '../diagram/geometry';
 
 export type TypeStyleResolver = (types: string[]) => CustomTypeStyle | undefined;
 export type LinkTemplateResolver = (linkType: string) => LinkTemplate | undefined;
@@ -27,6 +28,11 @@ export interface TemplateProps {
     isExpanded?: boolean;
     propsAsList?: PropArray;
     props?: Dictionary<Property>;
+
+    size?: Size;
+    setSize: (size: Size) => void;
+    isFixedSize: boolean;
+    setFixedSize: (isFixed: boolean) => void;
 }
 
 export type PropArray = Array<{

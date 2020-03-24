@@ -12,6 +12,7 @@ import { KeyedObserver, observeElementTypes, observeProperties } from '../viewUt
 import { setElementExpanded } from './commands';
 import { Element } from './elements';
 import { DiagramView, RenderingLayer, IriClickIntent } from './view';
+import { Size } from './geometry';
 
 export interface Props {
     view: DiagramView;
@@ -204,8 +205,11 @@ export class ElementLayer extends React.Component<Props, State> {
     }
 
     private requestSizeUpdate = (element: Element, node: HTMLDivElement) => {
-        this.sizeRequests.set(element.id, {element, node});
-        this.delayedUpdateSizes.call(this.recomputeQueuedSizes);
+        // don't recompute size for element if it has fixed size
+        if (!element.isFixedSize) {
+            this.sizeRequests.set(element.id, {element, node});
+            this.delayedUpdateSizes.call(this.recomputeQueuedSizes);
+        }
     }
 
     private recomputeQueuedSizes = () => {
@@ -361,6 +365,11 @@ class OverlayedElement extends React.Component<OverlayedElementProps, {}> {
             const element = findDOMNode(this) as HTMLElement;
             if (element) { element.focus(); }
         });
+        this.listener.listen(state.element.events, 'changeFixedSize', (data) => {
+            if (!data.source.isFixedSize) {
+                this.requestResize();
+            }
+        });
         this.typesObserver = observeElementTypes(
             view.model, 'changeLabel', this.rerenderTemplate
         );
@@ -383,6 +392,10 @@ class OverlayedElement extends React.Component<OverlayedElementProps, {}> {
 
     componentDidUpdate() {
         this.observeTypes();
+        this.requestResize();
+    }
+
+    private requestResize = () => {
         this.props.onResize(this.props.state.element, findDOMNode(this) as HTMLDivElement);
     }
 
@@ -434,6 +447,10 @@ function computeTemplateProps(model: Element, view: DiagramView): TemplateProps 
         isExpanded: model.isExpanded,
         props: model.data.properties,
         propsAsList,
+        size: model.size,
+        setSize: (s: Size) => model.setSize(s),
+        isFixedSize: model.isFixedSize,
+        setFixedSize: (b: boolean) => model.setFixedSize(b)
     };
 }
 

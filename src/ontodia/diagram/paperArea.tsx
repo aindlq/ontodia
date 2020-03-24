@@ -440,7 +440,16 @@ export class PaperArea extends React.Component<PaperAreaProps, State> {
     private onPaperPointerDown = (e: React.MouseEvent<HTMLElement>, cell: Cell | undefined) => {
         if (this.movingState) { return; }
 
-        const restore = RestoreGeometry.capture(this.props.view.model);
+        // to enable resizable nodes with react-resizable
+        // if pointer is down on resiza handle then we don't need to move the node
+        if (
+            (e.target instanceof HTMLElement) &&
+            e.target.className.indexOf('resizableHandle') > -1
+        ) {
+            return ;
+        }
+
+            const restore = RestoreGeometry.capture(this.props.view.model);
         const batch = this.props.view.model.history.startBatch(restore.title);
 
         if (cell && e.button === LEFT_MOUSE_BUTTON) {

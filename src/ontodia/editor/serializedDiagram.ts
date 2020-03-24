@@ -32,6 +32,7 @@ export interface LayoutElement {
     iri: ElementIri;
     position: Vector;
     size?: Size;
+    fixedSize?: boolean;
     angle?: number;
     isExpanded?: boolean;
     group?: string;
@@ -52,7 +53,7 @@ const serializedCellProperties = [
     // common properties
     'id', 'type',
     // element properties
-    'size', 'angle', 'isExpanded', 'position', 'iri', 'group',
+    'size', 'fixedSize', 'angle', 'isExpanded', 'position', 'iri', 'group',
     // link properties
     'typeId', 'source', 'target', 'vertices',
 ];
@@ -153,6 +154,7 @@ export function makeLayoutData(
         iri: element.iri,
         position: element.position,
         size: element.size,
+        fixedSize: element.isFixedSize,
         isExpanded: element.isExpanded,
         group: element.group,
         elementState: element.elementState,

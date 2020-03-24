@@ -2059,11 +2059,12 @@ var Element = /** @class */ (function () {
         this.events = this.source;
         /** All in and out links of the element */
         this.links = [];
-        var id = props.id, data = props.data, _a = props.position, position = _a === void 0 ? { x: 0, y: 0 } : _a, _b = props.size, size = _b === void 0 ? { width: 0, height: 0 } : _b, _c = props.expanded, expanded = _c === void 0 ? false : _c, group = props.group, elementState = props.elementState, _d = props.temporary, temporary = _d === void 0 ? false : _d;
+        var id = props.id, data = props.data, _a = props.position, position = _a === void 0 ? { x: 0, y: 0 } : _a, _b = props.size, size = _b === void 0 ? { width: 0, height: 0 } : _b, fixedSize = props.fixedSize, _c = props.expanded, expanded = _c === void 0 ? false : _c, group = props.group, elementState = props.elementState, _d = props.temporary, temporary = _d === void 0 ? false : _d;
         this.id = id;
         this._data = data;
         this._position = position;
         this._size = size;
+        this._fixedSize = fixedSize;
         this._expanded = expanded;
         this._group = group;
         this._elementState = elementState;
@@ -2117,6 +2118,15 @@ var Element = /** @class */ (function () {
         }
         this._size = value;
         this.source.trigger('changeSize', { source: this, previous: previous });
+    };
+    Object.defineProperty(Element.prototype, "fixedSize", {
+        get: function () { return this._fixedSize; },
+        enumerable: true,
+        configurable: true
+    });
+    Element.prototype.setFixedSize = function (value) {
+        this._fixedSize = true;
+        this.setSize(value);
     };
     Object.defineProperty(Element.prototype, "isExpanded", {
         get: function () { return this._expanded; },
@@ -2868,8 +2878,11 @@ var ElementLayer = /** @class */ (function (_super) {
             }); });
         };
         _this.requestSizeUpdate = function (element, node) {
-            _this.sizeRequests.set(element.id, { element: element, node: node });
-            _this.delayedUpdateSizes.call(_this.recomputeQueuedSizes);
+            // don't recompute size for element if it has fixed size
+            if (!element.fixedSize) {
+                _this.sizeRequests.set(element.id, { element: element, node: node });
+                _this.delayedUpdateSizes.call(_this.recomputeQueuedSizes);
+            }
         };
         _this.recomputeQueuedSizes = function () {
             var batch = _this.sizeRequests;
@@ -3142,6 +3155,8 @@ function computeTemplateProps(model, view) {
         isExpanded: model.isExpanded,
         props: model.data.properties,
         propsAsList: propsAsList,
+        size: model.size,
+        setFixedSize: function (s) { return model.setFixedSize(s); }
     };
 }
 function computePropertyTable(model, view) {
@@ -5427,6 +5442,12 @@ var PaperArea = /** @class */ (function (_super) {
         };
         _this.onPaperPointerDown = function (e, cell) {
             if (_this.movingState) {
+                return;
+            }
+            // to enable resizable nodes with react-resizable
+            // if pointer is down on resiza handle then we don't need to move the node
+            if ((e.target instanceof HTMLElement) &&
+                e.target.className.indexOf('resizableHandle') > -1) {
                 return;
             }
             var restore = commands_1.RestoreGeometry.capture(_this.props.view.model);
@@ -11200,7 +11221,7 @@ var serializedCellProperties = [
     // common properties
     'id', 'type',
     // element properties
-    'size', 'angle', 'isExpanded', 'position', 'iri', 'group',
+    'size', 'fixedSize', 'angle', 'isExpanded', 'position', 'iri', 'group',
     // link properties
     'typeId', 'source', 'target', 'vertices',
 ];
@@ -11277,6 +11298,7 @@ function makeLayoutData(modelElements, modelLinks) {
         iri: element.iri,
         position: element.position,
         size: element.size,
+        fixedSize: element.fixedSize,
         isExpanded: element.isExpanded,
         group: element.group,
         elementState: element.elementState,
@@ -12226,10 +12248,10 @@ var AsyncModel = /** @class */ (function (_super) {
         var usedLinkTypes = {};
         for (var _i = 0, _c = layoutData.elements; _i < _c.length; _i++) {
             var layoutElement = _c[_i];
-            var id = layoutElement["@id"], iri = layoutElement.iri, position = layoutElement.position, size = layoutElement.size, isExpanded = layoutElement.isExpanded, group = layoutElement.group, elementState = layoutElement.elementState;
+            var id = layoutElement["@id"], iri = layoutElement.iri, position = layoutElement.position, size = layoutElement.size, fixedSize = layoutElement.fixedSize, isExpanded = layoutElement.isExpanded, group = layoutElement.group, elementState = layoutElement.elementState;
             var template = preloadedElements[iri];
             var data = template || model_1.placeholderDataFromIri(iri);
-            var element = new elements_1.Element({ id: id, data: data, position: position, size: size, expanded: isExpanded, group: group, elementState: elementState });
+            var element = new elements_1.Element({ id: id, data: data, position: position, size: size, fixedSize: fixedSize, expanded: isExpanded, group: group, elementState: elementState });
             this.graph.addElement(element);
             if (!template) {
                 elementIrisToRequestData.push(element.iri);

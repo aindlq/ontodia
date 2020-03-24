@@ -50,6 +50,7 @@ declare module 'ontodia/customization/props' {
     import { DiagramModel } from 'ontodia/diagram/model';
     import { ElementIri, ElementModel, Dictionary, LocalizedString, Property } from 'ontodia/data/model';
     import { Link } from 'ontodia/diagram/elements';
+    import { Size } from 'ontodia/diagram/geometry';
     export type TypeStyleResolver = (types: string[]) => CustomTypeStyle | undefined;
     export type LinkTemplateResolver = (linkType: string) => LinkTemplate | undefined;
     export type TemplateResolver = (types: string[]) => ElementTemplate | undefined;
@@ -70,6 +71,8 @@ declare module 'ontodia/customization/props' {
         isExpanded?: boolean;
         propsAsList?: PropArray;
         props?: Dictionary<Property>;
+        size?: Size;
+        setFixedSize: (s: Size) => void;
     }
     export type PropArray = Array<{
         id: string;
@@ -1187,6 +1190,7 @@ declare module 'ontodia/diagram/elements' {
                     data: ElementModel;
                     position?: Vector;
                     size?: Size;
+                    fixedSize?: boolean;
                     expanded?: boolean;
                     group?: string;
                     elementState?: ElementTemplateState;
@@ -1199,6 +1203,8 @@ declare module 'ontodia/diagram/elements' {
             setPosition(value: Vector): void;
             get size(): Size;
             setSize(value: Size): void;
+            get fixedSize(): boolean;
+            setFixedSize(value: Size): void;
             get isExpanded(): boolean;
             setExpanded(value: boolean): void;
             get group(): string | undefined;
@@ -2167,6 +2173,7 @@ declare module 'ontodia/editor/serializedDiagram' {
         iri: ElementIri;
         position: Vector;
         size?: Size;
+        fixedSize?: boolean;
         angle?: number;
         isExpanded?: boolean;
         group?: string;
