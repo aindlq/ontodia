@@ -696,7 +696,18 @@ export class SparqlDataProvider implements DataProvider {
             .filter(iri => !BlankNodes.isEncodedBlank(iri))
             .map(iri => `(${escapeIri(iri)})`).join(' ');
 
-        const queryTemplate = `SELECT ?inst ?class { VALUES(?inst) { \${ids} } \${filterTypePattern} }`;
+        const queryTemplate = `
+          SELECT ?inst ?class {
+            VALUES(?inst) { \${ids} }
+            {
+              \${filterTypePattern}
+            } UNION {
+              # even if instance is untyped explicitly,
+              # we assume that everything is at least rdfs:Resource
+              BIND(rdfs:Resource as ?class)
+            }
+          }
+        `;
         const query = resolveTemplate(queryTemplate, {ids, filterTypePattern});
         let response = await this.executeSparqlQuery<ElementTypeBinding>(query);
 
