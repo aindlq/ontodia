@@ -9,6 +9,7 @@ declare module 'ontodia' {
     export * from 'ontodia/data/metadataApi';
     export * from 'ontodia/data/validationApi';
     export * from 'ontodia/data/provider';
+    export { PLACEHOLDER_ELEMENT_TYPE, PLACEHOLDER_LINK_TYPE } from 'ontodia/data/schema';
     export * from 'ontodia/data/demo/provider';
     export { RdfNode, RdfIri, RdfLiteral, Triple } from 'ontodia/data/sparql/sparqlModels';
     export * from 'ontodia/data/rdf/rdfDataProvider';
@@ -72,7 +73,9 @@ declare module 'ontodia/customization/props' {
         propsAsList?: PropArray;
         props?: Dictionary<Property>;
         size?: Size;
-        setFixedSize: (s: Size) => void;
+        setSize: (size: Size) => void;
+        isFixedSize: boolean;
+        setFixedSize: (isFixed: boolean) => void;
     }
     export type PropArray = Array<{
         id: string;
@@ -238,7 +241,7 @@ declare module 'ontodia/data/model' {
 }
 
 declare module 'ontodia/data/metadataApi' {
-    import { ElementModel, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LinkModel, ElementIri } from 'ontodia/data/model';
+    import { ElementModel, ElementTypeIri, LinkTypeIri, PropertyTypeIri, LinkModel } from 'ontodia/data/model';
     import { LinkDirection } from 'ontodia/diagram/elements';
     import { CancellationToken } from 'ontodia/viewUtils/async';
     export interface MetadataApi {
@@ -268,7 +271,7 @@ declare module 'ontodia/data/metadataApi' {
             canLinkElement(element: ElementModel, ct: CancellationToken): Promise<boolean>;
             canDeleteLink(link: LinkModel, source: ElementModel, target: ElementModel, ct: CancellationToken): Promise<boolean>;
             canEditLink(link: LinkModel, source: ElementModel, target: ElementModel, ct: CancellationToken): Promise<boolean>;
-            generateNewElementIri(types: ReadonlyArray<ElementTypeIri>, ct: CancellationToken): Promise<ElementIri>;
+            generateNewElement(types: ReadonlyArray<ElementTypeIri>, ct: CancellationToken): Promise<ElementModel>;
     }
     export interface DirectedLinkType {
             readonly linkTypeIri: LinkTypeIri;
@@ -433,6 +436,21 @@ declare module 'ontodia/data/provider' {
                 * It's subject to be removed.
                 */
             languageCode: string;
+    }
+}
+
+declare module 'ontodia/data/schema' {
+    import { ElementTypeIri, LinkTypeIri } from 'ontodia/data/model';
+    export const DIAGRAM_CONTEXT_URL_V1 = "https://ontodia.org/context/v1.json";
+    export const PLACEHOLDER_ELEMENT_TYPE: ElementTypeIri;
+    export const PLACEHOLDER_LINK_TYPE: LinkTypeIri;
+    export namespace GenerateID {
+        function forElement(): string;
+        function forLink(): string;
+    }
+    export namespace TemplateProperties {
+        const PinnedProperties = "ontodia:pinnedProperties";
+        const CustomLabel = "ontodia:customLabel";
     }
 }
 
@@ -1102,21 +1120,6 @@ declare module 'ontodia/data/sparql/sparqlGraphBuilder' {
     }
 }
 
-declare module 'ontodia/data/schema' {
-    import { ElementTypeIri, LinkTypeIri } from 'ontodia/data/model';
-    export const DIAGRAM_CONTEXT_URL_V1 = "https://ontodia.org/context/v1.json";
-    export const PLACEHOLDER_ELEMENT_TYPE: ElementTypeIri;
-    export const PLACEHOLDER_LINK_TYPE: LinkTypeIri;
-    export namespace GenerateID {
-        function forElement(): string;
-        function forLink(): string;
-    }
-    export namespace TemplateProperties {
-        const PinnedProperties = "ontodia:pinnedProperties";
-        const CustomLabel = "ontodia:customLabel";
-    }
-}
-
 declare module 'ontodia/diagram/commands' {
     import { ElementModel, ElementIri, LinkModel } from 'ontodia/data/model';
     import { Element, Link, FatLinkType } from 'ontodia/diagram/elements';
@@ -1162,6 +1165,7 @@ declare module 'ontodia/diagram/elements' {
             changeData: PropertyChange<Element, ElementModel>;
             changePosition: PropertyChange<Element, Vector>;
             changeSize: PropertyChange<Element, Size>;
+            changeFixedSize: PropertyChange<Element, boolean>;
             changeExpanded: PropertyChange<Element, boolean>;
             changeGroup: PropertyChange<Element, string>;
             changeElementState: PropertyChange<Element, ElementTemplateState | undefined>;
@@ -1203,8 +1207,8 @@ declare module 'ontodia/diagram/elements' {
             setPosition(value: Vector): void;
             get size(): Size;
             setSize(value: Size): void;
-            get fixedSize(): boolean;
-            setFixedSize(value: Size): void;
+            get isFixedSize(): boolean;
+            setFixedSize(isFixed: boolean): void;
             get isExpanded(): boolean;
             setExpanded(value: boolean): void;
             get group(): string | undefined;
@@ -2065,10 +2069,11 @@ declare module 'ontodia/editor/editorController' {
         showEditEntityForm(target: Element): void;
         linkSelector(): LinkSelector;
         classSelector(): ClassSelector;
-        showEditElementTypeForm({ link, source, target }: {
+        showEditElementTypeForm({ link, source, target, targetIsNew }: {
             link: Link;
             source: Element;
             target: Element;
+            targetIsNew: boolean;
         }, fn: any): void;
         showEditLinkForm(link: Link): void;
         showDialog(params: {
