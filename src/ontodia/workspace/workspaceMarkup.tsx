@@ -293,7 +293,7 @@ function centerElementToPosition(element: Element, center: Vector) {
 }
 
 function tryParseDefaultDragAndDropData(e: DragEvent): ElementIri[] {
-    const tryGetIri = (type: string, decode: boolean = false) => {
+    const tryGetIri = (type: string) => {
         try {
             const iriString = e.dataTransfer.getData(type);
             if (!iriString) { return undefined; }
@@ -301,7 +301,7 @@ function tryParseDefaultDragAndDropData(e: DragEvent): ElementIri[] {
             try {
                 iris = JSON.parse(iriString);
             } catch (e) {
-                iris = [(decode ? decodeURI(iriString) : iriString) as ElementIri];
+                iris = [iriString as ElementIri];
             }
             return iris.length === 0 ? undefined : iris;
         } catch (e) {
@@ -310,7 +310,7 @@ function tryParseDefaultDragAndDropData(e: DragEvent): ElementIri[] {
     };
 
     return tryGetIri('application/x-ontodia-elements')
-        || tryGetIri('text/uri-list', true)
+        || tryGetIri('text/uri-list')
         || tryGetIri('text') // IE11, Edge
         || [];
 }
