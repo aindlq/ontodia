@@ -17736,8 +17736,7 @@ function centerElementToPosition(element, center) {
     element.setPosition(position);
 }
 function tryParseDefaultDragAndDropData(e) {
-    var tryGetIri = function (type, decode) {
-        if (decode === void 0) { decode = false; }
+    var tryGetIri = function (type) {
         try {
             var iriString = e.dataTransfer.getData(type);
             if (!iriString) {
@@ -17748,7 +17747,7 @@ function tryParseDefaultDragAndDropData(e) {
                 iris = JSON.parse(iriString);
             }
             catch (e) {
-                iris = [(decode ? decodeURI(iriString) : iriString)];
+                iris = [iriString];
             }
             return iris.length === 0 ? undefined : iris;
         }
@@ -17757,7 +17756,7 @@ function tryParseDefaultDragAndDropData(e) {
         }
     };
     return tryGetIri('application/x-ontodia-elements')
-        || tryGetIri('text/uri-list', true)
+        || tryGetIri('text/uri-list')
         || tryGetIri('text') // IE11, Edge
         || [];
 }
